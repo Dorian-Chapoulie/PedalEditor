@@ -45,6 +45,16 @@
       this.name = null;
       this.configChangedEvent = new CustomEvent("config-changed");
       this.ASSETS_PATH = ASSETS_PATH;
+
+      /* Selection listener. */
+    this.addEventListener(
+      "mousedown",
+      function(e) {
+        this.selectElement(null);
+        console.log("pedal selected")
+      },
+      true
+    );
     }
 
     getAttributes() {
@@ -156,6 +166,16 @@
     }
 
     selectElement(elementId) {
+      if(!elementId) {
+        // the pedal itself is selected
+        this.dispatchEvent(this.configChangedEvent);
+        //this.highlightElement(elementId);
+        this.updateStyle(this);
+        this.dispatchEvent(this.configChangedEvent);
+        return;
+      }
+
+      // a pedal element has been selected
       for (let knob of this.knobs) {
         if (knob.id === elementId) {
           this.selectedElement = knob;
@@ -223,6 +243,7 @@
     }
 
     generateStyle(functional) {
+      console.log("generate style pedal width = " + this.getAttribute("width"))
       let nonFuncitonalPedalStyle = `
                         .pedal{
                             display: block;
@@ -283,6 +304,8 @@
 
                         .container {
                             position: relative;
+                            width: ${this.getAttribute("width")}px;
+                            height: ${this.getAttribute("height")}px;
                             /* font-family: Arial; */
                           }
                           
@@ -446,7 +469,7 @@
           // calculated automatically
           //knobElem.setAttribute('step', 1);
           //knobElem.setAttribute('step', knob.step);
-          console.log("pedal.js KNOB STEP = " + knob.step);
+          //console.log("pedal.js KNOB STEP = " + knob.step);
           knobElem.value = knob.value;
           knobElem.setAttribute("value", knob.value);
 

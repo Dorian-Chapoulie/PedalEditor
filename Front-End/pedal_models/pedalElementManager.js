@@ -275,11 +275,11 @@ class PedalElementManager {
     var sliderelem = this.doc.createElement("webaudio-slider");
     sliderelem.setAttribute(
       "src",
-      this.pedal.ASSETS_PATH + "/img/sliders/" + sliderConfig.model
+      this.pedal.ASSETS_PATH + "/sliders/" + sliderConfig.model
     );
     sliderelem.setAttribute(
       "knobsrc",
-      this.pedal.ASSETS_PATH + "/img/sliders/sliderKnob.png"
+      this.pedal.ASSETS_PATH + "/sliders/sliderKnob.png"
     );
     sliderelem.setAttribute("height", sliderConfig.height);
     sliderelem.setAttribute("width", sliderConfig.width);

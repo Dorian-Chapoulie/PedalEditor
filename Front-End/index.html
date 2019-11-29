@@ -620,11 +620,12 @@
                 <div class="modal-body" style="background-color: #333;">
                     <!-- <editor-pedal-new-1 width="400" height="400"></editor-pedal-new-1> -->
 
-
+                    <!--
                     <div class="container" style="direction: ltr;">
                         <iframe src="pedal_templates/distorder/testDistorder.html" width="285" height="320"
                             id="template1"></iframe>
                     </div>
+                    -->
                     <a href="#selectTemplate" onclick="LoadTemplateConfig()" id="selectTemplate">Select Template</a>
 
 
@@ -802,42 +803,48 @@
         </div>
     </div>
 
-    <div id="wrapper">
+    <div id="wrapper"  class="toggled">
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <div id="accordion">
                     <div style="direction: ltr;">
+                         <!--
                         <details class="editor-collapsible">
 
+                           
                             <summary style="color: #999;"><a href="#editor-pedal-details">Pedal configuration</a>
                             </summary>
-
-                            <div class="editor-collapsible-content">
-                                <editor-pedal-details id="editor-pedal-details" class="accordion"
+                            -->
+                            <div style="height:300px">
+                                <editor-pedal-details id="editor-pedal-details"
                                     style="background-color: #333;"></editor-pedal-details>
                             </div>
+                            <!--
                         </details>
+                        -->
+                        
+                        <details class="editor-collapsible" style="display:none">
 
-                        <details class="editor-collapsible">
-
-                            <summary style="color: #999;">Elements </summary>
+                            <summary style="color: #999;"><a href="#editor-element-list">Elements</a> </summary>
 
                             <div class="editor-collapsible-content">
                                 <editor-element-list id="editor-element-list" class="accordion"></editor-element-list>
                             </div>
                         </details>
 
-                        <!-- <details class="editor-collapsible">
-        
-                                    <summary><a href="#editor-inspector">Inspector </a></summary>
                         
-                                    <div class="editor-collapsible-content" >
-                                            <editor-inspector id="editor-inspector" class="accordion"></editor-inspector>
-                                    </div>
-                            </details> -->
+                        <details class="editor-collapsible"  style="display:none">
 
-                        <details class="editor-collapsible">
+                            <summary><a href="#editor-inspector">Inspector </a></summary>
+
+                            <div class="editor-collapsible-content">
+                                <editor-inspector id="editor-inspector" class="accordion"></editor-inspector>
+                            </div>
+                        </details> 
+                      
+                        
+                        <details class="editor-collapsible"  style="display:none">
 
                             <summary style="color: #999;">Faust</summary>
 
@@ -845,6 +852,9 @@
                                 <editor-faust id="editor-faust" class="accordion"></editor-faust>
                             </div>
                         </details>
+                        
+                        
+
                     </div>
 
                 </div>
@@ -1588,11 +1598,6 @@
             },
 
             modifiers: [
-                // keep the edges inside the parent
-                interact.modifiers.restrictEdges({
-                    outer: 'parent',
-                    endOnly: true
-                }),
 
                 // minimum size
                 interact.modifiers.restrictSize({
@@ -2470,7 +2475,6 @@
     var faustUI = {};
 
     function initialize() {
-
         var urlParams = new URLSearchParams(window.location.search);
 
         console.log(urlParams.has('data')); // true
@@ -2481,7 +2485,6 @@
         //console.log(urlParams.get('data'));
         console.log("###");
         //faustUI = JSON.parse(urlParams.get('data'));
-
     }
 
     function setFaustUIFromUrl() {
@@ -2997,6 +3000,7 @@
 
     }
 
+    // TRES IMPORTANT !!!!
     function initializeFromMessagePostedByFaustIDE(data) {
         console.log("initializeFromMessagePostedByFaustIDE")
 
@@ -3050,12 +3054,11 @@
         if (window.faustUI) {
             console.log("### faustUI present ! ####")
             console.log(window.faustUI);
-            newPedal(null, true);
 
             let detail = faust.pedalConfigFromUI(window.faustUI);
 
             let pedalConfig = {
-                name: window.faustUI.WapName,
+                name: currentWapName,
                 color: "#7caeff",
                 width: detail.width,
                 height: detail.height,
@@ -3066,8 +3069,14 @@
             console.log(detail);
             console.log("PEDALCONFIG = ", pedalConfig);
 
+            newPedal(null, true);
+
             //currentWapName = pedalConfig.name;
             pedal.loadConfig(pedalConfig);
+
+
+
+     
 
         }
     }

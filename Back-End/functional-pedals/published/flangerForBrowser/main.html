@@ -1,4 +1,5 @@
 
+    <link href='https://fonts.googleapis.com/css?family=Montez|Lobster|Roboto|Lexend+Zetta|Josefin+Sans|Shadows+Into+Light|Pacifico|Amatic+SC:700|Orbitron:400,900|Rokkitt|Righteous|Dancing+Script:700|Bangers|Chewy|Sigmar+One|Architects+Daughter|Abril+Fatface|Covered+By+Your+Grace|Kaushan+Script|Gloria+Hallelujah|Satisfy|Lobster+Two:700|Comfortaa:700|Cinzel|Courgette' rel='stylesheet' type='text/css'>
             <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webcomponents-lite.js"></script>
             <script>
             </script>
@@ -15,6 +16,7 @@
                             border-radius: 10px;
                             position: relative;
                             /* bring your own prefixes */
+                            /* transform: translate(-50%, -50%); */
                         }
             
                         
@@ -23,8 +25,13 @@
                             width: 130px;
                             height: 570px;
                             opacity: 1;
+                            /* display: none; */
                             //visibility: hidden;
                         }
+
+                        /* .img-bck img[src=""] {
+                            display: none;
+                        } */
 
                         /* #resize {
                             position: absolute;
@@ -44,7 +51,7 @@
 
                         .container {
                             position: relative;
-                            font-family: Arial;
+                            /* font-family: Arial; */
                           }
                           
                         .text-block {
@@ -57,10 +64,14 @@
                             padding-right: 20px;
                         }
 
+                        /* .text-block :not(.tititi) {
+                            opacity : 0;
+                        } */
+
                         .draggable {
-                            cursor:move;
-                            position:absolute; 
-                          }
+                            touch-action: none;
+                            user-select: none;
+                        }
 
                           #canvas {
                             width:100px;
@@ -78,7 +89,7 @@
                         }
 
                         .selected:hover {
-                            border: 1px dashed black;
+                            /* border: 1px dashed black; */
                             cursor: move;
                         }
 
@@ -133,8 +144,8 @@
                     }
                 
                     #Rate {
-                        left: 40px;
-                        top: 90px;
+                        left: 141px;
+                        top: 9px;
                     }
 
                     #Rate div {
@@ -145,8 +156,8 @@
                     }
                 
                     #Depth {
-                        left: 40px;
-                        top: 170px;
+                        left: 231px;
+                        top: 6px;
                     }
 
                     #Depth div {
@@ -157,8 +168,8 @@
                     }
                 
                     #Feedback {
-                        left: 40px;
-                        top: 250px;
+                        left: 28px;
+                        top: 110px;
                     }
 
                     #Feedback div {
@@ -169,8 +180,8 @@
                     }
                 
                     #Waveshape {
-                        left: 28px;
-                        top: 330px;
+                        left: 109px;
+                        top: 98px;
                     }
 
                     #Waveshape div {
@@ -181,8 +192,8 @@
                     }
                 
                     #Enable {
-                        left: 40px;
-                        top: 410px;
+                        left: 241px;
+                        top: 80px;
                     }
 
                     #Enable div {
@@ -193,8 +204,8 @@
                     }
                 
                     #Invert {
-                        left: 35px;
-                        top: 486px;
+                        left: 165px;
+                        top: 174px;
                     }
 
                     #Invert div {
@@ -207,9 +218,9 @@
                         
                         .pedalLabel{
                             position: absolute;
-                            top: 225px;
-                            font-size: 25px;
-                            font-family: Sansita;/*{font}*/
+                            /* top: 225px; */
+                            font-size: 16pxpx;
+                            font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";/*Sansita;*//*{font}*/
                             text-align: center;
                             line-height: 30px;/*{pedalfontsize}*/
                             width: 150px;
@@ -229,17 +240,17 @@
                         #knob1-label{
                             top: 84px;
                             left: 43px;
-                        }</style><div class="pedal draggable" id="pedal">
-		<div id="resize"></div>
+                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-93.0469px, -250.131px); width: 343.625px; height: 249.312px; box-shadow: rgba(0, 0, 0, 0.7) 4px 5px 6px, rgba(0, 0, 0, 0.2) -2px -2px 5px 0px inset, rgba(255, 255, 255, 0.2) 3px 1px 1px 4px inset, rgba(0, 0, 0, 0.9) 1px 0px 1px 0px, rgba(0, 0, 0, 0.9) 0px 2px 1px 0px, rgba(0, 0, 0, 0.9) 1px 1px 1px 0px; background: linear-gradient(rgb(21, 83, 141), rgb(16, 67, 114));" data-x="-93.046875" data-y="-250.13125610351562">
+    <div id="resize"></div>
 
-    
-    
+
+
     <div class="container" id="txtcontainer">
-      <img id="background-image">
-      <div class="text-block" id="textB">
-          <h4></h4>
-          <p id="test"></p>
-      </div>
+      
+
+      <h4></h4>
+      <p class="pedalLabel" id="test"></p>
+
     </div>
     <!-- <p id="labeldiv" style="border-style: dashed; top: 68px;">tototo</p> -->
     <!-- <figure>
@@ -247,7 +258,7 @@
         <figcaption>tototo</figcaption>
     </figure> -->
     <!-- <div class="text-block" id="froala-editor"></div> -->
-	<div class="knob" id="Delay"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="1" value="0.22" id="/flangerForBrowser/Effects/Flanger/Knobs/Delay" style="height: 50px;"></webaudio-knob><div style="text-align:center">Delay</div></div><div class="knob" id="Rate"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="10" step="0.01" value="0.5" id="/flangerForBrowser/Effects/Flanger/Knobs/Rate" style="height: 50px;"></webaudio-knob><div style="text-align:center">Rate</div></div><div class="knob" id="Depth"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.001" value="0.75" id="/flangerForBrowser/Effects/Flanger/Knobs/Depth" style="height: 50px;"></webaudio-knob><div style="text-align:center">Depth</div></div><div class="knob" id="Feedback"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="-0.995" max="0.99" step="0.001" value="0" id="/flangerForBrowser/Effects/Flanger/Knobs/Feedback" style="height: 50px;"></webaudio-knob><div style="text-align:center">Feedback</div></div><div class="knob " id="Waveshape"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.001" value="0" id="/flangerForBrowser/Effects/Flanger/Knobs/Waveshape" style="height: 50px;"></webaudio-knob><div style="text-align:center">Waveshape</div></div><div class="knob" id="Enable"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="1" value="0" id="/flangerForBrowser/Effects/Flanger/Switches/Enable" style="height: 50px;"></webaudio-knob><div style="text-align:center">Enable</div></div><div class="knob " id="Invert"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="1" value="0" id="/flangerForBrowser/Effects/Flanger/Switches/Invert" style="height: 50px;"></webaudio-knob><div style="text-align:center">Invert</div></div></div></template><script>
+  <div class="knob" id="Delay"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="1" value="0.22" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Delay"></webaudio-knob><div style="text-align:center">Delay</div></div><div class="knob " id="Rate"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="10" step="0.01" value="0.5" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Rate"></webaudio-knob><div style="text-align:center">Rate</div></div><div class="knob " id="Depth"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.001" value="0.75" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Depth"></webaudio-knob><div style="text-align:center">Depth</div></div><div class="knob " id="Feedback"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="-0.995" max="0.99" step="0.001" value="0" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Feedback"></webaudio-knob><div style="text-align:center">Feedback</div></div><div class="knob " id="Waveshape"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.001" value="0" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Waveshape"></webaudio-knob><div style="text-align:center">Waveshape</div></div><div class="knob " id="Enable"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="1" value="0" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Switches/Enable"></webaudio-knob><div style="text-align:center">Enable</div></div><div class="knob" id="Invert"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="1" value="0" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Switches/Invert"></webaudio-knob><div style="text-align:center">Invert</div></div></div></template><script>
         let flangerForBrowserTemp = document.currentScript.ownerDocument.querySelector('template');
         class flangerForBrowserGui extends HTMLElement {
     
@@ -267,6 +278,8 @@
                 this.setSwitches();
                 //this.setSwitchListener();
                 this.setInactive();
+                this._root.querySelector("#pedal").style.transform = 'none';
+                //this._root.querySelector("#test").style.fontFamily = window.getComputedStyle(this._root.querySelector("#test")).getPropertyValue('font-family');
 
                 // Compute base URI of this main.html file. This is needed in order
                 // to fix all relative paths in CSS, as they are relative to
@@ -319,7 +332,7 @@
                
             console.log("Custom element attributes changed.");
             this.state = JSON.parse(this.getAttribute('state'));
-            let tmp = "/flangerForBrowser/bypass";
+            let tmp = "/undefined/bypass";
             if (this.state[tmp] == 1) {
             this._root.querySelector("#switch1").value = 0;
             this.isOn = false;

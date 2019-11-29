@@ -57,10 +57,14 @@
 
 
         setEditablePedal(editablePedal) {
+            console.log("@@@@@@@@@@@@@@@@@@@@@@@@");
+            console.log(editablePedal)
             this.editablePedal = editablePedal;
+            this.refreshInputs();
+
             this.enableInputs();
             this.setInputListeners();
-            this.refreshInputs();
+
 
             this.editablePedal.addEventListener('config-changed', (e) => {
                 this.refreshInputs();
@@ -85,16 +89,38 @@
         }*/
 
         refreshInputs() {
+            console.log("##### refresh inputs #####");
+            console.log(this.editablePedal)
+     
             for (let inputElem of this.root.querySelectorAll('input')) {
-                inputElem.setAttribute('value', this.editablePedal.getAttribute(inputElem.name));
+                let value = this.editablePedal.getAttribute(inputElem.name);
+                let elemName = inputElem.name;
+
+                //if(elemName === "width" || elemName === "height") {
+                    console.log("before  input value name = " + elemName + "  value = " + value);
+
+                    //value = Math.round(value);
+                    inputElem.value = value;
+
+                    console.log("after setting input value name = " + elemName + " with value = " + value);
+
+                //} else {
+                    //inputElem.setAttribute('value', value);
+
+                //}
+
             }
         }
 
         setInputListeners() {
             // For main inputs
             for (let inputElem of this.root.querySelectorAll('input')) {
-            inputElem.addEventListener('change', (event) => {
+            inputElem.addEventListener('input', (event) => {
+                console.log("before : " + this.editablePedal.getAttribute(event.target.name));
+
                     this.editablePedal.setAttribute(event.target.name, event.target.value);
+                    console.log("Setting " + event.target.name + " with value " + event.target.value);
+                    console.log("after : " + this.editablePedal.getAttribute(event.target.name));
                 });
             }
 

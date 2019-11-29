@@ -27,7 +27,9 @@
         }
 
         fetchPreviews() {
-            fetch(this.getAttribute('url'))
+            let url = this.getAttribute('url');
+            if(!url) return;
+            fetch(url)
                 .then(response => {
                     return response.json();
                 })

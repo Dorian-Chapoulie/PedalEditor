@@ -322,7 +322,7 @@ class FunctionalPedalGenerator {
     functionalPedalCode += "<script>";
 
     functionalPedalCode += `
-        let ${this.editablePedal.name}Temp = document.currentScript.ownerDocument.querySelector('template');
+        let ${this.editablePedal.name}Temp = document.currentScript.ownerDocument.querySelector('#${this.editablePedal.name.toLowerCase()}');
         `;
     // Generating and appending the class of the pedal.
     functionalPedalCode += this.generateClass(
@@ -354,7 +354,7 @@ class FunctionalPedalGenerator {
    */
   generateFunctionalPedalTemplate() {
     let template = "";
-    template += "<template>";
+    template += `<template id="${this.editablePedal.name.toLowerCase()}">`;
     template += this.generateFunctionalPedalStyle();
     template += this.generateFunctionalPedalHtml();
     template += "</template>";
