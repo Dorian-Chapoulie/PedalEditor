@@ -286,6 +286,7 @@
                             width: ${this.getAttribute("width")}px;
                             height: ${this.getAttribute("height")}px;
                             opacity: ${this.getAttribute("opacity")};
+                            border-radius: ${this.getAttribute("radius")}px;
                             /* display: none; */
                             //visibility: hidden;
                         }

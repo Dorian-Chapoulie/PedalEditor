@@ -10,11 +10,11 @@
             <template id="stonephaserstereo"><style>	
                         .pedal{
                             display: block;
-                            background:linear-gradient(rgba(255, 50, 204, 0.6), rgba(239, 254, 0, 0.6));
-                            background-color: #00fd3e;
-                            width: 268.69793701171875px;
-                            height: 272.7257080078125px;
-                            border-radius: 10px;
+                            background:linear-gradient(rgba(230, 255, 0, 0.8), rgba(179, 0, 34, 0.8));
+                            background-color: #ff1a25;
+                            width: 238px;
+                            height: 267px;
+                            border-radius: 6px;
                             position: relative;
                             box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
                             /* bring your own prefixes */
@@ -24,9 +24,9 @@
                         
                         #background-image {
                             //border: solid 2px black;
-                            width: 268.69793701171875px;
-                            height: 272.7257080078125px;
-                            opacity: 1;
+                            width: 238px;
+                            height: 267px;
+                            opacity: 0.5;
                             /* display: none; */
                             //visibility: hidden;
                         }
@@ -40,8 +40,8 @@
                             cursor: nwse-resize;
                             width: 10px;
                             height: 10px;
-                            left: 260.69793701171875px;
-                            top: 264.7257080078125px;
+                            left: 230px;
+                            top: 259px;
                             border: 1px solid black;
                         } */
 
@@ -53,8 +53,8 @@
 
                         .container {
                             position: relative;
-                            width: 268.69793701171875px;
-                            height: 272.7257080078125px;
+                            width: 238px;
+                            height: 267px;
                             /* font-family: Arial; */
                           }
                           
@@ -62,7 +62,7 @@
                             position: absolute;
                             bottom: 20px;
                             right: 20px;
-                            background-color: #00fd3e;
+                            background-color: #ff1a25;
                             color: white;
                             padding-left: 20px;
                             padding-right: 20px;
@@ -136,8 +136,8 @@
                         }
                         
                     #LFO {
-                        left: 28px;
-                        top: 108px;
+                        left: 18px;
+                        top: 80px;
                     }
 
                     #LFO div {
@@ -148,20 +148,20 @@
                     }
                 
                     #Feedback {
-                        left: 23px;
-                        top: 22px;
+                        left: 18px;
+                        top: 11px;
                     }
 
                     #Feedback div {
-                        color: #000000;
-                        font-family: "Verdana";
-                        font-size: 14px;
+                        color: #f5ff00;
+                        font-family: "Impact";
+                        font-size: 16px;
                         
                     }
                 
                     #Lo-cut {
-                        left: 108px;
-                        top: 23px;
+                        left: 91px;
+                        top: 10px;
                     }
 
                     #Lo-cut div {
@@ -172,8 +172,8 @@
                     }
                 
                     #Mix {
-                        left: 178px;
-                        top: 22px;
+                        left: 150px;
+                        top: 4px;
                     }
 
                     #Mix div {
@@ -184,8 +184,8 @@
                     }
                 
                     #Stereo_phase {
-                        left: 102px;
-                        top: 107px;
+                        left: 85px;
+                        top: 90px;
                     }
 
                     #Stereo_phase div {
@@ -196,26 +196,26 @@
                     }
                 
                     #Bypass {
-                        left: 89px;
-                        top: 191px;
+                        left: 81px;
+                        top: 183px;
                     }
 
                     #Bypass div {
-                        color: #000000;
-                        font-family: "Verdana";
-                        font-size: 14px;
+                        color: #ffffff;
+                        font-family: "Impact";
+                        font-size: 27px;
                         
                     }
                 
                     #Color {
-                        left: 160px;
-                        top: 105px;
+                        left: 150px;
+                        top: 91px;
                     }
 
                     #Color div {
-                        color: #000000;
-                        font-family: "Verdana";
-                        font-size: 14px;
+                        color: #f4fc45;
+                        font-family: "Impact";
+                        font-size: 29px;
                         
                     }
                 
@@ -244,13 +244,13 @@
                         #knob1-label{
                             top: 84px;
                             left: 43px;
-                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-358.351px, -337.018px);" data-x="-358.35076904296875" data-y="-337.0182189941406">
+                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-377.285px, -397.719px); box-shadow: rgba(0, 0, 0, 0.7) 4px 5px 6px, rgba(0, 0, 0, 0.2) -2px -2px 5px 0px inset, rgba(255, 255, 255, 0.2) 3px 1px 1px 4px inset, rgba(0, 0, 0, 0.9) 1px 0px 1px 0px, rgba(0, 0, 0, 0.9) 0px 2px 1px 0px, rgba(0, 0, 0, 0.9) 1px 1px 1px 0px;" data-x="-377.28515625" data-y="-397.71875">
     <div id="resize"></div>
 
 
 
     <div class="container" id="txtcontainer">
-      
+      <img id="background-image" src="./img/background/2.jpg">
 
       <h4></h4>
       <p class="pedalLabel" id="test"></p>
@@ -262,7 +262,7 @@
         <figcaption>tototo</figcaption>
     </figure> -->
     <!-- <div class="text-block" id="froala-editor"></div> -->
-  <div class="knob " id="LFO"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0.01" max="5" step="0.01" value="0.2" style="height: 50px;" id="/StonePhaserStereo/LFO"></webaudio-knob><div style="text-align:center">LFO</div></div><div class="knob " id="Feedback"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="99" step="1" value="75" style="height: 50px;" id="/StonePhaserStereo/Feedback"></webaudio-knob><div style="text-align:center">Feedback</div></div><div class="knob " id="Lo-cut"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="10" max="5000" step="1" value="500" style="height: 50px;" id="/StonePhaserStereo/Lo-cut"></webaudio-knob><div style="text-align:center">Lo-cut</div></div><div class="knob   " id="Mix"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="100" step="1" value="50" style="height: 50px;" id="/StonePhaserStereo/Mix"></webaudio-knob><div style="text-align:center">Mix</div></div><div class="knob     " id="Stereo_phase"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="-180" max="180" step="1" value="0" style="height: 50px;" id="/StonePhaserStereo/Stereo_phase"></webaudio-knob><div style="text-align:center">Stereo</div></div><div class="switch" id="Bypass"><webaudio-switch src="./img/switches/switch_1.png" height="44" width="80.95999999999992" style="height: 44px;" id="/StonePhaserStereo/Bypass"></webaudio-switch><div>Bypass</div></div><div class="switch       " id="Color"><webaudio-switch src="./img/switches/switch_2.png" height="53" width="98" style="height: 53px;" id="/StonePhaserStereo/Color"></webaudio-switch><div>Color</div></div></div></template><script>
+  <div class="knob    " id="LFO"><webaudio-knob src="./img/knobs/Martial_0-10_Gold_large_80x80.png" height="58" width="58" sprites="100" min="0.01" max="5" step="0.01" value="0.2" style="height: 58px;" id="/StonePhaserStereo/LFO"></webaudio-knob><div style="text-align:center">LFO</div></div><div class="knob  " id="Feedback"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="99" step="1" value="75" style="height: 50px;" id="/StonePhaserStereo/Feedback"></webaudio-knob><div style="text-align:center">Feedback</div></div><div class="knob  " id="Lo-cut"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="10" max="5000" step="1" value="500" style="height: 50px;" id="/StonePhaserStereo/Lo-cut"></webaudio-knob><div style="text-align:center">Lo-cut</div></div><div class="knob     " id="Mix"><webaudio-knob src="./img/knobs/lineshadow2.png" height="63.000000000000014" width="63.000000000000014" sprites="100" min="0" max="100" step="1" value="50" style="height: 63px;" id="/StonePhaserStereo/Mix"></webaudio-knob><div style="text-align:center">Mix</div></div><div class="knob   " id="Stereo_phase"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="-180" max="180" step="1" value="0" style="height: 50px;" id="/StonePhaserStereo/Stereo_phase"></webaudio-knob><div style="text-align:center">Stereo</div></div><div class="switch" id="Bypass"><webaudio-switch src="./img/switches/switch_1.png" height="38" width="68.40000000000002" style="height: 38px;" id="/StonePhaserStereo/Bypass"></webaudio-switch><div>Bypass</div></div><div class="switch         " id="Color"><webaudio-switch src="./img/switches/Power_switch_01.png" height="53" width="58.0821917808219" style="height: 53px;" id="/StonePhaserStereo/Color"></webaudio-switch><div>Color</div></div></div></template><script>
         let StonePhaserStereoTemp = document.currentScript.ownerDocument.querySelector('#stonephaserstereo');
         class StonePhaserStereoGui extends HTMLElement {
     
@@ -358,11 +358,11 @@
             this.boundingRect = {
                 dataWidth: {
                 type: Number,
-                value: 268.69793701171875
+                value: 238
                 },
                 dataHeight: {
                 type: Number,
-                value: 272.7257080078125
+                value: 267
                 }
           };
           return this.boundingRect;
@@ -379,8 +379,8 @@
                
             // Sets the background image and style.
             var background = this._root.querySelector('img');
-            background.src = this._plug.URL + '/assets/undefined';
-            background.style = 'border-radius : 10px;'
+            background.src = this._plug.URL + '/assets/2.jpg';
+            background.style = 'border-radius : 6px;'
             this._root.querySelectorAll(".knob").forEach((knob) => {
 				knob.querySelector("webaudio-knob").setAttribute('src', this._plug.URL + '/assets/MiniMoog_Main.png');
             });
