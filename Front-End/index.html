@@ -28,11 +28,11 @@
     </script>
     <script src="https://wasabi.i3s.unice.fr/WebAudioPluginBank/sdk/WebAudioSDK.js"></script>
 
-    <link rel="stylesheet" href="StyleSheet.css">
-    <link rel="stylesheet" href="StyleSideNav.css">
-    <link rel="stylesheet" href="index_css.css">
-    <link rel="Stylesheet" href="SideBar.css">
-    <link rel="Stylesheet" href="police_select.css">
+    <link rel="stylesheet" href="css/StyleSheet.css">
+    <link rel="stylesheet" href="css/StyleSideNav.css">
+    <link rel="stylesheet" href="css/index_css.css">
+    <link rel="Stylesheet" href="css/SideBar.css">
+    <link rel="Stylesheet" href="css/police_select.css">
 
     <link type="text/css" rel="stylesheet" href="rgbaColorPicker/rgbaColorPicker.css" />
     <script type="text/javascript" src="rgbaColorPicker/rgbaColorPicker.js"></script>
@@ -67,7 +67,8 @@
     <!-- <script src="editor_components/editor-inspector.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
 
-    <script src="jscolor.js"></script>
+    <script src="./lib/jscolor.js"></script>
+    <script src="./lib/tinycolor.js"></script>
 
     <link
         href="https://fonts.googleapis.com/css?family=Abril+Fatface|Belgrano|Bevan|Bungee+Inline|Bungee+Shade|Calligraffitti|Mogra|Nothing+You+Could+Do|Orbitron|Pangolin|Rock+Salt|Sansita|Shojumaru|UnifrakturMaguntia|VT323"
@@ -291,6 +292,7 @@
     <nav class="main-menu">
         <ul style="direction: ltr;">
 
+            <!--
             <li>
                 <a href="#" onclick="drawRectangle()">
                     <i class="fa fa-pencil fa-2x"></i>
@@ -328,7 +330,7 @@
                     </span>
                 </a>
             </li>
-
+-->
             <!-- <li class="has-subnav">
                 <a href="#" onclick="toggleLabelMenu()" id="LabelMenu">
                     <i class="fa fa-font fa-2x"></i>
@@ -337,7 +339,7 @@
                     </span>
                 </a>
             </li> -->
-
+            <!--
             <li class="has-subnav">
                 <a href="#" onclick="toggleLabelMenuFunction()" id="LabelMenu">
                     <i class="fa fa-font fa-2x"></i>
@@ -346,16 +348,25 @@
                     </span>
                 </a>
             </li>
-
+            -->
+            <li class="has-subnav">
+                    <a href="#" onclick="toggleGradientMenuFunction()" id="GradientMenu">
+                        <i class="fa fa-barcode fa-2x"></i>
+                        <span class="nav-text">
+                            Gradient Menu
+                        </span>
+                    </a>
+                </li>    
             <li class="has-subnav">
                 <a href="#" onclick="togglePreSetsFunction()" id="PresetsMenu">
-                    <i class="fa fa-toggle-on fa-2x"></i>
+                    <i class="fa fa-adjust fa-2x"></i>
                     <span class="nav-text">
-                        Toggle Presets
+                        Shadow menu
                     </span>
                 </a>
             </li>
 
+            <!--
             <li class="has-subnav">
                 <a href="#" onclick="toggleShadowMenuFunction()" id="ShadowMenu">
                     <i class="fa fa-tasks fa-2x"></i>
@@ -364,16 +375,9 @@
                     </span>
                 </a>
             </li>
-
-            <li class="has-subnav">
-                <a href="#" onclick="toggleGradientMenuFunction()" id="GradientMenu">
-                    <i class="fa fa-adjust fa-2x"></i>
-                    <span class="nav-text">
-                        Toggle Gradient Menu
-                    </span>
-                </a>
-            </li>
-
+            -->
+       
+            <!--
             <li class="has-subnav">
                 <a href="#" onclick="toggleTextureMenuFunction()" id="TextureMenu">
                     <i class="fa fa-tint fa-2x"></i>
@@ -391,7 +395,8 @@
                     </span>
                 </a>
             </li>
-
+            -->
+            <!--
             <li class="has-subnav">
                 <a href="#" onclick="toggleKnobMenuFunction()" id="KnobMenu">
                     <i class="fa fa-circle-notch fa-2x"></i>
@@ -400,7 +405,8 @@
                     </span>
                 </a>
             </li>
-
+            -->
+            <!--
             <li class="has-subnav">
                 <a href="#" onclick="toggleDivMenuFunction()" id="DivMenu">
                     <i class="fa fa-square fa-2x"></i>
@@ -409,6 +415,7 @@
                     </span>
                 </a>
             </li>
+            -->
         </ul>
 
 
@@ -657,11 +664,11 @@
                 <div class="modal-body" style="background-color: #333;">
                     <!-- <editor-pedal-new-1 width="400" height="400"></editor-pedal-new-1> -->
 
-
+                    <!--
                     <div class="editor-collapsible-content">
                         <editor-inspector id="editor-inspector"></editor-inspector>
                     </div>
-
+-->
 
 
                 </div>
@@ -819,7 +826,10 @@
                             <div style="height:300px">
                                 <editor-pedal-details id="editor-pedal-details"
                                     style="background-color: #333;"></editor-pedal-details>
+                                    <editor-inspector id="editor-inspector"></editor-inspector>
+
                             </div>
+                            
                             <!--
                         </details>
                         -->
@@ -834,14 +844,9 @@
                         </details>
 
                         
-                        <details class="editor-collapsible"  style="display:none">
+                        
 
-                            <summary><a href="#editor-inspector">Inspector </a></summary>
-
-                            <div class="editor-collapsible-content">
-                                <editor-inspector id="editor-inspector" class="accordion"></editor-inspector>
-                            </div>
-                        </details> 
+                        
                       
                         
                         <details class="editor-collapsible"  style="display:none">
@@ -886,8 +891,14 @@
         <hr class="dotted">
         <div style="box-shadow: 0px 0px 10px -2px #FFF" class="swatch" id="glow"></div> glow
         <hr class="dotted">
+
+        <!--
         <div style="box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);background: linear-gradient(rgb(21, 83, 141), rgb(16, 67, 114));"
             class="swatch" id="disto"></div> Disto
+        -->
+            <div style="box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);"
+            class="swatch" id="disto"></div> Disto
+
     </div>
 
     <div class="params draggables" id="shadowmenuid" style="display: none; direction: ltr;">
@@ -950,66 +961,30 @@
 
     <div class="params draggables" id="gradientmenuid" style="display: none; direction: ltr;">
         <h3>gradient parameters</h3>
+
         <div id="left" style="float: left; width: 50%;">
             <div class="row0">
-                <div class="minus">-</div>
-                <input value="3" size="3" id="leftred">
-                <div class="plus">+</div>
-                <label>Red Color</label>
-            </div>
-
-            <div class="row1">
-                <div class="minus">-</div>
-                <input value="3" size="3" id="leftgreen">
-                <div class="plus">+</div>
-                <label>Green Color</label>
-            </div>
-
-            <div class="row0">
-                <div class="minus">-</div>
-                <input value="3" size="3" id="leftblue">
-                <div class="plus">+</div>
-                <label>Blue Color</label>
+                <input type="color" oninput="generateGradient(event)" value="#1E6482" id="startColor">
+                <label>Start color</label>
             </div>
         </div>
 
         <div id="right" style="float: right; width: 50%;">
             <div class="row0">
-                <div class="minus">-</div>
-                <input value="3" size="3" id="rightred">
-                <div class="plus">+</div>
-                <label>Red Color</label>
+                <input type="color" oninput="generateGradient(event)" value="#1E1E1E"  id="endColor">
+                <label>End Color</label>
             </div>
 
-            <div class="row1">
-                <div class="minus">-</div>
-                <input value="3" size="3" id="rightgreen">
-                <div class="plus">+</div>
-                <label>Green Color</label>
-            </div>
-
-            <div class="row0">
-                <div class="minus">-</div>
-                <input value="3" size="3" id="rightblue">
-                <div class="plus">+</div>
-                <label>Blue Color</label>
-            </div>
         </div>
 
         <div class="row1">
-            <div class="minus">-</div>
-            <input value="3" size="3" id="opacityid">
-            <div class="plus">+</div>
+            <input type="range"  oninput="generateGradient(event)" value="1" min="0" max="1" step=0.1 id="opacityid">
             <label>Opacity</label>
         </div>
-
-        <div class="row0">
-            &nbsp; #<input value="555555" size="6" id="color"> <label>Color (HEX)</label>
-        </div>
-
-
+        <!--
         <br />
         <button id="gradientgenerate" class="button" onclick="generateGradient()">Generate Gradient</button>
+        -->
     </div>
 
 
@@ -1512,17 +1487,15 @@
         swatchclick++;
         var pp = document.querySelector('my-pedal');
         if (pp.shadowRoot) {
-            var toto = pedal.shadowRoot.getElementById('pedal').style.background;
+            var style = pedal.shadowRoot.getElementById('pedal').style;
             if ((swatchclick % 2) == 0) {
-                pedal.shadowRoot.getElementById('pedal').style.boxShadow = 'none';
-                pedal.shadowRoot.getElementById('pedal').style.background = document.getElementById('color').value;
-                pedal.shadowRoot.getElementById('pedal').style.boxShadow = document.getElementById('disto').style
-                    .boxShadow;
-                pedal.shadowRoot.getElementById('pedal').style.background = document.getElementById('disto').style
-                    .background;
+                style.boxShadow = 'none';
+                style.background = document.getElementById('color').value;
+                style.boxShadow = document.getElementById('disto').style.boxShadow;
+                style.background = document.getElementById('disto').style.background;
             } else {
-                pedal.shadowRoot.getElementById('pedal').style.boxShadow = 'none';
-                pedal.shadowRoot.getElementById('pedal').style.background = document.getElementById('color').value;
+                style.boxShadow = 'none';
+                style.background = document.getElementById('color').value;
 
             }
         }
@@ -1692,6 +1665,7 @@
         var x = document.getElementById("gradientmenuid");
         if (x.style.display === "none") {
             x.style.display = "block";
+            generateGradient();
         } else {
             x.style.display = "none";
         }
@@ -1716,19 +1690,22 @@
     }
 
 
-    function generateGradient() {
-        var pp = document.querySelector('my-pedal');
+    function generateGradient(event) {
+        // avoid moving floating menu.
+        //event.preventDefault();
+        //event.stopPropagation();
 
-        var leftred = Number(document.getElementById('leftred').value);
-        var leftgreen = Number(document.getElementById('leftgreen').value);
-        var leftblue = Number(document.getElementById('leftblue').value);
+        let pp = document.querySelector('my-pedal');
 
-        var rightred = Number(document.getElementById('rightred').value);
-        var rightgreen = Number(document.getElementById('rightgreen').value);
-        var rightblue = Number(document.getElementById('rightblue').value);
+        let startColor = tinycolor(document.querySelector('#startColor').value).toRgb();
+        let endColor = tinycolor(document.querySelector('#endColor').value).toRgb();
 
-        var opacity = Number(document.getElementById('opacityid').value);
-
+        let opacity = Number(document.querySelector('#opacityid').value);
+        let gradiant = 'linear-gradient(rgba(' + startColor.r + ', ' +
+        startColor.g + ', ' + startColor.b + ', ' + opacity + '), ' + 'rgba(' + endColor.r + ', ' + endColor.g + ', ' +
+        endColor.b + ', ' + opacity + '))';
+        pp.setAttribute("background", gradiant);
+        /*
         if (pp.shadowRoot) {
             pedal.shadowRoot.getElementById('pedal').style.background = 'linear-gradient(rgb(' + leftred + ', ' +
                 leftgreen + ', ' + leftblue + '), ' + 'rgb(' + rightred + ', ' + rightgreen + ', ' + rightblue + '))';
@@ -1736,6 +1713,7 @@
                 leftgreen + ', ' + leftblue + ', ' + opacity + '), ' + 'rgba(' + rightred + ', ' + rightgreen + ', ' +
                 rightblue + ', ' + opacity + '))';
         }
+        */
     }
 
     function generateTexture() {
@@ -2642,8 +2620,10 @@
 
         // remove background image is it has no src
         let img = pedal.shadowRoot.querySelector("#background-image");
-        console.log("### img.src = " + img.src);
+        if(!img) return;
         if ((img.src === undefined) || (img.src === "")) {
+            console.log("### img.src = " + img.src);
+
             // remove the elem
             img.parentNode.removeChild(img);
         }

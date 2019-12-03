@@ -7,14 +7,15 @@
             WebAudioControlsOptions = {
                 useMidi: 1,
             };
-            <template><style>	
+            <template id="pitchshifter"><style>	
                         .pedal{
                             display: block;
                             background-color: #7caeff;
                             width: 130px;
-                            height: 250px;
+                            height: 330px;
                             border-radius: 10px;
                             position: relative;
+                            box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
                             /* bring your own prefixes */
                             /* transform: translate(-50%, -50%); */
                         }
@@ -23,7 +24,7 @@
                         #background-image {
                             //border: solid 2px black;
                             width: 130px;
-                            height: 250px;
+                            height: 330px;
                             opacity: 1;
                             /* display: none; */
                             //visibility: hidden;
@@ -39,7 +40,7 @@
                             width: 10px;
                             height: 10px;
                             left: 122px;
-                            top: 242px;
+                            top: 322px;
                             border: 1px solid black;
                         } */
 
@@ -51,6 +52,8 @@
 
                         .container {
                             position: relative;
+                            width: 130px;
+                            height: 330px;
                             /* font-family: Arial; */
                           }
                           
@@ -137,7 +140,7 @@
                     }
 
                     #shift div {
-                        color: #000000;
+                        color: 000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
@@ -149,7 +152,7 @@
                     }
 
                     #window div {
-                        color: #000000;
+                        color: 000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
@@ -161,7 +164,19 @@
                     }
 
                     #xfade div {
-                        color: #000000;
+                        color: 000000;
+                        font-family: "Verdana";
+                        font-size: 14px;
+                        
+                    }
+                
+                    #bypass {
+                        left: 25px;
+                        top: 250px;
+                    }
+
+                    #bypass div {
+                        color: 000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
@@ -192,7 +207,7 @@
                         #knob1-label{
                             top: 84px;
                             left: 43px;
-                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-19.0625px, -88.8219px);" data-x="-19.0625" data-y="-88.82188415527344">
+                        }</style><div class="pedal draggable" id="pedal" style="">
     <div id="resize"></div>
 
 
@@ -210,8 +225,8 @@
         <figcaption>tototo</figcaption>
     </figure> -->
     <!-- <div class="text-block" id="froala-editor"></div> -->
-  <div class="knob" id="shift"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="-12" max="12" step="0.1" value="0" style="height: 50px;" id="/Pitch_Shifter/shift"></webaudio-knob><div style="text-align:center">shift</div></div><div class="knob" id="window"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="50" max="10000" step="1" value="1000" style="height: 50px;" id="/Pitch_Shifter/window"></webaudio-knob><div style="text-align:center">window</div></div><div class="knob" id="xfade"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="1" max="10000" step="1" value="10" style="height: 50px;" id="/Pitch_Shifter/xfade"></webaudio-knob><div style="text-align:center">xfade</div></div></div></template><script>
-        let pitchShifterTemp = document.currentScript.ownerDocument.querySelector('template');
+  <div class="knob" id="shift"><webaudio-knob src="./img/knobs/MarkVI.PNG" height="70" width="70" sprites="100" min="-12" max="12" step="0.1" value="0" style="height: 70px;" id="/pitchShifter/Pitch_Shifter/shift"></webaudio-knob><div style="text-align:center">shift</div></div><div class="knob" id="window"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="50" max="10000" step="1" value="1000" style="height: 50px;" id="/pitchShifter/Pitch_Shifter/window"></webaudio-knob><div style="text-align:center">window</div></div><div class="knob" id="xfade"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="1" max="10000" step="1" value="10" style="height: 50px;" id="/pitchShifter/Pitch_Shifter/xfade"></webaudio-knob><div style="text-align:center">xfade</div></div><div class="switch" id="bypass"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" style="height: 50px;" id="/pitchShifter/bypass"></webaudio-switch><div>bypass</div></div></div></template><script>
+        let pitchShifterTemp = document.currentScript.ownerDocument.querySelector('#pitchshifter');
         class pitchShifterGui extends HTMLElement {
     
         
@@ -284,7 +299,7 @@
                
             console.log("Custom element attributes changed.");
             this.state = JSON.parse(this.getAttribute('state'));
-            let tmp = "/undefined/bypass";
+            let tmp = "/pitchShifter/bypass";
             if (this.state[tmp] == 1) {
             this._root.querySelector("#switch1").value = 0;
             this.isOn = false;
@@ -310,7 +325,7 @@
                 },
                 dataHeight: {
                 type: Number,
-                value: 250
+                value: 330
                 }
           };
           return this.boundingRect;
@@ -342,9 +357,9 @@
             }
         
             setKnobs() {
-               this._root.getElementById("/Pitch_Shifter/shift").addEventListener("input", (e) =>this._plug.setParam("/Pitch_Shifter/shift", e.target.value));
-this._root.getElementById("/Pitch_Shifter/window").addEventListener("input", (e) =>this._plug.setParam("/Pitch_Shifter/window", e.target.value));
-this._root.getElementById("/Pitch_Shifter/xfade").addEventListener("input", (e) =>this._plug.setParam("/Pitch_Shifter/xfade", e.target.value));
+               this._root.getElementById("/pitchShifter/Pitch_Shifter/shift").addEventListener("input", (e) =>this._plug.setParam("/pitchShifter/Pitch_Shifter/shift", e.target.value));
+this._root.getElementById("/pitchShifter/Pitch_Shifter/window").addEventListener("input", (e) =>this._plug.setParam("/pitchShifter/Pitch_Shifter/window", e.target.value));
+this._root.getElementById("/pitchShifter/Pitch_Shifter/xfade").addEventListener("input", (e) =>this._plug.setParam("/pitchShifter/Pitch_Shifter/xfade", e.target.value));
 
             }
         
@@ -366,7 +381,8 @@ this._root.getElementById("/Pitch_Shifter/xfade").addEventListener("input", (e) 
             }
         
             setSwitches() {
-               
+               this._root.getElementById("/pitchShifter/bypass").addEventListener("change", (e) =>this._plug.setParam("/pitchShifter/bypass", 1-e.target.value));
+
             }
         
             setInactive() {

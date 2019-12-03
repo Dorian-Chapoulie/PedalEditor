@@ -1,7 +1,7 @@
 <template>
 
     <style>
-        @import "StyleSheet.css";
+        @import "css/StyleSheet.css";
         #width {
             border:2px solid red;
         }
@@ -24,7 +24,7 @@
         <details class="editor-collapsible" open>
             
             <summary style="color: white;" > Pedal configuration </summary>
-
+""
             <div class="editor-collapsible-content" style="background-color: #333;">
                 <label style="direction: ltr; color: white;">Name: </label>
                 <input id="pedal-name" name="name" class="maininput" style="direction: ltr;" disabled>
@@ -33,11 +33,6 @@
 
                 <label style="direction: ltr; color: white;">Background color: #</label>
                 <input type="color" name="color" class="maininput" style="direction: ltr;" disabled>
-
-                <br>
-
-                <label style="direction: ltr; color: white;">Image opacity: </label>
-                <input id="opacity" class="maininput" type="range" name="opacity" min="0" max="1" step = 0.1 style="direction: ltr;" disabled>
 
                 <br>
 
@@ -54,14 +49,21 @@
                 <label style="direction: ltr; color: white;">Radius: </label>
                 <input id="radius" class="maininput" type="range" name="radius" min="0" max="150" style="direction: ltr;" disabled> px
 
+                <br>
+
+                <label style="direction: ltr; color: white;">Image opacity: </label>
+                <input id="opacity" class="maininput" type="range" name="opacity" min="0" max="1" step = 0.1 style="direction: ltr;" disabled>
+                <br>
                 <label style="direction: ltr; color: white;">Background images: </label>
                 <div id="background-images" style="direction: ltr;">
                     <img class="menu-img background-image" src="./img/background/image2.png" alt="image2.png" />
                     <img class="menu-img background-image" src="./img/background/1.png" alt="1.png" />
                     <img class="menu-img background-image" src="./img/background/2.jpg" alt="2.jpg" />
                 </div>
+                <!--
                 <a data-toggle="modal" data-target="#moreModal" href="#moreModal" style="direction: ltr; float: right;" onclick="loadmore()">more...</a>
                 <br>
+                -->
                 <!--<input id="uploadImage" type="file" class="maininput" name="radius" name="photo" />-->
                 <br />
 
@@ -69,7 +71,7 @@
 
         </details>
         
-        
+        <div style="display:none">
         <details class="editor-collapsible">
 
             <summary style="color: white;"> Add pedal element </summary>
@@ -112,10 +114,11 @@
             </div>
 
         </details>
-        
+    </div>>
+
 
     </div>
-
+    
 </template>
 
 

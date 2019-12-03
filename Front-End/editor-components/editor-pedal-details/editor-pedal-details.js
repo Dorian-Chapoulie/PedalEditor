@@ -89,20 +89,20 @@
         }*/
 
         refreshInputs() {
-            console.log("##### refresh inputs #####");
-            console.log(this.editablePedal)
+            //console.log("##### refresh inputs #####");
+            //console.log(this.editablePedal)
      
             for (let inputElem of this.root.querySelectorAll('input')) {
                 let value = this.editablePedal.getAttribute(inputElem.name);
                 let elemName = inputElem.name;
 
                 //if(elemName === "width" || elemName === "height") {
-                    console.log("before  input value name = " + elemName + "  value = " + value);
+                    //console.log("before  input value name = " + elemName + "  value = " + value);
 
                     //value = Math.round(value);
                     inputElem.value = value;
 
-                    console.log("after setting input value name = " + elemName + " with value = " + value);
+                    //console.log("after setting input value name = " + elemName + " with value = " + value);
 
                 //} else {
                     //inputElem.setAttribute('value', value);
@@ -116,11 +116,11 @@
             // For main inputs
             for (let inputElem of this.root.querySelectorAll('input')) {
             inputElem.addEventListener('input', (event) => {
-                console.log("before : " + this.editablePedal.getAttribute(event.target.name));
+                //console.log("before : " + this.editablePedal.getAttribute(event.target.name));
 
                     this.editablePedal.setAttribute(event.target.name, event.target.value);
-                    console.log("Setting " + event.target.name + " with value " + event.target.value);
-                    console.log("after : " + this.editablePedal.getAttribute(event.target.name));
+                    //console.log("Setting " + event.target.name + " with value " + event.target.value);
+                    //console.log("after : " + this.editablePedal.getAttribute(event.target.name));
                 });
             }
 
@@ -160,8 +160,9 @@
         addLabel() {
             pedal.addElement('label');
         }
-
     }
+
+
 
     window.customElements.define('editor-pedal-details', EditorPedalDetails);
 })(window, document);

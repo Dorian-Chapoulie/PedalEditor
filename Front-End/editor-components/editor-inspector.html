@@ -1,7 +1,7 @@
 <template id="pedal-details">
 
     <style>
-        @import "StyleSheet.css";
+        @import "css/StyleSheet.css";
         #backround-images {
             width: 50%;
             float: right;
@@ -12,8 +12,11 @@
             width: 80%;
         }
     </style>
-
-    <div style="direction: ltr;">
+    <details class="editor-collapsible" open>
+            
+            <summary style="color: white;" >Element properties</summary>
+""
+    <div style="direction: ltr;" >
         <button class="mainbtn" onclick="deleteSelectedElement()">Delete</button>
 
             <br>
@@ -43,34 +46,34 @@
             <br>
 
             <label style="color: white;">Label Color: </label>
-            <input id="inspector-label-color" class="jscolor maininput" name="label_color" disabled>
+            <input id="inspector-label-color" type="color" class="jscolor maininput" name="label_color" disabled>
 
             <br>
 
             <label style="color: white;">Label size: </label>
-            <input id="inspector-label-font-size" class="fontsizeselector maininput" type="number" min="0" max="600" name="label_fontsize" disabled> px
+            <input id="inspector-label-font-size" class="fontsizeselector maininput" type="range" value=20 min="5" max="100" step="1"  name="label_fontsize" disabled> px
 
             <br>
             <br>
 
             <label style="color: white;">X position: </label>
-            <input id="inspector-x-position" class="maininput" type="number" name="x" disabled>
+            <input id="inspector-x-position" class="maininput" type="number" name="x" min=-200 max = 1500 disabled>
 
             <br>
 
             <label style="color: white;">Y position: </label>
-            <input id="inspector-y-position" class="maininput" type="number" name="y" disabled>
+            <input id="inspector-y-position" class="maininput" type="number" name="y"  min=-200 max = 1500 disabled>
 
             <br>
             <br>
 
             <label style="color: white;">Width: </label>
-            <input id="inspector-width" class="maininput" type="number" name="height" disabled>
+            <input id="inspector-width" class="maininput" type="range" name="width" min=30 max=200 disabled>
 
             <br>
 
             <label style="color: white;">Height: </label>
-            <input id="inspector-height" class="maininput" type="number" name="width" disabled>
+            <input id="inspector-height" class="maininput" type="range" name="height" min=30 max=200 disabled>
 
             <br>
 
@@ -80,8 +83,8 @@
             <br>
             <br>
 
-            <label style="color: white;">Model: </label>
-            <select id="inspector-model" class="maininput" name="model" disabled>
+            
+            <select id="inspector-model" class="maininput" name="model" disabled style="display:none">
                 <option value="knob2.png">Knob2</option>
                 <option value="Carbon.png">Carbon</option>
                 <option value="JP8000.png">JP8000</option>
@@ -92,8 +95,23 @@
                 <option value="lineshadow.png">lineshadow</option>
                 <option value="lineshadow2.png">lineshadow2</option>
             </select>
+            
+            <div class="editor-collapsible-content">
+                    <label style="color: white;">Model: </label>
+                    <br>
+                    <pedal-elem-previews url="http://localhost:3000/previews/knobs" pedal-element-type="knob" id="preview-knobs" style="display:none">
+                    </pedal-elem-previews>
+                    <br>
+                    <pedal-elem-previews url="http://localhost:3000/previews/sliders" pedal-element-type="slider" id="preview-sliders" style="display:none">
+                    </pedal-elem-previews>
+                    <pedal-elem-previews url="http://localhost:3000/previews/switches" pedal-element-type="switch" id="preview-switches" style="display:none">
+                    </pedal-elem-previews>
+                    
+            </div>
     </div>
+</details>
 
 </template>
+<link rel="import" href="./editor-pedal-details/pedal-elem-previews.html">
 
 <script src="editor-inspector.js"></script>

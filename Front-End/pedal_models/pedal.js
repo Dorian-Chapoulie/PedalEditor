@@ -28,7 +28,8 @@
         "height",
         "radius",
         "background-image",
-        "opacity"
+        "opacity",
+        "background"
       ];
     }
 
@@ -51,7 +52,7 @@
       "mousedown",
       function(e) {
         this.selectElement(null);
-        console.log("pedal selected")
+        //console.log("pedal selected")
       },
       true
     );
@@ -65,7 +66,8 @@
         "radius",
         "background-image",
         "opacity",
-        "name"
+        "name",
+        "background"
       ];
     }
 
@@ -142,7 +144,10 @@
     }
 
     setSelectedElementAttribute(key, value) {
+      if(!this.selectedElement) return;
+
       this.selectedElement[key] = value;
+      //console.log("setting " + key + " with value = " + value);
       this.updateStyle_();
     }
 
@@ -168,7 +173,6 @@
     selectElement(elementId) {
       if(!elementId) {
         // the pedal itself is selected
-        this.dispatchEvent(this.configChangedEvent);
         //this.highlightElement(elementId);
         this.updateStyle(this);
         this.dispatchEvent(this.configChangedEvent);
@@ -243,10 +247,11 @@
     }
 
     generateStyle(functional) {
-      console.log("generate style pedal width = " + this.getAttribute("width"))
+      //console.log("generate style pedal width = " + this.getAttribute("width"))
       let nonFuncitonalPedalStyle = `
                         .pedal{
                             display: block;
+                            background:${this.getAttribute("background")};
                             background-color: ${this.getAttribute("color")};
                             width: ${this.getAttribute("width")}px;
                             height: ${this.getAttribute("height")}px;
@@ -254,6 +259,7 @@
                             position: fixed;
                             top: 50%;
                             left: 50%;
+                            box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
                             /* bring your own prefixes */
                             /* transform: translate(-50%, -50%); */
                         }`;
@@ -261,11 +267,13 @@
       let functionalPedalStyle = `
                         .pedal{
                             display: block;
+                            background:${this.getAttribute("background")};
                             background-color: ${this.getAttribute("color")};
                             width: ${this.getAttribute("width")}px;
                             height: ${this.getAttribute("height")}px;
                             border-radius: ${this.getAttribute("radius")}px;
                             position: relative;
+                            box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
                             /* bring your own prefixes */
                             /* transform: translate(-50%, -50%); */
                         }
@@ -445,7 +453,7 @@
                     }
 
                     #${knob.id} div {
-                        color: #${knob.label_color};
+                        color: ${knob.label_color};
                         font-family: "${knob.label_fontfamily}";
                         font-size: ${knob.label_fontsize}px;
                         
@@ -490,7 +498,7 @@
                     }
 
                     #${s.id} div {
-                        color: #${s.label_color};
+                        color: ${s.label_color};
                         font-family: "${s.label_fontfamily}";
                         font-size: ${s.label_fontsize}px;
                         
@@ -522,7 +530,7 @@
                     }
 
                     #${slider.id} div {
-                        color: #${slider.label_color};
+                        color: ${slider.label_color};
                         font-family: "${slider.label_fontfamily}";
                         font-size: ${slider.label_fontsize}px;
                         
@@ -539,7 +547,7 @@
           sliderElem.setAttribute("max", slider.max);
           sliderElem.setAttribute("min", slider.min);
           sliderElem.setAttribute("step", slider.step);
-          console.log("pedal.js SLIDER STEP = " + slider.step);
+          //console.log("pedal.js SLIDER STEP = " + slider.step);
 
           sliderElem.src = ASSETS_PATH + "/sliders/" + slider.model;
           sliderElem.setAttribute(
@@ -575,7 +583,7 @@
                 #${label.id} {
                             left: ${label.x}px;
                             top: ${label.y}px;
-                            color: #${label.label_color};
+                            color: ${label.label_color};
                             font-family: "${label.label_fontfamily}";
                             font-size: ${label.label_fontsize}px;
                         }
@@ -621,12 +629,13 @@
       }
 
       for (let element of config.elements) {
-        console.log(
+        /*console.log(
           "loadConfig: element.type = " +
             element.type +
             " element.label=" +
             element.label
         );
+        */
         if (element.type == "knob") {
           let knob = this.addElement("knob", null, element.label);
           // added to match with the elements generated by fetching wap
@@ -638,9 +647,10 @@
           knob.min = element.min ? element.min : 0;
           knob.max = element.max ? element.max : 100;
           knob.step = element.step ? element.step : 1;
-          console.log(
+          /*console.log(
             "LoadConfig: label = " + knob.id + " step = " + knob.step
           );
+          */
           knob.width = element.width;
           knob.height = element.height;
           knob.model = element.model;
@@ -690,9 +700,11 @@
           slider.step = element.step ? element.step : 1;
           slider.value = element.value;
           slider.address = element.address;
+          /*
           console.log(
             "loadConfig SLIDER " + slider.label + " STEP = " + element.step
           );
+          */
         }
       }
 

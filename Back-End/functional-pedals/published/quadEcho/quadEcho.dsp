@@ -13,9 +13,10 @@ declare copyright 	"(c)GRAME 2007";
 
 import("stdfaust.lib");
 
-process = vgroup("stereo echo", multi(ef.echo1s, 4))
+quadecho = vgroup("stereo echo", multi(ef.echo1s, 4))
 	with{ 
 		multi(f,1) = f;
 		multi(f,n) = f,multi(f,n-1);
 	};							
 	
+    process = ba.bypass_fade(ma.SR/10, checkbox("bypass"), quadecho);

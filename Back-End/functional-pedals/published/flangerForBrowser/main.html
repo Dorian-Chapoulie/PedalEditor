@@ -7,14 +7,15 @@
             WebAudioControlsOptions = {
                 useMidi: 1,
             };
-            <template><style>	
+            <template id="flangerforbrowser"><style>	
                         .pedal{
                             display: block;
                             background-color: #7caeff;
-                            width: 130px;
-                            height: 570px;
+                            width: 336.111083984375px;
+                            height: 268.0339050292969px;
                             border-radius: 10px;
                             position: relative;
+                            box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
                             /* bring your own prefixes */
                             /* transform: translate(-50%, -50%); */
                         }
@@ -22,8 +23,8 @@
                         
                         #background-image {
                             //border: solid 2px black;
-                            width: 130px;
-                            height: 570px;
+                            width: 336.111083984375px;
+                            height: 268.0339050292969px;
                             opacity: 1;
                             /* display: none; */
                             //visibility: hidden;
@@ -38,8 +39,8 @@
                             cursor: nwse-resize;
                             width: 10px;
                             height: 10px;
-                            left: 122px;
-                            top: 562px;
+                            left: 328.111083984375px;
+                            top: 260.0339050292969px;
                             border: 1px solid black;
                         } */
 
@@ -51,6 +52,8 @@
 
                         .container {
                             position: relative;
+                            width: 336.111083984375px;
+                            height: 268.0339050292969px;
                             /* font-family: Arial; */
                           }
                           
@@ -131,85 +134,85 @@
                             right: 0px;
                         }
                         
-                    #Delay {
-                        left: 40px;
-                        top: 10px;
-                    }
-
-                    #Delay div {
-                        color: #000000;
-                        font-family: "Verdana";
-                        font-size: 14px;
-                        
-                    }
-                
                     #Rate {
-                        left: 141px;
-                        top: 9px;
+                        left: 100px;
+                        top: 11px;
                     }
 
                     #Rate div {
-                        color: #000000;
+                        color: 000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
                     #Depth {
-                        left: 231px;
-                        top: 6px;
+                        left: 165px;
+                        top: 10px;
                     }
 
                     #Depth div {
-                        color: #000000;
+                        color: 000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
                     #Feedback {
-                        left: 28px;
-                        top: 110px;
+                        left: 221px;
+                        top: 9px;
                     }
 
                     #Feedback div {
-                        color: #000000;
+                        color: 000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
                     #Waveshape {
-                        left: 109px;
-                        top: 98px;
+                        left: 29px;
+                        top: 92px;
                     }
 
                     #Waveshape div {
-                        color: #000000;
+                        color: 000000;
+                        font-family: "Verdana";
+                        font-size: 14px;
+                        
+                    }
+                
+                    #Delay {
+                        left: 25px;
+                        top: 10px;
+                    }
+
+                    #Delay div {
+                        color: 000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
                     #Enable {
-                        left: 241px;
-                        top: 80px;
+                        left: 93px;
+                        top: 86px;
                     }
 
                     #Enable div {
-                        color: #000000;
+                        color: 000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
                     #Invert {
-                        left: 165px;
-                        top: 174px;
+                        left: 111px;
+                        top: 181px;
                     }
 
                     #Invert div {
-                        color: #000000;
+                        color: 000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
@@ -240,13 +243,13 @@
                         #knob1-label{
                             top: 84px;
                             left: 43px;
-                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-93.0469px, -250.131px); width: 343.625px; height: 249.312px; box-shadow: rgba(0, 0, 0, 0.7) 4px 5px 6px, rgba(0, 0, 0, 0.2) -2px -2px 5px 0px inset, rgba(255, 255, 255, 0.2) 3px 1px 1px 4px inset, rgba(0, 0, 0, 0.9) 1px 0px 1px 0px, rgba(0, 0, 0, 0.9) 0px 2px 1px 0px, rgba(0, 0, 0, 0.9) 1px 1px 1px 0px; background: linear-gradient(rgb(21, 83, 141), rgb(16, 67, 114));" data-x="-93.046875" data-y="-250.13125610351562">
+                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-266.827px, -142.852px);" data-x="-266.82720947265625" data-y="-142.85157775878906">
     <div id="resize"></div>
 
 
 
     <div class="container" id="txtcontainer">
-      
+      <img id="background-image" src="./img/background/2.jpg">
 
       <h4></h4>
       <p class="pedalLabel" id="test"></p>
@@ -258,8 +261,8 @@
         <figcaption>tototo</figcaption>
     </figure> -->
     <!-- <div class="text-block" id="froala-editor"></div> -->
-  <div class="knob" id="Delay"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="1" value="0.22" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Delay"></webaudio-knob><div style="text-align:center">Delay</div></div><div class="knob " id="Rate"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="10" step="0.01" value="0.5" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Rate"></webaudio-knob><div style="text-align:center">Rate</div></div><div class="knob " id="Depth"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.001" value="0.75" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Depth"></webaudio-knob><div style="text-align:center">Depth</div></div><div class="knob " id="Feedback"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="-0.995" max="0.99" step="0.001" value="0" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Feedback"></webaudio-knob><div style="text-align:center">Feedback</div></div><div class="knob " id="Waveshape"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.001" value="0" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Waveshape"></webaudio-knob><div style="text-align:center">Waveshape</div></div><div class="knob " id="Enable"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="1" value="0" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Switches/Enable"></webaudio-knob><div style="text-align:center">Enable</div></div><div class="knob" id="Invert"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="1" value="0" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Switches/Invert"></webaudio-knob><div style="text-align:center">Invert</div></div></div></template><script>
-        let flangerForBrowserTemp = document.currentScript.ownerDocument.querySelector('template');
+  <div class="knob " id="Rate"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="10" step="0.01" value="0.5" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Rate"></webaudio-knob><div style="text-align:center">Rate</div></div><div class="knob " id="Depth"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.001" value="0.75" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Depth"></webaudio-knob><div style="text-align:center">Depth</div></div><div class="knob" id="Feedback"><webaudio-knob src="./img/knobs/knob2.png" height="68.05312499999995" width="68.05312499999995" sprites="100" min="-0.995" max="0.99" step="0.001" value="0" style="height: 68.0531px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Feedback"></webaudio-knob><div style="text-align:center">Feedback</div></div><div class="knob " id="Waveshape"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.001" value="0" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Waveshape"></webaudio-knob><div style="text-align:center">Waveshape</div></div><div class="switch" id="Delay"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Knobs/Delay"></webaudio-switch><div>Delay</div></div><div class="switch " id="Enable"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Switches/Enable"></webaudio-switch><div>Enable</div></div><div class="switch " id="Invert"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" style="height: 50px;" id="/flangerForBrowser/Effects/Flanger/Switches/Invert"></webaudio-switch><div>Invert</div></div></div></template><script>
+        let flangerForBrowserTemp = document.currentScript.ownerDocument.querySelector('#flangerforbrowser');
         class flangerForBrowserGui extends HTMLElement {
     
         
@@ -332,7 +335,7 @@
                
             console.log("Custom element attributes changed.");
             this.state = JSON.parse(this.getAttribute('state'));
-            let tmp = "/undefined/bypass";
+            let tmp = "/flangerForBrowser/bypass";
             if (this.state[tmp] == 1) {
             this._root.querySelector("#switch1").value = 0;
             this.isOn = false;
@@ -354,11 +357,11 @@
             this.boundingRect = {
                 dataWidth: {
                 type: Number,
-                value: 130
+                value: 336.111083984375
                 },
                 dataHeight: {
                 type: Number,
-                value: 570
+                value: 268.0339050292969
                 }
           };
           return this.boundingRect;
@@ -375,7 +378,7 @@
                
             // Sets the background image and style.
             var background = this._root.querySelector('img');
-            background.src = this._plug.URL + '/assets/undefined';
+            background.src = this._plug.URL + '/assets/2.jpg';
             background.style = 'border-radius : 10px;'
             this._root.querySelectorAll(".knob").forEach((knob) => {
 				knob.querySelector("webaudio-knob").setAttribute('src', this._plug.URL + '/assets/MiniMoog_Main.png');
@@ -390,13 +393,10 @@
             }
         
             setKnobs() {
-               this._root.getElementById("/flangerForBrowser/Effects/Flanger/Knobs/Delay").addEventListener("input", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Knobs/Delay", e.target.value));
-this._root.getElementById("/flangerForBrowser/Effects/Flanger/Knobs/Rate").addEventListener("input", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Knobs/Rate", e.target.value));
+               this._root.getElementById("/flangerForBrowser/Effects/Flanger/Knobs/Rate").addEventListener("input", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Knobs/Rate", e.target.value));
 this._root.getElementById("/flangerForBrowser/Effects/Flanger/Knobs/Depth").addEventListener("input", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Knobs/Depth", e.target.value));
 this._root.getElementById("/flangerForBrowser/Effects/Flanger/Knobs/Feedback").addEventListener("input", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Knobs/Feedback", e.target.value));
 this._root.getElementById("/flangerForBrowser/Effects/Flanger/Knobs/Waveshape").addEventListener("input", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Knobs/Waveshape", e.target.value));
-this._root.getElementById("/flangerForBrowser/Effects/Flanger/Switches/Enable").addEventListener("input", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Switches/Enable", e.target.value));
-this._root.getElementById("/flangerForBrowser/Effects/Flanger/Switches/Invert").addEventListener("input", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Switches/Invert", e.target.value));
 
             }
         
@@ -418,7 +418,10 @@ this._root.getElementById("/flangerForBrowser/Effects/Flanger/Switches/Invert").
             }
         
             setSwitches() {
-               
+               this._root.getElementById("/flangerForBrowser/Effects/Flanger/Knobs/Delay").addEventListener("change", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Knobs/Delay", 1-e.target.value));
+this._root.getElementById("/flangerForBrowser/Effects/Flanger/Switches/Enable").addEventListener("change", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Switches/Enable", 1-e.target.value));
+this._root.getElementById("/flangerForBrowser/Effects/Flanger/Switches/Invert").addEventListener("change", (e) =>this._plug.setParam("/flangerForBrowser/Effects/Flanger/Switches/Invert", 1-e.target.value));
+
             }
         
             setInactive() {

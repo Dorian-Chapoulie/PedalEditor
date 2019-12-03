@@ -92,7 +92,7 @@ class PedalElementManager {
       label: "knbo_" + uid,
       label_fontfamily: "Comic Sans MS",
       label_fontsize: "9",
-      label_color: "000000",
+      label_color: "#000000",
       type: "knob"
     };
     this.pedal.knobs.push(knob);
@@ -114,7 +114,7 @@ class PedalElementManager {
       label: "",
       label_fontfamily: "Comic Sans MS",
       label_fontsize: "9",
-      label_color: "000000",
+      label_color: "#000000",
       type: "switch"
     };
     this.pedal.switches.push(_switch);
@@ -135,7 +135,7 @@ class PedalElementManager {
       label: "slider_" + uid,
       label_fontfamily: "Comic Sans MS",
       label_fontsize: "9",
-      label_color: "000000",
+      label_color: "#000000",
       type: "slider"
     };
     this.pedal.sliders.push(slider);
@@ -172,7 +172,7 @@ class PedalElementManager {
         .getComputedStyle(this.pedal.shadowRoot.querySelector("#test"))
         .getPropertyValue("font-family"),
       label_fontsize: "14",
-      label_color: "ffffff",
+      label_color: "#ffffff",
       type: "label"
     };
     this.pedal.labels.push(_label);

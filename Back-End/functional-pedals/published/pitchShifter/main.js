@@ -1,13 +1,13 @@
 
 /*
-Code generated with Faust version 2.18.0
+Code generated with Faust version 2.20.0
 Compilation options: -lang wasm-ib -scal -ftz 2
 */
 
-function getJSONquadEcho() {
-	return "{\"name\": \"quadEcho\",\"filename\": \"quadEcho.dsp\",\"version\": \"2.18.0\",\"compile_options\": \"-lang wasm-ib -scal -ftz 2\",\"include_pathnames\": [\"/usr/local/share/faust\",\"/usr/local/share/faust\",\"/usr/share/faust\",\".\",\"/tmp/sessions/F4550C440B3889D18D7582069F9F826DDF9D81E6/web/wap\"],\"size\": \"2097172\",\"inputs\": \"4\",\"outputs\": \"4\",\"meta\": [ { \"author\": \"Grame\" },{ \"basics_lib_name\": \"Faust Basic Element Library\" },{ \"basics_lib_version\": \"0.1\" },{ \"compilation_options\": \"-single -scal -I libraries/ -I project/ -lang wasm\" },{ \"copyright\": \"(c)GRAME 2007\" },{ \"delays_lib_name\": \"Faust Delay Library\" },{ \"delays_lib_version\": \"0.1\" },{ \"filename\": \"quadEcho.dsp\" },{ \"library_path\": \"FaustDSP\" },{ \"license\": \"BSD\" },{ \"maths_lib_author\": \"GRAME\" },{ \"maths_lib_copyright\": \"GRAME\" },{ \"maths_lib_license\": \"LGPL with exception\" },{ \"maths_lib_name\": \"Faust Math Library\" },{ \"maths_lib_version\": \"2.1\" },{ \"misceffects_lib_name\": \"Faust Math Library\" },{ \"misceffects_lib_version\": \"2.0\" },{ \"name\": \"quadEcho\" },{ \"version\": \"1.0\" }],\"ui\": [ {\"type\": \"vgroup\",\"label\": \"stereo echo\",\"items\": [ {\"type\": \"vgroup\",\"label\": \"echo  1000\",\"items\": [ {\"type\": \"hslider\",\"label\": \"feedback\",\"address\": \"/stereo_echo/echo__1000/feedback\",\"index\": \"0\",\"init\": \"0\",\"min\": \"0\",\"max\": \"100\",\"step\": \"0.1\"},{\"type\": \"hslider\",\"label\": \"millisecond\",\"address\": \"/stereo_echo/echo__1000/millisecond\",\"index\": \"12\",\"init\": \"0\",\"min\": \"0\",\"max\": \"1000\",\"step\": \"0.1\"}]}]}]}";
+function getJSONpitchShifter() {
+	return '{"name": "pitchShifter","filename": "pitchShifter.dsp","version": "2.20.0","compile_options": "-lang wasm-ib -scal -ftz 2","include_pathnames": ["/usr/local/share/faust","/usr/local/share/faust","/usr/share/faust",".","/tmp/sessions/9D6AAC30CEFE04A4755F96C409C5870D38AF88F4/web/wap"],"size": 524364,"inputs": 1,"outputs": 1,"meta": [ { "author": "Grame" },{ "basics_lib_name": "Faust Basic Element Library" },{ "basics_lib_version": "0.1" },{ "compilation_options": "-single -scal -I libraries/ -I project/ -lang wasm" },{ "copyright": "(c)GRAME 2006" },{ "delays_lib_name": "Faust Delay Library" },{ "delays_lib_version": "0.1" },{ "filename": "pitchShifter.dsp" },{ "library_path": "FaustDSP" },{ "license": "BSD" },{ "maths_lib_author": "GRAME" },{ "maths_lib_copyright": "GRAME" },{ "maths_lib_license": "LGPL with exception" },{ "maths_lib_name": "Faust Math Library" },{ "maths_lib_version": "2.1" },{ "misceffects_lib_name": "Faust Math Library" },{ "misceffects_lib_version": "2.0" },{ "name": "pitchShifter" },{ "signals_lib_name": "Faust Signal Routing Library" },{ "signals_lib_version": "0.0" },{ "version": "1.0" }],"ui": [ {"type": "vgroup","label": "pitchShifter","items": [ {"type": "vgroup","label": "Pitch Shifter","items": [ {"type": "hslider","label": "shift","address": "/pitchShifter/Pitch_Shifter/shift","index": 40,"meta": [{ "style": "knob" }],"init": 0,"min": -12,"max": 12,"step": 0.1},{"type": "hslider","label": "window","address": "/pitchShifter/Pitch_Shifter/window","index": 28,"meta": [{ "style": "knob" }],"init": 1000,"min": 50,"max": 10000,"step": 1},{"type": "hslider","label": "xfade","address": "/pitchShifter/Pitch_Shifter/xfade","index": 60,"meta": [{ "style": "knob" }],"init": 10,"min": 1,"max": 10000,"step": 1}]},{"type": "checkbox","label": "bypass","address": "/pitchShifter/bypass","index": 8}]}]}';
 }
-function getBase64CodequadEcho() { return "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IjogIjQiLCJtZXRhIjogWyB7ICJhdXRob3IiOiAiR3JhbWUiIH0seyAiYmFzaWNzX2xpYl9uYW1lIjogIkZhdXN0IEJhc2ljIEVsZW1lbnQgTGlicmFyeSIgfSx7ICJiYXNpY3NfbGliX3ZlcnNpb24iOiAiMC4xIiB9LHsgImNvbXBpbGF0aW9uX29wdGlvbnMiOiAiLXNpbmdsZSAtc2NhbCAtSSBsaWJyYXJpZXMvIC1JIHByb2plY3QvIC1sYW5nIHdhc20iIH0seyAiY29weXJpZ2h0IjogIihjKUdSQU1FIDIwMDciIH0seyAiZGVsYXlzX2xpYl9uYW1lIjogIkZhdXN0IERlbGF5IExpYnJhcnkiIH0seyAiZGVsYXlzX2xpYl92ZXJzaW9uIjogIjAuMSIgfSx7ICJmaWxlbmFtZSI6ICJxdWFkRWNoby5kc3AiIH0seyAibGlicmFyeV9wYXRoIjogIkZhdXN0RFNQIiB9LHsgImxpY2Vuc2UiOiAiQlNEIiB9LHsgIm1hdGhzX2xpYl9hdXRob3IiOiAiR1JBTUUiIH0seyAibWF0aHNfbGliX2NvcHlyaWdodCI6ICJHUkFNRSIgfSx7ICJtYXRoc19saWJfbGljZW5zZSI6ICJMR1BMIHdpdGggZXhjZXB0aW9uIiB9LHsgIm1hdGhzX2xpYl9uYW1lIjogIkZhdXN0IE1hdGggTGlicmFyeSIgfSx7ICJtYXRoc19saWJfdmVyc2lvbiI6ICIyLjEiIH0seyAibWlzY2VmZmVjdHNfbGliX25hbWUiOiAiRmF1c3QgTWF0aCBMaWJyYXJ5IiB9LHsgIm1pc2NlZmZlY3RzX2xpYl92ZXJzaW9uIjogIjIuMCIgfSx7ICJuYW1lIjogInF1YWRFY2hvIiB9LHsgInZlcnNpb24iOiAiMS4wIiB9XSwidWkiOiBbIHsidHlwZSI6ICJ2Z3JvdXAiLCJsYWJlbCI6ICJzdGVyZW8gZWNobyIsIml0ZW1zIjogWyB7InR5cGUiOiAidmdyb3VwIiwibGFiZWwiOiAiZWNobyAgMTAwMCIsIml0ZW1zIjogWyB7InR5cGUiOiAiaHNsaWRlciIsImxhYmVsIjogImZlZWRiYWNrIiwiYWRkcmVzcyI6ICIvc3RlcmVvX2VjaG8vZWNob19fMTAwMC9mZWVkYmFjayIsImluZGV4IjogIjAiLCJpbml0IjogIjAiLCJtaW4iOiAiMCIsIm1heCI6ICIxMDAiLCJzdGVwIjogIjAuMSJ9LHsidHlwZSI6ICJoc2xpZGVyIiwibGFiZWwiOiAibWlsbGlzZWNvbmQiLCJhZGRyZXNzIjogIi9zdGVyZW9fZWNoby9lY2hvX18xMDAwL21pbGxpc2Vjb25kIiwiaW5kZXgiOiAiMTIiLCJpbml0IjogIjAiLCJtaW4iOiAiMCIsIm1heCI6ICIxMDAwIiwic3RlcCI6ICIwLjEifV19XX1dfQ=="; }
+function getBase64CodepitchShifter() { return "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AgwBCwsLC8iAgIAAAEEAIAE2AgBBAEMAACBBQwCAO0hDAACAP0EAKAIAspeWlTgCBEEAQwAAAABBACoCBJMQADgCFEEAQwAAgD9BACoCFJM4AhgLkICAgAAAIAAgARALIAAQDSAAEAoLqoCAgAAAQQBDAAAAADgCCEEAQwAAekQ4AhxBAEMAAAAAOAIoQQBDAAAgQTgCPAuQgICAAAAgACABSAR/IAEFIAALDwuQgICAAAAgACABSAR/IAAFIAELDwuMgICAAAAgACABaiACOAIACwu8joCAAAEAQQALtQ57Im5hbWUiOiAicGl0Y2hTaGlmdGVyIiwiZmlsZW5hbWUiOiAicGl0Y2hTaGlmdGVyLmRzcCIsInZlcnNpb24iOiAiMi4yMC4wIiwiY29tcGlsZV9vcHRpb25zIjogIi1sYW5nIHdhc20taWIgLXNjYWwgLWZ0eiAyIiwiaW5jbHVkZV9wYXRobmFtZXMiOiBbIi91c3IvbG9jYWwvc2hhcmUvZmF1c3QiLCIvdXNyL2xvY2FsL3NoYXJlL2ZhdXN0IiwiL3Vzci9zaGFyZS9mYXVzdCIsIi4iLCIvdG1wL3Nlc3Npb25zLzlENkFBQzMwQ0VGRTA0QTQ3NTVGOTZDNDA5QzU4NzBEMzhBRjg4RjQvd2ViL3dhcCJdLCJzaXplIjogNTI0MzY0LCJpbnB1dHMiOiAxLCJvdXRwdXRzIjogMSwibWV0YSI6IFsgeyAiYXV0aG9yIjogIkdyYW1lIiB9LHsgImJhc2ljc19saWJfbmFtZSI6ICJGYXVzdCBCYXNpYyBFbGVtZW50IExpYnJhcnkiIH0seyAiYmFzaWNzX2xpYl92ZXJzaW9uIjogIjAuMSIgfSx7ICJjb21waWxhdGlvbl9vcHRpb25zIjogIi1zaW5nbGUgLXNjYWwgLUkgbGlicmFyaWVzLyAtSSBwcm9qZWN0LyAtbGFuZyB3YXNtIiB9LHsgImNvcHlyaWdodCI6ICIoYylHUkFNRSAyMDA2IiB9LHsgImRlbGF5c19saWJfbmFtZSI6ICJGYXVzdCBEZWxheSBMaWJyYXJ5IiB9LHsgImRlbGF5c19saWJfdmVyc2lvbiI6ICIwLjEiIH0seyAiZmlsZW5hbWUiOiAicGl0Y2hTaGlmdGVyLmRzcCIgfSx7ICJsaWJyYXJ5X3BhdGgiOiAiRmF1c3REU1AiIH0seyAibGljZW5zZSI6ICJCU0QiIH0seyAibWF0aHNfbGliX2F1dGhvciI6ICJHUkFNRSIgfSx7ICJtYXRoc19saWJfY29weXJpZ2h0IjogIkdSQU1FIiB9LHsgIm1hdGhzX2xpYl9saWNlbnNlIjogIkxHUEwgd2l0aCBleGNlcHRpb24iIH0seyAibWF0aHNfbGliX25hbWUiOiAiRmF1c3QgTWF0aCBMaWJyYXJ5IiB9LHsgIm1hdGhzX2xpYl92ZXJzaW9uIjogIjIuMSIgfSx7ICJtaXNjZWZmZWN0c19saWJfbmFtZSI6ICJGYXVzdCBNYXRoIExpYnJhcnkiIH0seyAibWlzY2VmZmVjdHNfbGliX3ZlcnNpb24iOiAiMi4wIiB9LHsgIm5hbWUiOiAicGl0Y2hTaGlmdGVyIiB9LHsgInNpZ25hbHNfbGliX25hbWUiOiAiRmF1c3QgU2lnbmFsIFJvdXRpbmcgTGlicmFyeSIgfSx7ICJzaWduYWxzX2xpYl92ZXJzaW9uIjogIjAuMCIgfSx7ICJ2ZXJzaW9uIjogIjEuMCIgfV0sInVpIjogWyB7InR5cGUiOiAidmdyb3VwIiwibGFiZWwiOiAicGl0Y2hTaGlmdGVyIiwiaXRlbXMiOiBbIHsidHlwZSI6ICJ2Z3JvdXAiLCJsYWJlbCI6ICJQaXRjaCBTaGlmdGVyIiwiaXRlbXMiOiBbIHsidHlwZSI6ICJoc2xpZGVyIiwibGFiZWwiOiAic2hpZnQiLCJhZGRyZXNzIjogIi9waXRjaFNoaWZ0ZXIvUGl0Y2hfU2hpZnRlci9zaGlmdCIsImluZGV4IjogNDAsIm1ldGEiOiBbeyAic3R5bGUiOiAia25vYiIgfV0sImluaXQiOiAwLCJtaW4iOiAtMTIsIm1heCI6IDEyLCJzdGVwIjogMC4xfSx7InR5cGUiOiAiaHNsaWRlciIsImxhYmVsIjogIndpbmRvdyIsImFkZHJlc3MiOiAiL3BpdGNoU2hpZnRlci9QaXRjaF9TaGlmdGVyL3dpbmRvdyIsImluZGV4IjogMjgsIm1ldGEiOiBbeyAic3R5bGUiOiAia25vYiIgfV0sImluaXQiOiAxMDAwLCJtaW4iOiA1MCwibWF4IjogMTAwMDAsInN0ZXAiOiAxfSx7InR5cGUiOiAiaHNsaWRlciIsImxhYmVsIjogInhmYWRlIiwiYWRkcmVzcyI6ICIvcGl0Y2hTaGlmdGVyL1BpdGNoX1NoaWZ0ZXIveGZhZGUiLCJpbmRleCI6IDYwLCJtZXRhIjogW3sgInN0eWxlIjogImtub2IiIH1dLCJpbml0IjogMTAsIm1pbiI6IDEsIm1heCI6IDEwMDAwLCJzdGVwIjogMX1dfSx7InR5cGUiOiAiY2hlY2tib3giLCJsYWJlbCI6ICJieXBhc3MiLCJhZGRyZXNzIjogIi9waXRjaFNoaWZ0ZXIvYnlwYXNzIiwiaW5kZXgiOiA4fV19XX0="; }
 
 /*
  faust2wasm: GRAME 2017-2019
@@ -19,11 +19,11 @@ if (typeof (AudioWorkletNode) === "undefined") {
 	alert("AudioWorklet is not supported in this browser !")
 }
 
-class quadEchoNode extends AudioWorkletNode {
+class pitchShifterNode extends AudioWorkletNode {
 
     constructor(context, baseURL, options)
     {
-        super(context, 'quadEcho', options);
+        super(context, 'pitchShifter', options);
         
         this.baseURL = baseURL;
         this.json = options.processorOptions.json;
@@ -74,7 +74,9 @@ class quadEchoNode extends AudioWorkletNode {
                     for (var i = 0; i < item.meta.length; i++) {
                         if (item.meta[i].midi !== undefined) {
                             if (item.meta[i].midi.trim() === "pitchwheel") {
-                                obj.fPitchwheelLabel.push(item.address);
+                                obj.fPitchwheelLabel.push({ path:item.address,
+                                      min:parseFloat(item.min),
+                                      max:parseFloat(item.max) });
                             } else if (item.meta[i].midi.trim().split(" ")[0] === "ctrl") {
                                 obj.fCtrlLabel[parseInt(item.meta[i].midi.trim().split(" ")[1])]
                                 .push({ path:item.address,
@@ -257,7 +259,7 @@ class quadEchoNode extends AudioWorkletNode {
         if (this.fCtrlLabel[ctrl] !== []) {
             for (var i = 0; i < this.fCtrlLabel[ctrl].length; i++) {
                 var path = this.fCtrlLabel[ctrl][i].path;
-                this.setParamValue(path, quadEchoNode.remap(value, 0, 127, this.fCtrlLabel[ctrl][i].min, this.fCtrlLabel[ctrl][i].max));
+                this.setParamValue(path, pitchShifterNode.remap(value, 0, 127, this.fCtrlLabel[ctrl][i].min, this.fCtrlLabel[ctrl][i].max));
                 if (this.output_handler) {
                     this.output_handler(path, this.getParamValue(path));
                 }
@@ -274,10 +276,10 @@ class quadEchoNode extends AudioWorkletNode {
     pitchWheel(channel, wheel)
     {
         for (var i = 0; i < this.fPitchwheelLabel.length; i++) {
-            var path = this.fPitchwheelLabel[i];
-            this.setParamValue(path, Math.pow(2.0, wheel/12.0));
+            var pw = this.fPitchwheelLabel[i];
+            this.setParamValue(pw.path, pitchShifterNode.remap(wheel, 0, 16383, pw.min, pw.max));
             if (this.output_handler) {
-                this.output_handler(path, this.getParamValue(path));
+                this.output_handler(pw.path, this.getParamValue(pw.path));
             }
         }
     }
@@ -297,7 +299,7 @@ class quadEchoNode extends AudioWorkletNode {
         } else if (cmd === 11) {
             this.ctrlChange(channel, data1, data2);
         } else if (cmd === 14) {
-            this.pitchWheel(channel, ((data2 * 128.0 + data1)-8192)/8192.0);
+            this.pitchWheel(channel, (data2 * 128.0 + data1));
         }
     }
     
@@ -355,7 +357,7 @@ class quadEchoNode extends AudioWorkletNode {
 }
 
 // Factory class
-class quadEcho {
+class pitchShifter {
 
     /**
      * Factory constructor.
@@ -449,12 +451,12 @@ class quadEcho {
                     _cosh: Math.cosh,
                     _sinh: Math.sinh,
                     _tanh: Math.tanh,
-                        
+                    
                     table: new WebAssembly.Table({ initial: 0, element: "anyfunc" })
                 }
             };
 
-            let real_url = (this.baseURL === "") ? "quadEcho.wasm" : (this.baseURL + "/quadEcho.wasm");
+            let real_url = (this.baseURL === "") ? "pitchShifter.wasm" : (this.baseURL + "/pitchShifter.wasm");
             const dspFile = await fetch(real_url);
             const dspBuffer = await dspFile.arrayBuffer();
             const dspModule = await WebAssembly.compile(dspBuffer);
@@ -468,11 +470,11 @@ class quadEcho {
                 let options = { wasm_module: dspModule, json: json };
                 
                 let re = /JSON_STR/g;
-                let quadEchoProcessorString1 = quadEchoProcessorString.replace(re, json);
-                let real_url = window.URL.createObjectURL(new Blob([quadEchoProcessorString1], { type: 'text/javascript' }));
+                let pitchShifterProcessorString1 = pitchShifterProcessorString.replace(re, json);
+                let real_url = window.URL.createObjectURL(new Blob([pitchShifterProcessorString1], { type: 'text/javascript' }));
                 
                 this.context.audioWorklet.addModule(real_url).then(() => {
-                    this.node = new quadEchoNode(this.context, this.baseURL, 
+                    this.node = new pitchShifterNode(this.context, this.baseURL, 
                                         { numberOfInputs: (parseInt(json_object.inputs) > 0) ? 1 : 0,
                                         numberOfOutputs: (parseInt(json_object.outputs) > 0) ? 1 : 0,
                                         channelCount: Math.max(1, parseInt(json_object.inputs)),
@@ -480,7 +482,7 @@ class quadEcho {
                                         channelCountMode: "explicit",
                                         channelInterpretation: "speakers",
                                         processorOptions: options });
-                    this.node.onprocessorerror = () => { console.log('An error from quadEcho-processor was detected.');}
+                    this.node.onprocessorerror = () => { console.log('An error from pitchShifter-processor was detected.');}
                     return (this.node);
                 }).then((node) => {
                     resolve(node);
@@ -513,13 +515,13 @@ class quadEcho {
                         // the file has been loaded, instanciate GUI
                         // and get back the HTML elem
                         // HERE WE COULD REMOVE THE HARD CODED NAME
-                        var element = createquadEchoGUI(this.node);
+                        var element = createpitchShifterGUI(this.node);
                         resolve(element);
                     }
                 } else {
                     // LINK EXIST, WE AT LEAST CREATED ONE INSTANCE PREVIOUSLY
                     // so we can create another instance
-                    var element = createquadEchoGUI(this.node);
+                    var element = createpitchShifterGUI(this.node);
                     resolve(element);
                 }
             } catch (e) {
@@ -538,25 +540,25 @@ class quadEcho {
 
 // Template string for AudioWorkletProcessor
 
-let quadEchoProcessorString = `
+let pitchShifterProcessorString = `
 
     'use strict';
 
     // Monophonic Faust DSP
-    class quadEchoProcessor extends AudioWorkletProcessor {
+    class pitchShifterProcessor extends AudioWorkletProcessor {
         
         // JSON parsing functions
         static parse_ui(ui, obj, callback)
         {
             for (var i = 0; i < ui.length; i++) {
-                quadEchoProcessor.parse_group(ui[i], obj, callback);
+                pitchShifterProcessor.parse_group(ui[i], obj, callback);
             }
         }
         
         static parse_group(group, obj, callback)
         {
             if (group.items) {
-                quadEchoProcessor.parse_items(group.items, obj, callback);
+                pitchShifterProcessor.parse_items(group.items, obj, callback);
             }
         }
         
@@ -572,7 +574,7 @@ let quadEchoProcessorString = `
             if (item.type === "vgroup"
                 || item.type === "hgroup"
                 || item.type === "tgroup") {
-                quadEchoProcessor.parse_items(item.items, obj, callback);
+                pitchShifterProcessor.parse_items(item.items, obj, callback);
             } else if (item.type === "hbargraph"
                        || item.type === "vbargraph") {
                 // Nothing
@@ -593,7 +595,7 @@ let quadEchoProcessorString = `
             if (item.type === "vgroup"
                 || item.type === "hgroup"
                 || item.type === "tgroup") {
-                quadEchoProcessor.parse_items(item.items, obj, callback);
+                pitchShifterProcessor.parse_items(item.items, obj, callback);
             } else if (item.type === "hbargraph"
                        || item.type === "vbargraph") {
                 // Keep bargraph adresses
@@ -614,7 +616,7 @@ let quadEchoProcessorString = `
         {
             // Analyse JSON to generate AudioParam parameters
             var params = [];
-            quadEchoProcessor.parse_ui(JSON.parse(\`JSON_STR\`).ui, params, quadEchoProcessor.parse_item1);
+            pitchShifterProcessor.parse_ui(JSON.parse(\`JSON_STR\`).ui, params, pitchShifterProcessor.parse_item1);
             return params;
         }
        
@@ -650,6 +652,12 @@ let quadEchoProcessorString = `
                         _sinf: Math.sin,
                         _sqrtf: Math.sqrt,
                         _tanf: Math.tan,
+                        _acoshf: Math.acosh,
+                        _asinhf: Math.asinh,
+                        _atanhf: Math.atanh,
+                        _coshf: Math.cosh,
+                        _sinhf: Math.sinh,
+                        _tanhf: Math.tanh,
 
                         // Double version
                         _acos: Math.acos,
@@ -671,12 +679,18 @@ let quadEchoProcessorString = `
                         _sin: Math.sin,
                         _sqrt: Math.sqrt,
                         _tan: Math.tan,
+                        _acosh: Math.acosh,
+                        _asinh: Math.asinh,
+                        _atanh: Math.atanh,
+                        _cosh: Math.cosh,
+                        _sinh: Math.sinh,
+                        _tanh: Math.tanh,
 
                         table: new WebAssembly.Table({ initial: 0, element: 'anyfunc' })
                     }
             };
             
-            this.quadEcho_instance = new WebAssembly.Instance(options.processorOptions.wasm_module, importObject);
+            this.pitchShifter_instance = new WebAssembly.Instance(options.processorOptions.wasm_module, importObject);
             this.json_object = JSON.parse(options.processorOptions.json);
          
             this.output_handler = function(path, value) { this.port.postMessage({ path: path, value: value }); };
@@ -695,8 +709,8 @@ let quadEchoProcessorString = `
             this.sample_size = 4;
             this.integer_size = 4;
             
-            this.factory = this.quadEcho_instance.exports;
-            this.HEAP = this.quadEcho_instance.exports.memory.buffer;
+            this.factory = this.pitchShifter_instance.exports;
+            this.HEAP = this.pitchShifter_instance.exports.memory.buffer;
             this.HEAP32 = new Int32Array(this.HEAP);
             this.HEAPF32 = new Float32Array(this.HEAP);
 
@@ -771,7 +785,7 @@ let quadEchoProcessorString = `
                 }
                 
                 // Parse UI
-                quadEchoProcessor.parse_ui(this.json_object.ui, this, quadEchoProcessor.parse_item2);
+                pitchShifterProcessor.parse_ui(this.json_object.ui, this, pitchShifterProcessor.parse_item2);
                 
                 // Init DSP
                 this.factory.init(this.dsp, sampleRate); // 'sampleRate' is defined in AudioWorkletGlobalScope  
@@ -829,8 +843,12 @@ let quadEchoProcessorString = `
                 this.HEAPF32[this.pathTable[params[i][0]] >> 2] = params[i][1][0];
             }
             
-            // Compute
-            this.factory.compute(this.dsp, NUM_FRAMES, this.ins, this.outs);
+          	// Compute
+            try {
+                this.factory.compute(this.dsp, NUM_FRAMES, this.ins, this.outs);
+            } catch(e) {
+                console.log("ERROR in compute (" + e + ")");
+            }
             
             // Update bargraph
             this.update_outputs();
@@ -849,13 +867,17 @@ let quadEchoProcessorString = `
 
     // Globals
     const NUM_FRAMES = 128;
-    registerProcessor('quadEcho', quadEchoProcessor);
+    try {
+        registerProcessor('pitchShifter', pitchShifterProcessor);
+    } catch (error) {
+        console.warn(error);
+    }
 `;
 
 // WAP factory or npm package module
 if (typeof module === "undefined") {
-    window.quadEcho = quadEcho;
-    window.FaustquadEcho = quadEcho;
+    window.pitchShifter = pitchShifter;
+    window.FaustpitchShifter = pitchShifter;
 } else {
-    module.exports = { quadEcho };
+    module.exports = { pitchShifter };
 }

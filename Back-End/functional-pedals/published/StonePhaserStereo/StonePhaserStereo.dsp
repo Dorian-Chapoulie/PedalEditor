@@ -14,7 +14,7 @@ import("stdfaust.lib");
 // Control //
 /////////////
 bypass = checkbox("[0] Bypass [symbol:bypass]");
-color = hslider("[1] Color [symbol:color] [boolean] [style:knob]", 1, 0, 1, 1);
+color = checkbox("[1] Color [symbol:color]");
 lf = hslider("[2] LFO  [symbol:lfo_frequency] [unit:Hz] [scale:log] [style:knob]", 0.2, 0.01, 5., 0.01) : tsmooth;
 fb = hslider("[3] Feedback  [symbol:feedback_depth] [unit:%] [integer] [style:knob]", 75, 0, 99, 1) : *(0.01) : tsmooth;
 fbHf = hslider("[4] Lo-cut [abbrev:Fb bass cut] [symbol:feedback_hpf_cutoff] [unit:Hz] [scale:log] [style:knob]", 500., 10., 5000., 1.) : tsmooth;

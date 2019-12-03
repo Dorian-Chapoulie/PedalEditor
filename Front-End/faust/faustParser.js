@@ -77,7 +77,7 @@ class FaustParser {
             label: faustSliderParams[0],
             label_fontfamily: "Verdana",
             label_fontsize: "14",
-            label_color: "000000",
+            label_color: "#000000",
             type: type,
             min: faustSliderParams[2],
             max: faustSliderParams[3]
@@ -122,7 +122,7 @@ class FaustParser {
             label: elem.label,
             label_fontfamily: "Verdana",
             label_fontsize: "14",
-            label_color: "000000",
+            label_color: "#000000",
             type: type,
             // ATTENTION (MICHEL BUFFA) : all elems may not have min, max, step etc.
             min: elem.min,

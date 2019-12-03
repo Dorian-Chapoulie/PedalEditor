@@ -9,12 +9,14 @@ declare copyright 	"(c)GRAME 2006";
  //--------------------------------------
  
 import("stdfaust.lib");
+tsmooth = si.smooth(ba.tau2pole(t)) with { t = 100e-3; };
 
 pitchshifter = vgroup("Pitch Shifter", ef.transpose(
-									hslider("window  [style:knob]", 1000, 50, 10000, 1),
-									hslider("xfade  [style:knob]", 10, 1, 10000, 1),
-									hslider("shift  [style:knob]", 0, -12, +12, 0.1)
+									hslider("window [style:knob]", 1000, 50, 10000, 1):tsmooth,
+									hslider("xfade [style:knob]", 10, 1, 10000, 1):tsmooth,
+									hslider("shift [style:knob]", 0, -12, +12, 0.1):tsmooth
 								  )
 				);
 
-process = pitchshifter;
+    process = ba.bypass_fade(ma.SR/10, checkbox("bypass"), pitchshifter);
+

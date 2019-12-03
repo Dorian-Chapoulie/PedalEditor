@@ -4,10 +4,10 @@ Code generated with Faust version 2.20.0
 Compilation options: -lang wasm-ib -scal -ftz 2
 */
 
-function getJSONquadEcho() {
-	return '{"name": "quadEcho","filename": "quadEcho.dsp","version": "2.20.0","compile_options": "-lang wasm-ib -scal -ftz 2","include_pathnames": ["/usr/local/share/faust","/usr/local/share/faust","/usr/share/faust",".","/tmp/sessions/F4F5015A0D8BD3964CCCCDB62257CE3CC941CE1A/web/wap"],"size": 2097192,"inputs": 4,"outputs": 4,"meta": [ { "author": "Grame" },{ "basics_lib_name": "Faust Basic Element Library" },{ "basics_lib_version": "0.1" },{ "compilation_options": "-single -scal -I libraries/ -I project/ -lang wasm" },{ "copyright": "(c)GRAME 2007" },{ "delays_lib_name": "Faust Delay Library" },{ "delays_lib_version": "0.1" },{ "filename": "quadEcho.dsp" },{ "library_path": "FaustDSP" },{ "license": "BSD" },{ "maths_lib_author": "GRAME" },{ "maths_lib_copyright": "GRAME" },{ "maths_lib_license": "LGPL with exception" },{ "maths_lib_name": "Faust Math Library" },{ "maths_lib_version": "2.1" },{ "misceffects_lib_name": "Faust Math Library" },{ "misceffects_lib_version": "2.0" },{ "name": "quadEcho" },{ "version": "1.0" }],"ui": [ {"type": "vgroup","label": "quadEcho","items": [ {"type": "checkbox","label": "bypass","address": "/quadEcho/bypass","index": 12},{"type": "vgroup","label": "stereo echo","items": [ {"type": "vgroup","label": "echo  1000","items": [ {"type": "hslider","label": "feedback","address": "/quadEcho/stereo_echo/echo__1000/feedback","index": 24,"init": 0,"min": 0,"max": 100,"step": 0.1},{"type": "hslider","label": "millisecond","address": "/quadEcho/stereo_echo/echo__1000/millisecond","index": 32,"init": 0,"min": 0,"max": 1000,"step": 0.1}]}]}]}]}';
+function getJSONflangerForBrowser() {
+	return '{"name": "flangerForBrowser","filename": "flangerForBrowser.dsp","version": "2.20.0","compile_options": "-lang wasm-ib -scal -ftz 2","include_pathnames": ["/usr/local/share/faust","/usr/local/share/faust","/usr/share/faust",".","/tmp/sessions/12956ED9E8416553EB502DCE4F489A56DF9E6D35/web/wap"],"size": 16504,"inputs": 1,"outputs": 1,"meta": [ { "basics_lib_name": "Faust Basic Element Library" },{ "basics_lib_version": "0.1" },{ "compilation_options": "-single -scal -I libraries/ -I project/ -lang wasm" },{ "delays_lib_name": "Faust Delay Library" },{ "delays_lib_version": "0.1" },{ "designer": "Robert A. Moog" },{ "filename": "flangerForBrowser.dsp" },{ "filters_lib_lowpass0_highpass1": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>" },{ "filters_lib_name": "Faust Filters Library" },{ "filters_lib_nlf2_author": "Julius O. Smith III" },{ "filters_lib_nlf2_copyright": "Copyright (C) 2003-2019 by Julius O. Smith III <jos@ccrma.stanford.edu>" },{ "filters_lib_nlf2_license": "MIT-style STK-4.3 license" },{ "library_path": "FaustDSP" },{ "maths_lib_author": "GRAME" },{ "maths_lib_copyright": "GRAME" },{ "maths_lib_license": "LGPL with exception" },{ "maths_lib_name": "Faust Math Library" },{ "maths_lib_version": "2.1" },{ "name": "flangerForBrowser" },{ "oscillators_lib_name": "Faust Oscillator Library" },{ "oscillators_lib_version": "0.0" },{ "signals_lib_name": "Faust Signal Routing Library" },{ "signals_lib_version": "0.0" }],"ui": [ {"type": "hgroup","label": "flangerForBrowser","items": [ {"type": "hgroup","label": "Effects","meta": [{ "1": "" }],"items": [ {"type": "hgroup","label": "Flanger","meta": [{ "5": "" }],"items": [ {"type": "vgroup","label": "Knobs","meta": [{ "0": "" }],"items": [ {"type": "checkbox","label": "Delay","address": "/flangerForBrowser/Effects/Flanger/Knobs/Delay","index": 16476,"meta": [{ "1": "" },{ "midi": "ctrl 50" }]},{"type": "vslider","label": "Rate","address": "/flangerForBrowser/Effects/Flanger/Knobs/Rate","index": 36,"meta": [{ "1": "" },{ "midi": "ctrl 2" },{ "style": "knob" },{ "unit": "Hz" }],"init": 0.5,"min": 0,"max": 10,"step": 0.01},{"type": "vslider","label": "Depth","address": "/flangerForBrowser/Effects/Flanger/Knobs/Depth","index": 16492,"meta": [{ "3": "" },{ "midi": "ctrl 3" },{ "style": "knob" }],"init": 0.75,"min": 0,"max": 1,"step": 0.001},{"type": "vslider","label": "Feedback","address": "/flangerForBrowser/Effects/Flanger/Knobs/Feedback","index": 76,"meta": [{ "5": "" },{ "midi": "ctrl 4" },{ "style": "knob" }],"init": 0,"min": -0.995,"max": 0.99,"step": 0.001},{"type": "vslider","label": "Waveshape","address": "/flangerForBrowser/Effects/Flanger/Knobs/Waveshape","index": 4,"meta": [{ "7": "" },{ "midi": "ctrl 54" },{ "style": "knob" }],"init": 0,"min": 0,"max": 1,"step": 0.001}]},{"type": "vgroup","label": "Switches","meta": [{ "1": "" }],"items": [ {"type": "checkbox","label": "Enable","address": "/flangerForBrowser/Effects/Flanger/Switches/Enable","index": 0,"meta": [{ "0": "" },{ "midi": "ctrl 105" }]},{"type": "checkbox","label": "Invert","address": "/flangerForBrowser/Effects/Flanger/Switches/Invert","index": 16488,"meta": [{ "1": "" },{ "midi": "ctrl 49" }]}]}]}]}]}]}';
 }
-function getBase64CodequadEcho() { return "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AQsPC4yAgIAAACAAIAFqIAI4AgALC7KMgIAAAQBBAAurDHsibmFtZSI6ICJxdWFkRWNobyIsImZpbGVuYW1lIjogInF1YWRFY2hvLmRzcCIsInZlcnNpb24iOiAiMi4yMC4wIiwiY29tcGlsZV9vcHRpb25zIjogIi1sYW5nIHdhc20taWIgLXNjYWwgLWZ0eiAyIiwiaW5jbHVkZV9wYXRobmFtZXMiOiBbIi91c3IvbG9jYWwvc2hhcmUvZmF1c3QiLCIvdXNyL2xvY2FsL3NoYXJlL2ZhdXN0IiwiL3Vzci9zaGFyZS9mYXVzdCIsIi4iLCIvdG1wL3Nlc3Npb25zL0Y0RjUwMTVBMEQ4QkQzOTY0Q0NDQ0RCNjIyNTdDRTNDQzk0MUNFMUEvd2ViL3dhcCJdLCJzaXplIjogMjA5NzE5MiwiaW5wdXRzIjogNCwib3V0cHV0cyI6IDQsIm1ldGEiOiBbIHsgImF1dGhvciI6ICJHcmFtZSIgfSx7ICJiYXNpY3NfbGliX25hbWUiOiAiRmF1c3QgQmFzaWMgRWxlbWVudCBMaWJyYXJ5IiB9LHsgImJhc2ljc19saWJfdmVyc2lvbiI6ICIwLjEiIH0seyAiY29tcGlsYXRpb25fb3B0aW9ucyI6ICItc2luZ2xlIC1zY2FsIC1JIGxpYnJhcmllcy8gLUkgcHJvamVjdC8gLWxhbmcgd2FzbSIgfSx7ICJjb3B5cmlnaHQiOiAiKGMpR1JBTUUgMjAwNyIgfSx7ICJkZWxheXNfbGliX25hbWUiOiAiRmF1c3QgRGVsYXkgTGlicmFyeSIgfSx7ICJkZWxheXNfbGliX3ZlcnNpb24iOiAiMC4xIiB9LHsgImZpbGVuYW1lIjogInF1YWRFY2hvLmRzcCIgfSx7ICJsaWJyYXJ5X3BhdGgiOiAiRmF1c3REU1AiIH0seyAibGljZW5zZSI6ICJCU0QiIH0seyAibWF0aHNfbGliX2F1dGhvciI6ICJHUkFNRSIgfSx7ICJtYXRoc19saWJfY29weXJpZ2h0IjogIkdSQU1FIiB9LHsgIm1hdGhzX2xpYl9saWNlbnNlIjogIkxHUEwgd2l0aCBleGNlcHRpb24iIH0seyAibWF0aHNfbGliX25hbWUiOiAiRmF1c3QgTWF0aCBMaWJyYXJ5IiB9LHsgIm1hdGhzX2xpYl92ZXJzaW9uIjogIjIuMSIgfSx7ICJtaXNjZWZmZWN0c19saWJfbmFtZSI6ICJGYXVzdCBNYXRoIExpYnJhcnkiIH0seyAibWlzY2VmZmVjdHNfbGliX3ZlcnNpb24iOiAiMi4wIiB9LHsgIm5hbWUiOiAicXVhZEVjaG8iIH0seyAidmVyc2lvbiI6ICIxLjAiIH1dLCJ1aSI6IFsgeyJ0eXBlIjogInZncm91cCIsImxhYmVsIjogInF1YWRFY2hvIiwiaXRlbXMiOiBbIHsidHlwZSI6ICJjaGVja2JveCIsImxhYmVsIjogImJ5cGFzcyIsImFkZHJlc3MiOiAiL3F1YWRFY2hvL2J5cGFzcyIsImluZGV4IjogMTJ9LHsidHlwZSI6ICJ2Z3JvdXAiLCJsYWJlbCI6ICJzdGVyZW8gZWNobyIsIml0ZW1zIjogWyB7InR5cGUiOiAidmdyb3VwIiwibGFiZWwiOiAiZWNobyAgMTAwMCIsIml0ZW1zIjogWyB7InR5cGUiOiAiaHNsaWRlciIsImxhYmVsIjogImZlZWRiYWNrIiwiYWRkcmVzcyI6ICIvcXVhZEVjaG8vc3RlcmVvX2VjaG8vZWNob19fMTAwMC9mZWVkYmFjayIsImluZGV4IjogMjQsImluaXQiOiAwLCJtaW4iOiAwLCJtYXgiOiAxMDAsInN0ZXAiOiAwLjF9LHsidHlwZSI6ICJoc2xpZGVyIiwibGFiZWwiOiAibWlsbGlzZWNvbmQiLCJhZGRyZXNzIjogIi9xdWFkRWNoby9zdGVyZW9fZWNoby9lY2hvX18xMDAwL21pbGxpc2Vjb25kIiwiaW5kZXgiOiAzMiwiaW5pdCI6IDAsIm1pbiI6IDAsIm1heCI6IDEwMDAsInN0ZXAiOiAwLjF9XX1dfV19XX0="; }
+function getBase64CodeflangerForBrowser() { return "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eyAiYmFzaWNzX2xpYl9uYW1lIjogIkZhdXN0IEJhc2ljIEVsZW1lbnQgTGlicmFyeSIgfSx7ICJiYXNpY3NfbGliX3ZlcnNpb24iOiAiMC4xIiB9LHsgImNvbXBpbGF0aW9uX29wdGlvbnMiOiAiLXNpbmdsZSAtc2NhbCAtSSBsaWJyYXJpZXMvIC1JIHByb2plY3QvIC1sYW5nIHdhc20iIH0seyAiZGVsYXlzX2xpYl9uYW1lIjogIkZhdXN0IERlbGF5IExpYnJhcnkiIH0seyAiZGVsYXlzX2xpYl92ZXJzaW9uIjogIjAuMSIgfSx7ICJkZXNpZ25lciI6ICJSb2JlcnQgQS4gTW9vZyIgfSx7ICJmaWxlbmFtZSI6ICJmbGFuZ2VyRm9yQnJvd3Nlci5kc3AiIH0seyAiZmlsdGVyc19saWJfbG93cGFzczBfaGlnaHBhc3MxIjogIkNvcHlyaWdodCAoQykgMjAwMy0yMDE5IGJ5IEp1bGl1cyBPLiBTbWl0aCBJSUkgPGpvc0BjY3JtYS5zdGFuZm9yZC5lZHU+IiB9LHsgImZpbHRlcnNfbGliX25hbWUiOiAiRmF1c3QgRmlsdGVycyBMaWJyYXJ5IiB9LHsgImZpbHRlcnNfbGliX25sZjJfYXV0aG9yIjogIkp1bGl1cyBPLiBTbWl0aCBJSUkiIH0seyAiZmlsdGVyc19saWJfbmxmMl9jb3B5cmlnaHQiOiAiQ29weXJpZ2h0IChDKSAyMDAzLTIwMTkgYnkgSnVsaXVzIE8uIFNtaXRoIElJSSA8am9zQGNjcm1hLnN0YW5mb3JkLmVkdT4iIH0seyAiZmlsdGVyc19saWJfbmxmMl9saWNlbnNlIjogIk1JVC1zdHlsZSBTVEstNC4zIGxpY2Vuc2UiIH0seyAibGlicmFyeV9wYXRoIjogIkZhdXN0RFNQIiB9LHsgIm1hdGhzX2xpYl9hdXRob3IiOiAiR1JBTUUiIH0seyAibWF0aHNfbGliX2NvcHlyaWdodCI6ICJHUkFNRSIgfSx7ICJtYXRoc19saWJfbGljZW5zZSI6ICJMR1BMIHdpdGggZXhjZXB0aW9uIiB9LHsgIm1hdGhzX2xpYl9uYW1lIjogIkZhdXN0IE1hdGggTGlicmFyeSIgfSx7ICJtYXRoc19saWJfdmVyc2lvbiI6ICIyLjEiIH0seyAibmFtZSI6ICJmbGFuZ2VyRm9yQnJvd3NlciIgfSx7ICJvc2NpbGxhdG9yc19saWJfbmFtZSI6ICJGYXVzdCBPc2NpbGxhdG9yIExpYnJhcnkiIH0seyAib3NjaWxsYXRvcnNfbGliX3ZlcnNpb24iOiAiMC4wIiB9LHsgInNpZ25hbHNfbGliX25hbWUiOiAiRmF1c3QgU2lnbmFsIFJvdXRpbmcgTGlicmFyeSIgfSx7ICJzaWduYWxzX2xpYl92ZXJzaW9uIjogIjAuMCIgfV0sInVpIjogWyB7InR5cGUiOiAiaGdyb3VwIiwibGFiZWwiOiAiZmxhbmdlckZvckJyb3dzZXIiLCJpdGVtcyI6IFsgeyJ0eXBlIjogImhncm91cCIsImxhYmVsIjogIkVmZmVjdHMiLCJtZXRhIjogW3sgIjEiOiAiIiB9XSwiaXRlbXMiOiBbIHsidHlwZSI6ICJoZ3JvdXAiLCJsYWJlbCI6ICJGbGFuZ2VyIiwibWV0YSI6IFt7ICI1IjogIiIgfV0sIml0ZW1zIjogWyB7InR5cGUiOiAidmdyb3VwIiwibGFiZWwiOiAiS25vYnMiLCJtZXRhIjogW3sgIjAiOiAiIiB9XSwiaXRlbXMiOiBbIHsidHlwZSI6ICJjaGVja2JveCIsImxhYmVsIjogIkRlbGF5IiwiYWRkcmVzcyI6ICIvZmxhbmdlckZvckJyb3dzZXIvRWZmZWN0cy9GbGFuZ2VyL0tub2JzL0RlbGF5IiwiaW5kZXgiOiAxNjQ3NiwibWV0YSI6IFt7ICIxIjogIiIgfSx7ICJtaWRpIjogImN0cmwgNTAiIH1dfSx7InR5cGUiOiAidnNsaWRlciIsImxhYmVsIjogIlJhdGUiLCJhZGRyZXNzIjogIi9mbGFuZ2VyRm9yQnJvd3Nlci9FZmZlY3RzL0ZsYW5nZXIvS25vYnMvUmF0ZSIsImluZGV4IjogMzYsIm1ldGEiOiBbeyAiMSI6ICIiIH0seyAibWlkaSI6ICJjdHJsIDIiIH0seyAic3R5bGUiOiAia25vYiIgfSx7ICJ1bml0IjogIkh6IiB9XSwiaW5pdCI6IDAuNSwibWluIjogMCwibWF4IjogMTAsInN0ZXAiOiAwLjAxfSx7InR5cGUiOiAidnNsaWRlciIsImxhYmVsIjogIkRlcHRoIiwiYWRkcmVzcyI6ICIvZmxhbmdlckZvckJyb3dzZXIvRWZmZWN0cy9GbGFuZ2VyL0tub2JzL0RlcHRoIiwiaW5kZXgiOiAxNjQ5MiwibWV0YSI6IFt7ICIzIjogIiIgfSx7ICJtaWRpIjogImN0cmwgMyIgfSx7ICJzdHlsZSI6ICJrbm9iIiB9XSwiaW5pdCI6IDAuNzUsIm1pbiI6IDAsIm1heCI6IDEsInN0ZXAiOiAwLjAwMX0seyJ0eXBlIjogInZzbGlkZXIiLCJsYWJlbCI6ICJGZWVkYmFjayIsImFkZHJlc3MiOiAiL2ZsYW5nZXJGb3JCcm93c2VyL0VmZmVjdHMvRmxhbmdlci9Lbm9icy9GZWVkYmFjayIsImluZGV4IjogNzYsIm1ldGEiOiBbeyAiNSI6ICIiIH0seyAibWlkaSI6ICJjdHJsIDQiIH0seyAic3R5bGUiOiAia25vYiIgfV0sImluaXQiOiAwLCJtaW4iOiAtMC45OTUsIm1heCI6IDAuOTksInN0ZXAiOiAwLjAwMX0seyJ0eXBlIjogInZzbGlkZXIiLCJsYWJlbCI6ICJXYXZlc2hhcGUiLCJhZGRyZXNzIjogIi9mbGFuZ2VyRm9yQnJvd3Nlci9FZmZlY3RzL0ZsYW5nZXIvS25vYnMvV2F2ZXNoYXBlIiwiaW5kZXgiOiA0LCJtZXRhIjogW3sgIjciOiAiIiB9LHsgIm1pZGkiOiAiY3RybCA1NCIgfSx7ICJzdHlsZSI6ICJrbm9iIiB9XSwiaW5pdCI6IDAsIm1pbiI6IDAsIm1heCI6IDEsInN0ZXAiOiAwLjAwMX1dfSx7InR5cGUiOiAidmdyb3VwIiwibGFiZWwiOiAiU3dpdGNoZXMiLCJtZXRhIjogW3sgIjEiOiAiIiB9XSwiaXRlbXMiOiBbIHsidHlwZSI6ICJjaGVja2JveCIsImxhYmVsIjogIkVuYWJsZSIsImFkZHJlc3MiOiAiL2ZsYW5nZXJGb3JCcm93c2VyL0VmZmVjdHMvRmxhbmdlci9Td2l0Y2hlcy9FbmFibGUiLCJpbmRleCI6IDAsIm1ldGEiOiBbeyAiMCI6ICIiIH0seyAibWlkaSI6ICJjdHJsIDEwNSIgfV19LHsidHlwZSI6ICJjaGVja2JveCIsImxhYmVsIjogIkludmVydCIsImFkZHJlc3MiOiAiL2ZsYW5nZXJGb3JCcm93c2VyL0VmZmVjdHMvRmxhbmdlci9Td2l0Y2hlcy9JbnZlcnQiLCJpbmRleCI6IDE2NDg4LCJtZXRhIjogW3sgIjEiOiAiIiB9LHsgIm1pZGkiOiAiY3RybCA0OSIgfV19XX1dfV19XX1dfQ=="; }
 
 /*
  faust2wasm: GRAME 2017-2019
@@ -19,11 +19,11 @@ if (typeof (AudioWorkletNode) === "undefined") {
 	alert("AudioWorklet is not supported in this browser !")
 }
 
-class quadEchoNode extends AudioWorkletNode {
+class flangerForBrowserNode extends AudioWorkletNode {
 
     constructor(context, baseURL, options)
     {
-        super(context, 'quadEcho', options);
+        super(context, 'flangerForBrowser', options);
         
         this.baseURL = baseURL;
         this.json = options.processorOptions.json;
@@ -259,7 +259,7 @@ class quadEchoNode extends AudioWorkletNode {
         if (this.fCtrlLabel[ctrl] !== []) {
             for (var i = 0; i < this.fCtrlLabel[ctrl].length; i++) {
                 var path = this.fCtrlLabel[ctrl][i].path;
-                this.setParamValue(path, quadEchoNode.remap(value, 0, 127, this.fCtrlLabel[ctrl][i].min, this.fCtrlLabel[ctrl][i].max));
+                this.setParamValue(path, flangerForBrowserNode.remap(value, 0, 127, this.fCtrlLabel[ctrl][i].min, this.fCtrlLabel[ctrl][i].max));
                 if (this.output_handler) {
                     this.output_handler(path, this.getParamValue(path));
                 }
@@ -277,7 +277,7 @@ class quadEchoNode extends AudioWorkletNode {
     {
         for (var i = 0; i < this.fPitchwheelLabel.length; i++) {
             var pw = this.fPitchwheelLabel[i];
-            this.setParamValue(pw.path, quadEchoNode.remap(wheel, 0, 16383, pw.min, pw.max));
+            this.setParamValue(pw.path, flangerForBrowserNode.remap(wheel, 0, 16383, pw.min, pw.max));
             if (this.output_handler) {
                 this.output_handler(pw.path, this.getParamValue(pw.path));
             }
@@ -357,7 +357,7 @@ class quadEchoNode extends AudioWorkletNode {
 }
 
 // Factory class
-class quadEcho {
+class flangerForBrowser {
 
     /**
      * Factory constructor.
@@ -456,7 +456,7 @@ class quadEcho {
                 }
             };
 
-            let real_url = (this.baseURL === "") ? "quadEcho.wasm" : (this.baseURL + "/quadEcho.wasm");
+            let real_url = (this.baseURL === "") ? "flangerForBrowser.wasm" : (this.baseURL + "/flangerForBrowser.wasm");
             const dspFile = await fetch(real_url);
             const dspBuffer = await dspFile.arrayBuffer();
             const dspModule = await WebAssembly.compile(dspBuffer);
@@ -470,11 +470,11 @@ class quadEcho {
                 let options = { wasm_module: dspModule, json: json };
                 
                 let re = /JSON_STR/g;
-                let quadEchoProcessorString1 = quadEchoProcessorString.replace(re, json);
-                let real_url = window.URL.createObjectURL(new Blob([quadEchoProcessorString1], { type: 'text/javascript' }));
+                let flangerForBrowserProcessorString1 = flangerForBrowserProcessorString.replace(re, json);
+                let real_url = window.URL.createObjectURL(new Blob([flangerForBrowserProcessorString1], { type: 'text/javascript' }));
                 
                 this.context.audioWorklet.addModule(real_url).then(() => {
-                    this.node = new quadEchoNode(this.context, this.baseURL, 
+                    this.node = new flangerForBrowserNode(this.context, this.baseURL, 
                                         { numberOfInputs: (parseInt(json_object.inputs) > 0) ? 1 : 0,
                                         numberOfOutputs: (parseInt(json_object.outputs) > 0) ? 1 : 0,
                                         channelCount: Math.max(1, parseInt(json_object.inputs)),
@@ -482,7 +482,7 @@ class quadEcho {
                                         channelCountMode: "explicit",
                                         channelInterpretation: "speakers",
                                         processorOptions: options });
-                    this.node.onprocessorerror = () => { console.log('An error from quadEcho-processor was detected.');}
+                    this.node.onprocessorerror = () => { console.log('An error from flangerForBrowser-processor was detected.');}
                     return (this.node);
                 }).then((node) => {
                     resolve(node);
@@ -515,13 +515,13 @@ class quadEcho {
                         // the file has been loaded, instanciate GUI
                         // and get back the HTML elem
                         // HERE WE COULD REMOVE THE HARD CODED NAME
-                        var element = createquadEchoGUI(this.node);
+                        var element = createflangerForBrowserGUI(this.node);
                         resolve(element);
                     }
                 } else {
                     // LINK EXIST, WE AT LEAST CREATED ONE INSTANCE PREVIOUSLY
                     // so we can create another instance
-                    var element = createquadEchoGUI(this.node);
+                    var element = createflangerForBrowserGUI(this.node);
                     resolve(element);
                 }
             } catch (e) {
@@ -540,25 +540,25 @@ class quadEcho {
 
 // Template string for AudioWorkletProcessor
 
-let quadEchoProcessorString = `
+let flangerForBrowserProcessorString = `
 
     'use strict';
 
     // Monophonic Faust DSP
-    class quadEchoProcessor extends AudioWorkletProcessor {
+    class flangerForBrowserProcessor extends AudioWorkletProcessor {
         
         // JSON parsing functions
         static parse_ui(ui, obj, callback)
         {
             for (var i = 0; i < ui.length; i++) {
-                quadEchoProcessor.parse_group(ui[i], obj, callback);
+                flangerForBrowserProcessor.parse_group(ui[i], obj, callback);
             }
         }
         
         static parse_group(group, obj, callback)
         {
             if (group.items) {
-                quadEchoProcessor.parse_items(group.items, obj, callback);
+                flangerForBrowserProcessor.parse_items(group.items, obj, callback);
             }
         }
         
@@ -574,7 +574,7 @@ let quadEchoProcessorString = `
             if (item.type === "vgroup"
                 || item.type === "hgroup"
                 || item.type === "tgroup") {
-                quadEchoProcessor.parse_items(item.items, obj, callback);
+                flangerForBrowserProcessor.parse_items(item.items, obj, callback);
             } else if (item.type === "hbargraph"
                        || item.type === "vbargraph") {
                 // Nothing
@@ -595,7 +595,7 @@ let quadEchoProcessorString = `
             if (item.type === "vgroup"
                 || item.type === "hgroup"
                 || item.type === "tgroup") {
-                quadEchoProcessor.parse_items(item.items, obj, callback);
+                flangerForBrowserProcessor.parse_items(item.items, obj, callback);
             } else if (item.type === "hbargraph"
                        || item.type === "vbargraph") {
                 // Keep bargraph adresses
@@ -616,7 +616,7 @@ let quadEchoProcessorString = `
         {
             // Analyse JSON to generate AudioParam parameters
             var params = [];
-            quadEchoProcessor.parse_ui(JSON.parse(\`JSON_STR\`).ui, params, quadEchoProcessor.parse_item1);
+            flangerForBrowserProcessor.parse_ui(JSON.parse(\`JSON_STR\`).ui, params, flangerForBrowserProcessor.parse_item1);
             return params;
         }
        
@@ -690,7 +690,7 @@ let quadEchoProcessorString = `
                     }
             };
             
-            this.quadEcho_instance = new WebAssembly.Instance(options.processorOptions.wasm_module, importObject);
+            this.flangerForBrowser_instance = new WebAssembly.Instance(options.processorOptions.wasm_module, importObject);
             this.json_object = JSON.parse(options.processorOptions.json);
          
             this.output_handler = function(path, value) { this.port.postMessage({ path: path, value: value }); };
@@ -709,8 +709,8 @@ let quadEchoProcessorString = `
             this.sample_size = 4;
             this.integer_size = 4;
             
-            this.factory = this.quadEcho_instance.exports;
-            this.HEAP = this.quadEcho_instance.exports.memory.buffer;
+            this.factory = this.flangerForBrowser_instance.exports;
+            this.HEAP = this.flangerForBrowser_instance.exports.memory.buffer;
             this.HEAP32 = new Int32Array(this.HEAP);
             this.HEAPF32 = new Float32Array(this.HEAP);
 
@@ -785,7 +785,7 @@ let quadEchoProcessorString = `
                 }
                 
                 // Parse UI
-                quadEchoProcessor.parse_ui(this.json_object.ui, this, quadEchoProcessor.parse_item2);
+                flangerForBrowserProcessor.parse_ui(this.json_object.ui, this, flangerForBrowserProcessor.parse_item2);
                 
                 // Init DSP
                 this.factory.init(this.dsp, sampleRate); // 'sampleRate' is defined in AudioWorkletGlobalScope  
@@ -868,7 +868,7 @@ let quadEchoProcessorString = `
     // Globals
     const NUM_FRAMES = 128;
     try {
-        registerProcessor('quadEcho', quadEchoProcessor);
+        registerProcessor('flangerForBrowser', flangerForBrowserProcessor);
     } catch (error) {
         console.warn(error);
     }
@@ -876,8 +876,8 @@ let quadEchoProcessorString = `
 
 // WAP factory or npm package module
 if (typeof module === "undefined") {
-    window.quadEcho = quadEcho;
-    window.FaustquadEcho = quadEcho;
+    window.flangerForBrowser = flangerForBrowser;
+    window.FaustflangerForBrowser = flangerForBrowser;
 } else {
-    module.exports = { quadEcho };
+    module.exports = { flangerForBrowser };
 }

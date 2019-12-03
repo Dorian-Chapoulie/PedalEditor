@@ -26,7 +26,7 @@ process = ba.bypass1(fbp,flanger_mono_gui);
 
    dmax = 2048;
    odflange = 44; // ~1 ms at 44.1 kHz = min delay
-   dflange  = ((dmax-1)-odflange)*del_group(vslider("[1] Delay [midi:ctrl 50][style:knob]", 0.22, 0, 1, 1));
+   dflange  = ((dmax-1)-odflange)*del_group(1-checkbox("[1] Delay [midi:ctrl 50]"));
    freq     = ctl_group(vslider("[1] Rate [midi:ctrl 2] [unit:Hz] [style:knob]", 0.5, 0, 10, 0.01)) : si.smooth(ba.tau2pole(freqT60/6.91));
 
    freqT60  = 0.15661;
@@ -39,9 +39,9 @@ process = ba.bypass1(fbp,flanger_mono_gui);
    lfoshape = ctl_group(vslider("[7] Waveshape [midi:ctrl 54] [style:knob]", 0, 0, 1, 0.001));
    curdel   = odflange+dflange*lfo(freq);
 
-   fbp = 1-int(flsg(vslider("[0] Enable [midi:ctrl 105][style:knob]",0,0,1,1)));
+   fbp = int(flsg(checkbox("[0] Enable [midi:ctrl 105]")));
 
-   invert = flsg(vslider("[1] Invert [midi:ctrl 49][style:knob]",0,0,1,1):int);
+   invert = flsg(checkbox("[1] Invert [midi:ctrl 49]"));
 
 // This layout loosely follows the MiniMoog-V
 // Arturia-only features are labeled
