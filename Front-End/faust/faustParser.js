@@ -92,6 +92,7 @@ class FaustParser {
 
     addElement(elem) {
         let type, width, height;
+        let fontSize = 14;
 
         if(this.isAKnob(elem)) {
             type = 'knob';
@@ -109,6 +110,11 @@ class FaustParser {
             type = 'switch';
             width = 80;
             height = 50;
+        } else if(elem.type == 'label') {
+            type = 'label';
+            width = 80;
+            height = 30;
+            fontSize = 28;
         }
 
         let ret = {
@@ -121,7 +127,7 @@ class FaustParser {
             value: elem.init,
             label: elem.label,
             label_fontfamily: "Verdana",
-            label_fontsize: "14",
+            label_fontsize: fontSize,
             label_color: "#000000",
             type: type,
             // ATTENTION (MICHEL BUFFA) : all elems may not have min, max, step etc.
@@ -162,8 +168,14 @@ class FaustParser {
         return singleElements;
     }
 
-    pedalConfigFromUI(faustUI) {
-        return this.singleElementsFromGroupElements(faustUI[0]);
+    pedalConfigFromUI(faustUI, currentWapName) {
+        let elements = this.singleElementsFromGroupElements(faustUI[0]);
+
+        console.log("pedalConfigFromUI WapName = " + currentWapName);
+        // add the pedal label
+        elements.push(this.addElement({type:'label', label:currentWapName}));
+
+        return elements;
     }
 
 }

@@ -353,7 +353,7 @@
                         }
 
                         .selected:hover {
-                            /* border: 1px dashed black; */
+                            border: 1px dashed black;
                             cursor: move;
                         }
 
@@ -396,6 +396,11 @@
                         }
                         ${this.generateElementsStyles()}
                         
+                        .pedalLabelName {
+                          color: #FFFFFF;
+                          background: transparent;
+                          text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;                        }                        
+
                         .pedalLabel{
                             position: absolute;
                             /* top: 225px; */
@@ -712,6 +717,7 @@
       if (config.name) {
         for (let element of config.elements) {
           if (element.type == "label") {
+            console.log("ADDING LABEL FOR PEDALE NAME #########")
             let label = this.addElement("label", config.name);
             label.label = element.label;
             label.x = element.x;

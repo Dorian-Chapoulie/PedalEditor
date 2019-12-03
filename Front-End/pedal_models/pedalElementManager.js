@@ -47,6 +47,8 @@ class PedalElementManager {
     pedalElementContainer.addEventListener(
       "mousedown",
       function(e) {
+        e.stopPropagation();
+        e.preventDefault();
         that.pedal.selectElement(containerId);
       },
       true
@@ -194,6 +196,7 @@ class PedalElementManager {
       case "slider":
         return this.addSliderHtml(pedalElementConfig, id);
       case "label":
+        console.log("LABEL addElementHtml pedalElementManager.js ###################")
         return this.addLabelHtml(pedalElementConfig, id);
     }
   }
@@ -204,7 +207,7 @@ class PedalElementManager {
     knobContainer.setAttribute("class", "knob");
     knobContainer.setAttribute("id", id ? id : knobConfig.id);
 
-    var knobElem = this.doc.createElement("webaudio-konb");
+    var knobElem = this.doc.createElement("webaudio-knob");
 
     knobElem.setAttribute("sprites", 100);
     knobElem.setAttribute("value", 0);
@@ -233,6 +236,7 @@ class PedalElementManager {
     labelContainer.setAttribute("class", "label");
     labelContainer.setAttribute("id", id ? id : labelConfig.id);
     labelContainer.innerHTML = labelConfig.label;
+    labelContainer.classList.add("pedalLabelName")
 
     //labelElement.setAttribute('style',`color:#${labelConfig.label_color}; font-family:${labelConfig.label_fontfamily}; font-size:${labelConfig.label_fontsize}px`);
     //labelElement.innerHTML = labelConfig.label;

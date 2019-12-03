@@ -3035,7 +3035,7 @@
             console.log("### faustUI present ! ####")
             console.log(window.faustUI);
 
-            let detail = faust.pedalConfigFromUI(window.faustUI);
+            let detail = faust.pedalConfigFromUI(window.faustUI, currentWapName);
 
             let pedalConfig = {
                 name: currentWapName,

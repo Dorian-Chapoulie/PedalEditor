@@ -137,7 +137,7 @@ figcaption {
   // target elements with the "draggable" class
   interact('.draggable')
     .draggable({
-      ignoreFrom: 'webaudio-knob, webaudio-switch, webaudio-slider',
+      ignoreFrom: 'webaudio-knob, webaudio-switch, webaudio-slider, div.label',
       onmove: window.dragMoveListener,
     })
     .resizable({

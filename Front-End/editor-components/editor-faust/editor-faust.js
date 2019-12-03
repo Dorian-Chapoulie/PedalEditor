@@ -57,8 +57,8 @@
     // updated in order to display a much better
     // default layout instead of all elems one below
     // the other...
-    pedalConfigFromUI(faustUI) {
-      let elements = this.faustParser.pedalConfigFromUI(faustUI);
+    pedalConfigFromUI(faustUI, currentWapName) {
+      let elements = this.faustParser.pedalConfigFromUI(faustUI, currentWapName);
       let width = Math.max(...elements.map(elm => elm.width)) + 20;
       width = width < 130 ? 130 : width;
       let height = 10;

@@ -5,4 +5,5 @@ declare description "Freeverb demo application.";
 
 import("stdfaust.lib");
 
-process = dm.freeverb_demo;
+freeverb = dm.freeverb_demo;
+process = ba.bypass_fade(ma.SR/10, checkbox("bypass"), freeverb);
