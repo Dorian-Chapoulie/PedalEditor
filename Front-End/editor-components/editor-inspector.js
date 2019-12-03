@@ -36,6 +36,17 @@
                 inputElem.value = value;
             }
 
+            console.log("elem font = " + elem.label_fontfamily)
+
+            // show current font in menu
+            let menuFonts = this.root.querySelector('#inspector-label-font-family');
+            for(var i = 0;i < menuFonts.options.length;i++){
+                //console.log("select.options[i].value = " + menuFonts.options[i].value);
+                if(menuFonts.options[i].value === elem.label_fontfamily){
+                    menuFonts.options[i].selected = true;
+                }
+            }
+            // show previews images of knobs, slider switches depending in elem type...
             this.displayPreviews(elem.type);
         }
 
@@ -100,7 +111,7 @@
             for (let backgroundImageElem of this.root.querySelectorAll('select')) {
                 backgroundImageElem.addEventListener('change', (event) => {
                     this.editablePedal.setSelectedElementAttribute(event.target.name, event.target.value);
-                    //console.log(event.target.name + event.target.value);
+                    console.log(event.target.name + event.target.value);
                 })
             }
 
