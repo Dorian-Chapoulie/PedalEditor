@@ -143,8 +143,10 @@ app.post("/generate", multerData.fields([]), function(req, res) {
   let wapDir = currentDir + "/functional-pedals/published/" + wapName;
   console.log("/generate, checking if dir " + wapDir + "exists...");
 
-  if (!fs.existsSync(wapDir)) {
-    console.log("it does not exists, let's create it...");
+  if (fs.existsSync(wapDir)) {
+    console.log("Dir existed, deleting it...");
+    rimraf(wapDir);
+  }
     fs.mkdirSync(wapDir);
     console.log("...created, let's copy assets into it...");
     // copy inside the assets
@@ -161,7 +163,7 @@ app.post("/generate", multerData.fields([]), function(req, res) {
       wapDir
     );
     console.log("mp3 file needed to WAP embedded tester copied...");
-  }
+  //}
 
   fs.writeFile(wapDir + "/main.html", req.body.generated, err => {
     if (err) {
@@ -247,5 +249,24 @@ function copyFolderRecursiveSync(source, target) {
         copyFileSync(curSource, targetFolder);
       }
     });
+  }
+}
+
+/**
+ * Remove directory recursively
+ * @param {string} dir_path
+ * @see https://stackoverflow.com/a/42505874/3027390
+ */
+function rimraf(dir_path) {
+  if (fs.existsSync(dir_path)) {
+      fs.readdirSync(dir_path).forEach(function(entry) {
+          var entry_path = path.join(dir_path, entry);
+          if (fs.lstatSync(entry_path).isDirectory()) {
+              rimraf(entry_path);
+          } else {
+              fs.unlinkSync(entry_path);
+          }
+      });
+      fs.rmdirSync(dir_path);
   }
 }

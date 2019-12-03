@@ -21,10 +21,12 @@ class FunctionalPedalGenerator {
             <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webcomponents-lite.js"></script>
             <script>
             </script>
-            <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webaudio-controls.js"></script>
+            <script>
             WebAudioControlsOptions = {
                 useMidi: 1,
             };
+            </script>
+            <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webaudio-controls.js"></script>
             `;
 
     /* let functionalPedalCode = `

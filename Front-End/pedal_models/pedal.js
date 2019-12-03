@@ -479,6 +479,7 @@
           knobElem.setAttribute("min", knob.min);
           knobElem.setAttribute("max", knob.max);
           knobElem.setAttribute("step", knob.step);
+          knobElem.setAttribute("midilearn", true);
 
           // calculated automatically
           //knobElem.setAttribute('step', 1);
@@ -519,6 +520,7 @@
 
           switchElem.setAttribute("height", s.height);
           switchElem.setAttribute("width", s.width);
+          switchElem.setAttribute("midilearn", true);
 
           switchContainer.appendChild(switchElem);
 
@@ -553,6 +555,8 @@
           sliderElem.setAttribute("max", slider.max);
           sliderElem.setAttribute("min", slider.min);
           sliderElem.setAttribute("step", slider.step);
+          sliderElem.setAttribute("midilearn", true);
+
           //console.log("pedal.js SLIDER STEP = " + slider.step);
 
           sliderElem.src = ASSETS_PATH + "/sliders/" + slider.model;
