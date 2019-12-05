@@ -94,7 +94,7 @@ class FunctionalPedalGenerator {
 
     let funcFixRelativeImagePathsInCSSContent = `
         // change webaudiocontrols relative paths for spritesheets to absolute
-            let webaudioControls = this._root.querySelectorAll("webaudio-knob, webaudio-slider, webaudio-switch");
+            let webaudioControls = this._root.querySelectorAll("webaudio-knob, webaudio-slider, webaudio-switch, img");
             webaudioControls.forEach(e => {
                 let currentImagePath = e.getAttribute("src");
                 if (currentImagePath !== undefined) {
@@ -105,14 +105,14 @@ class FunctionalPedalGenerator {
                 }
             });
 
-            let imgs = this._root.querySelectorAll("img");
-            imgs.forEach(e => {
-              let currentImagePath = e.getAttribute("src");
+            let sliders = this._root.querySelectorAll("webaudio-slider");
+            sliders.forEach(e => {
+              let currentImagePath = e.getAttribute("knobsrc");
               if (currentImagePath !== undefined) {
                   console.log("Got img src as " + e.getAttribute("src"));
-                  let imagePath = e.getAttribute("src");
-                  e.setAttribute("src", this.basePath + "/" + imagePath);
-                  console.log("After fix : img src as " + e.getAttribute("src"));
+                  let imagePath = e.getAttribute("knobsrc");
+                  e.setAttribute("knobsrc", this.basePath + "/" + imagePath);
+                  console.log("After fix : slider knobsrc as " + e.getAttribute("knobsrc"));
               }
           });
             `;

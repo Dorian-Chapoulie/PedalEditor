@@ -3,18 +3,22 @@
             <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webcomponents-lite.js"></script>
             <script>
             </script>
-            <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webaudio-controls.js"></script>
+            <script>
             WebAudioControlsOptions = {
                 useMidi: 1,
             };
-            <template><style>	
+            </script>
+            <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webaudio-controls.js"></script>
+            <template id="stionephaseranais"><style>	
                         .pedal{
                             display: block;
+                            background:linear-gradient(rgba(130, 53, 101, 1), rgba(30, 30, 30, 1));
                             background-color: #7caeff;
-                            width: 170px;
-                            height: 440px;
+                            width: 239.2734375px;
+                            height: 274.21875px;
                             border-radius: 10px;
                             position: relative;
+                            box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
                             /* bring your own prefixes */
                             /* transform: translate(-50%, -50%); */
                         }
@@ -22,9 +26,10 @@
                         
                         #background-image {
                             //border: solid 2px black;
-                            width: 170px;
-                            height: 440px;
-                            opacity: 1;
+                            width: 239.2734375px;
+                            height: 274.21875px;
+                            opacity: 0.7;
+                            border-radius: 10px;
                             /* display: none; */
                             //visibility: hidden;
                         }
@@ -38,8 +43,8 @@
                             cursor: nwse-resize;
                             width: 10px;
                             height: 10px;
-                            left: 162px;
-                            top: 432px;
+                            left: 231.2734375px;
+                            top: 266.21875px;
                             border: 1px solid black;
                         } */
 
@@ -51,6 +56,8 @@
 
                         .container {
                             position: relative;
+                            width: 239.2734375px;
+                            height: 274.21875px;
                             /* font-family: Arial; */
                           }
                           
@@ -89,7 +96,7 @@
                         }
 
                         .selected:hover {
-                            /* border: 1px dashed black; */
+                            border: 1px dashed black;
                             cursor: move;
                         }
 
@@ -131,21 +138,9 @@
                             right: 0px;
                         }
                         
-                    #Bypass {
-                        left: 45px;
-                        top: 10px;
-                    }
-
-                    #Bypass div {
-                        color: #000000;
-                        font-family: "Verdana";
-                        font-size: 14px;
-                        
-                    }
-                
                     #Color {
-                        left: 10px;
-                        top: 90px;
+                        left: 172px;
+                        top: 110px;
                     }
 
                     #Color div {
@@ -155,55 +150,81 @@
                         
                     }
                 
-                    #LFO_frequency {
-                        left: 10px;
-                        top: 160px;
+                    #LFO {
+                        left: 24px;
+                        top: 19px;
                     }
 
-                    #LFO_frequency div {
+                    #LFO div {
                         color: #000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
-                    #Feedback_depth {
-                        left: 10px;
-                        top: 230px;
+                    #Feedback {
+                        left: 81px;
+                        top: 21px;
                     }
 
-                    #Feedback_depth div {
+                    #Feedback div {
                         color: #000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
-                    #Feedback_bass_cut {
-                        left: 10px;
-                        top: 300px;
+                    #bass_cut {
+                        left: 155px;
+                        top: 18px;
                     }
 
-                    #Feedback_bass_cut div {
+                    #bass_cut div {
                         color: #000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
-                    #Dry/wet_mix {
-                        left: 10px;
-                        top: 370px;
+                    #mix {
+                        left: 24px;
+                        top: 104px;
                     }
 
-                    #Dry/wet_mix div {
+                    #mix div {
                         color: #000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
+                    #Bypass {
+                        left: 92px;
+                        top: 161px;
+                    }
+
+                    #Bypass div {
+                        color: #000000;
+                        font-family: "Verdana";
+                        font-size: 14px;
                         
+                    }
+                
+                #label_409 {
+                            left: 38px;
+                            top: 214px;
+                            color: #000000;
+                            font-family: "Verdana";
+                            font-size: 28px;
+                        }
+
+                
+                        
+                        .pedalLabelName {
+                          color: #FFFFFF;
+                          background: transparent;
+                          text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;                        }                        
+
                         .pedalLabel{
                             position: absolute;
                             /* top: 225px; */
@@ -228,13 +249,13 @@
                         #knob1-label{
                             top: 84px;
                             left: 43px;
-                        }</style><div class="pedal draggable" id="pedal" style="width: 170px; height: 541.19px; transform: translate(0px, -101.19px);" data-x="0" data-y="-101.18962097167969">
+                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-311.145px, -158.66px);" data-x="-311.14453125" data-y="-158.66015625">
     <div id="resize"></div>
 
 
 
     <div class="container" id="txtcontainer">
-      
+      <img id="background-image" src="./img/background/2.jpg">
 
       <h4></h4>
       <p class="pedalLabel" id="test"></p>
@@ -246,8 +267,8 @@
         <figcaption>tototo</figcaption>
     </figure> -->
     <!-- <div class="text-block" id="froala-editor"></div> -->
-  <div class="switch" id="Bypass"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" style="height: 50px;" id="/StionePHASERANAIS/Bypass"></webaudio-switch><div>Bypass</div></div><div class="slider" id="Color"><webaudio-slider value="1" height="40" width="150" max="1" min="0" step="1" src="./img/sliders/slider1.png" knobsrc="./img/sliders/sliderKnob.png" style="height: 40px;" id="/StionePHASERANAIS/Color"></webaudio-slider><div>Color</div></div><div class="slider" id="LFO_frequency"><webaudio-slider value="0.2" height="40" width="150" max="5" min="0.01" step="0.01" src="./img/sliders/slider1.png" knobsrc="./img/sliders/sliderKnob.png" style="height: 40px;" id="/StionePHASERANAIS/LFO_frequency"></webaudio-slider><div>LFO_frequency</div></div><div class="slider" id="Feedback_depth"><webaudio-slider value="75" height="40" width="150" max="99" min="0" step="1" src="./img/sliders/slider1.png" knobsrc="./img/sliders/sliderKnob.png" style="height: 40px;" id="/StionePHASERANAIS/Feedback_depth"></webaudio-slider><div>Feedback_depth</div></div><div class="slider" id="Feedback_bass_cut"><webaudio-slider value="500" height="40" width="150" max="5000" min="10" step="1" src="./img/sliders/slider1.png" knobsrc="./img/sliders/sliderKnob.png" style="height: 40px;" id="/StionePHASERANAIS/Feedback_bass_cut"></webaudio-slider><div>Feedback_bass_cut</div></div><div class="slider" id="Dry/wet_mix"><webaudio-slider value="50" height="40" width="150" max="100" min="0" step="1" src="./img/sliders/slider1.png" knobsrc="./img/sliders/sliderKnob.png" style="height: 40px;" id="/StionePHASERANAIS/Dry/wet_mix"></webaudio-slider><div>Dry_wet_mix</div></div></div></template><script>
-        let StionePHASERANAISTemp = document.currentScript.ownerDocument.querySelector('template');
+  <div class="knob  " id="Color"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="1" midilearn="true" value="1" style="height: 50px;" id="/StionePHASERANAIS/Color"></webaudio-knob><div style="text-align:center">Color</div></div><div class="knob " id="LFO"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0.01" max="5" step="0.01" midilearn="true" value="0.2" style="height: 50px;" id="/StionePHASERANAIS/LFO"></webaudio-knob><div style="text-align:center">LFO</div></div><div class="knob " id="Feedback"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="99" step="1" midilearn="true" value="75" style="height: 50px;" id="/StionePHASERANAIS/Feedback"></webaudio-knob><div style="text-align:center">Feedback</div></div><div class="knob  " id="bass_cut"><webaudio-knob src="./img/knobs/Jambalaya.png" height="50" width="50" sprites="100" min="10" max="5000" step="1" midilearn="true" value="500" style="height: 50px;" id="/StionePHASERANAIS/bass_cut"></webaudio-knob><div style="text-align:center">bass_cut</div></div><div class="knob " id="mix"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="100" step="1" midilearn="true" value="50" style="height: 50px;" id="/StionePHASERANAIS/mix"></webaudio-knob><div style="text-align:center">mix</div></div><div class="switch    " id="Bypass"><webaudio-switch src="./img/switches/switch_1.png" height="30.85106382978724" width="58" midilearn="true" style="height: 30.8511px;" id="/StionePHASERANAIS/Bypass"></webaudio-switch><div>Bypass</div></div><div class="label pedalLabelName" id="label_409">Phaser extra</div></div></template><script>
+        let StionePHASERANAISTemp = document.currentScript.ownerDocument.querySelector('#stionephaseranais');
         class StionePHASERANAISGui extends HTMLElement {
     
         
@@ -302,6 +323,17 @@
                     //console.log("After fix : wc src as " + e.getAttribute("src"));
                 }
             });
+
+            let imgs = this._root.querySelectorAll("img");
+            imgs.forEach(e => {
+              let currentImagePath = e.getAttribute("src");
+              if (currentImagePath !== undefined) {
+                  console.log("Got img src as " + e.getAttribute("src"));
+                  let imagePath = e.getAttribute("src");
+                  e.setAttribute("src", this.basePath + "/" + imagePath);
+                  console.log("After fix : img src as " + e.getAttribute("src"));
+              }
+          });
             
             }
         
@@ -320,7 +352,7 @@
                
             console.log("Custom element attributes changed.");
             this.state = JSON.parse(this.getAttribute('state'));
-            let tmp = "/undefined/bypass";
+            let tmp = "/StionePHASERANAIS/bypass";
             if (this.state[tmp] == 1) {
             this._root.querySelector("#switch1").value = 0;
             this.isOn = false;
@@ -342,11 +374,11 @@
             this.boundingRect = {
                 dataWidth: {
                 type: Number,
-                value: 170
+                value: 239.2734375
                 },
                 dataHeight: {
                 type: Number,
-                value: 440
+                value: 274.21875
                 }
           };
           return this.boundingRect;
@@ -363,7 +395,7 @@
                
             // Sets the background image and style.
             var background = this._root.querySelector('img');
-            background.src = this._plug.URL + '/assets/undefined';
+            background.src = this._plug.URL + '/assets/2.jpg';
             background.style = 'border-radius : 10px;'
             this._root.querySelectorAll(".knob").forEach((knob) => {
 				knob.querySelector("webaudio-knob").setAttribute('src', this._plug.URL + '/assets/MiniMoog_Main.png');
@@ -378,7 +410,12 @@
             }
         
             setKnobs() {
-               
+               this._root.getElementById("/StionePHASERANAIS/Color").addEventListener("input", (e) =>this._plug.setParam("/StionePHASERANAIS/Color", e.target.value));
+this._root.getElementById("/StionePHASERANAIS/LFO").addEventListener("input", (e) =>this._plug.setParam("/StionePHASERANAIS/LFO", e.target.value));
+this._root.getElementById("/StionePHASERANAIS/Feedback").addEventListener("input", (e) =>this._plug.setParam("/StionePHASERANAIS/Feedback", e.target.value));
+this._root.getElementById("/StionePHASERANAIS/bass_cut").addEventListener("input", (e) =>this._plug.setParam("/StionePHASERANAIS/bass_cut", e.target.value));
+this._root.getElementById("/StionePHASERANAIS/mix").addEventListener("input", (e) =>this._plug.setParam("/StionePHASERANAIS/mix", e.target.value));
+
             }
         
             setSwitchListener() {
@@ -395,12 +432,7 @@
             }
         
             setSliders() {
-               this._root.getElementById("/StionePHASERANAIS/Color").addEventListener("input", (e) =>this._plug.setParam("/StionePHASERANAIS/Color", e.target.value));
-this._root.getElementById("/StionePHASERANAIS/LFO_frequency").addEventListener("input", (e) =>this._plug.setParam("/StionePHASERANAIS/LFO_frequency", e.target.value));
-this._root.getElementById("/StionePHASERANAIS/Feedback_depth").addEventListener("input", (e) =>this._plug.setParam("/StionePHASERANAIS/Feedback_depth", e.target.value));
-this._root.getElementById("/StionePHASERANAIS/Feedback_bass_cut").addEventListener("input", (e) =>this._plug.setParam("/StionePHASERANAIS/Feedback_bass_cut", e.target.value));
-this._root.getElementById("/StionePHASERANAIS/Dry/wet_mix").addEventListener("input", (e) =>this._plug.setParam("/StionePHASERANAIS/Dry/wet_mix", e.target.value));
-
+               
             }
         
             setSwitches() {
