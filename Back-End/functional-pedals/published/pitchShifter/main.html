@@ -3,16 +3,19 @@
             <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webcomponents-lite.js"></script>
             <script>
             </script>
-            <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webaudio-controls.js"></script>
+            <script>
             WebAudioControlsOptions = {
                 useMidi: 1,
             };
+            </script>
+            <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webaudio-controls.js"></script>
             <template id="pitchshifter"><style>	
                         .pedal{
                             display: block;
-                            background-color: #7caeff;
-                            width: 130px;
-                            height: 330px;
+                            background:linear-gradient(rgba(30, 100, 130, 0.6), rgba(207, 226, 216, 0.6));
+                            background-color: #ff5265;
+                            width: 206.359375px;
+                            height: 288.12890625px;
                             border-radius: 10px;
                             position: relative;
                             box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
@@ -23,9 +26,10 @@
                         
                         #background-image {
                             //border: solid 2px black;
-                            width: 130px;
-                            height: 330px;
-                            opacity: 1;
+                            width: 206.359375px;
+                            height: 288.12890625px;
+                            opacity: 0.5;
+                            border-radius: 10px;
                             /* display: none; */
                             //visibility: hidden;
                         }
@@ -39,8 +43,8 @@
                             cursor: nwse-resize;
                             width: 10px;
                             height: 10px;
-                            left: 122px;
-                            top: 322px;
+                            left: 198.359375px;
+                            top: 280.12890625px;
                             border: 1px solid black;
                         } */
 
@@ -52,8 +56,8 @@
 
                         .container {
                             position: relative;
-                            width: 130px;
-                            height: 330px;
+                            width: 206.359375px;
+                            height: 288.12890625px;
                             /* font-family: Arial; */
                           }
                           
@@ -61,7 +65,7 @@
                             position: absolute;
                             bottom: 20px;
                             right: 20px;
-                            background-color: #7caeff;
+                            background-color: #ff5265;
                             color: white;
                             padding-left: 20px;
                             padding-right: 20px;
@@ -92,7 +96,7 @@
                         }
 
                         .selected:hover {
-                            /* border: 1px dashed black; */
+                            border: 1px dashed black;
                             cursor: move;
                         }
 
@@ -140,49 +144,63 @@
                     }
 
                     #shift div {
-                        color: 000000;
+                        color: #000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
                     #window {
-                        left: 40px;
-                        top: 90px;
+                        left: 111px;
+                        top: 8px;
                     }
 
                     #window div {
-                        color: 000000;
+                        color: #000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
                     #xfade {
-                        left: 40px;
-                        top: 170px;
+                        left: 77px;
+                        top: 80px;
                     }
 
                     #xfade div {
-                        color: 000000;
+                        color: #000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
                     #bypass {
-                        left: 25px;
-                        top: 250px;
+                        left: 72px;
+                        top: 166px;
                     }
 
                     #bypass div {
-                        color: 000000;
+                        color: #000000;
                         font-family: "Verdana";
                         font-size: 14px;
                         
                     }
                 
+                #label_858 {
+                            left: 29px;
+                            top: 226px;
+                            color: #000000;
+                            font-family: "Verdana";
+                            font-size: 28px;
+                        }
+
+                
                         
+                        .pedalLabelName {
+                          color: #FFFFFF;
+                          background: transparent;
+                          text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;                        }                        
+
                         .pedalLabel{
                             position: absolute;
                             /* top: 225px; */
@@ -207,13 +225,13 @@
                         #knob1-label{
                             top: 84px;
                             left: 43px;
-                        }</style><div class="pedal draggable" id="pedal" style="">
+                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-245.324px, -162.668px);" data-x="-245.32421875" data-y="-162.66796875">
     <div id="resize"></div>
 
 
 
     <div class="container" id="txtcontainer">
-      
+      <img id="background-image" src="./img/background/image2.png">
 
       <h4></h4>
       <p class="pedalLabel" id="test"></p>
@@ -225,7 +243,7 @@
         <figcaption>tototo</figcaption>
     </figure> -->
     <!-- <div class="text-block" id="froala-editor"></div> -->
-  <div class="knob" id="shift"><webaudio-knob src="./img/knobs/MarkVI.PNG" height="70" width="70" sprites="100" min="-12" max="12" step="0.1" value="0" style="height: 70px;" id="/pitchShifter/Pitch_Shifter/shift"></webaudio-knob><div style="text-align:center">shift</div></div><div class="knob" id="window"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="50" max="10000" step="1" value="1000" style="height: 50px;" id="/pitchShifter/Pitch_Shifter/window"></webaudio-knob><div style="text-align:center">window</div></div><div class="knob" id="xfade"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="1" max="10000" step="1" value="10" style="height: 50px;" id="/pitchShifter/Pitch_Shifter/xfade"></webaudio-knob><div style="text-align:center">xfade</div></div><div class="switch" id="bypass"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" style="height: 50px;" id="/pitchShifter/bypass"></webaudio-switch><div>bypass</div></div></div></template><script>
+  <div class="knob " id="shift"><webaudio-knob src="./img/knobs/Jambalaya.png" height="50" width="50" sprites="100" min="-12" max="12" step="0.1" midilearn="true" value="0" style="height: 50px;" id="/pitchShifter/Pitch_Shifter/shift"></webaudio-knob><div style="text-align:center">shift</div></div><div class="knob  " id="window"><webaudio-knob src="./img/knobs/Jambalaya.png" height="50" width="50" sprites="100" min="50" max="10000" step="1" midilearn="true" value="1000" style="height: 50px;" id="/pitchShifter/Pitch_Shifter/window"></webaudio-knob><div style="text-align:center">window</div></div><div class="knob  " id="xfade"><webaudio-knob src="./img/knobs/Prophetic_0-10_black_large_80x80.png" height="64.09216589861748" width="64.09216589861748" sprites="100" min="1" max="10000" step="1" midilearn="true" value="10" style="height: 64.0922px;" id="/pitchShifter/Pitch_Shifter/xfade"></webaudio-knob><div style="text-align:center">xfade</div></div><div class="switch" id="bypass"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" midilearn="true" style="height: 50px;" id="/pitchShifter/bypass"></webaudio-switch><div>bypass</div></div><div class="label pedalLabelName " id="label_858">pitchShifter</div></div></template><script>
         let pitchShifterTemp = document.currentScript.ownerDocument.querySelector('#pitchshifter');
         class pitchShifterGui extends HTMLElement {
     
@@ -321,11 +339,11 @@
             this.boundingRect = {
                 dataWidth: {
                 type: Number,
-                value: 130
+                value: 206.359375
                 },
                 dataHeight: {
                 type: Number,
-                value: 330
+                value: 288.12890625
                 }
           };
           return this.boundingRect;
@@ -342,7 +360,7 @@
                
             // Sets the background image and style.
             var background = this._root.querySelector('img');
-            background.src = this._plug.URL + '/assets/undefined';
+            background.src = this._plug.URL + '/assets/image2.png';
             background.style = 'border-radius : 10px;'
             this._root.querySelectorAll(".knob").forEach((knob) => {
 				knob.querySelector("webaudio-knob").setAttribute('src', this._plug.URL + '/assets/MiniMoog_Main.png');

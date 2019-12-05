@@ -104,6 +104,17 @@ class FunctionalPedalGenerator {
                     //console.log("After fix : wc src as " + e.getAttribute("src"));
                 }
             });
+
+            let imgs = this._root.querySelectorAll("img");
+            imgs.forEach(e => {
+              let currentImagePath = e.getAttribute("src");
+              if (currentImagePath !== undefined) {
+                  console.log("Got img src as " + e.getAttribute("src"));
+                  let imagePath = e.getAttribute("src");
+                  e.setAttribute("src", this.basePath + "/" + imagePath);
+                  console.log("After fix : img src as " + e.getAttribute("src"));
+              }
+          });
             `;
 
     let funcSetImageBackgroundContent = `

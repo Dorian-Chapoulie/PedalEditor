@@ -3,18 +3,22 @@
             <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webcomponents-lite.js"></script>
             <script>
             </script>
-            <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webaudio-controls.js"></script>
+            <script>
             WebAudioControlsOptions = {
                 useMidi: 1,
             };
-            <template><style>	
+            </script>
+            <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webaudio-controls.js"></script>
+            <template id="phaserx2"><style>	
                         .pedal{
                             display: block;
+                            background:null;
                             background-color: #7caeff;
                             width: 130px;
-                            height: 890px;
+                            height: 950px;
                             border-radius: 10px;
                             position: relative;
+                            box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
                             /* bring your own prefixes */
                             /* transform: translate(-50%, -50%); */
                         }
@@ -23,8 +27,9 @@
                         #background-image {
                             //border: solid 2px black;
                             width: 130px;
-                            height: 890px;
+                            height: 950px;
                             opacity: 1;
+                            border-radius: 10px;
                             /* display: none; */
                             //visibility: hidden;
                         }
@@ -39,7 +44,7 @@
                             width: 10px;
                             height: 10px;
                             left: 122px;
-                            top: 882px;
+                            top: 942px;
                             border: 1px solid black;
                         } */
 
@@ -51,6 +56,8 @@
 
                         .container {
                             position: relative;
+                            width: 130px;
+                            height: 950px;
                             /* font-family: Arial; */
                           }
                           
@@ -89,7 +96,7 @@
                         }
 
                         .selected:hover {
-                            /* border: 1px dashed black; */
+                            border: 1px dashed black;
                             cursor: move;
                         }
 
@@ -144,8 +151,8 @@
                     }
                 
                     #Feedback_Gain {
-                        left: 141px;
-                        top: 29px;
+                        left: 40px;
+                        top: 90px;
                     }
 
                     #Feedback_Gain div {
@@ -180,8 +187,8 @@
                     }
                 
                     #Notch_Width {
-                        left: 193px;
-                        top: 95px;
+                        left: 40px;
+                        top: 330px;
                     }
 
                     #Notch_Width div {
@@ -192,8 +199,8 @@
                     }
                 
                     #NotchFreq {
-                        left: 224px;
-                        top: 216px;
+                        left: 40px;
+                        top: 410px;
                     }
 
                     #NotchFreq div {
@@ -204,8 +211,8 @@
                     }
                 
                     #Speed {
-                        left: 297px;
-                        top: 313px;
+                        left: 40px;
+                        top: 490px;
                     }
 
                     #Speed div {
@@ -216,8 +223,8 @@
                     }
                 
                     #level {
-                        left: 10px;
-                        top: 340px;
+                        left: 40px;
+                        top: 810px;
                     }
 
                     #level div {
@@ -228,8 +235,8 @@
                     }
                 
                     #VibratoMode {
-                        left: 158px;
-                        top: 301px;
+                        left: 25px;
+                        top: 570px;
                     }
 
                     #VibratoMode div {
@@ -240,8 +247,8 @@
                     }
                 
                     #bypass {
-                        left: 286px;
-                        top: 28px;
+                        left: 25px;
+                        top: 650px;
                     }
 
                     #bypass div {
@@ -252,8 +259,8 @@
                     }
                 
                     #invert {
-                        left: 141px;
-                        top: 39px;
+                        left: 25px;
+                        top: 730px;
                     }
 
                     #invert div {
@@ -263,7 +270,21 @@
                         
                     }
                 
+                #label_145 {
+                            left: 25px;
+                            top: 890px;
+                            color: #000000;
+                            font-family: "Verdana";
+                            font-size: 28px;
+                        }
+
+                
                         
+                        .pedalLabelName {
+                          color: #FFFFFF;
+                          background: transparent;
+                          text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;                        }                        
+
                         .pedalLabel{
                             position: absolute;
                             /* top: 225px; */
@@ -288,13 +309,13 @@
                         #knob1-label{
                             top: 84px;
                             left: 43px;
-                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-143.455px, -366.001px); width: 397.873px; height: 434.343px; box-shadow: rgba(0, 0, 0, 0.7) 4px 5px 6px, rgba(0, 0, 0, 0.2) -2px -2px 5px 0px inset, rgba(255, 255, 255, 0.2) 3px 1px 1px 4px inset, rgba(0, 0, 0, 0.9) 1px 0px 1px 0px, rgba(0, 0, 0, 0.9) 0px 2px 1px 0px, rgba(0, 0, 0, 0.9) 1px 1px 1px 0px; background: linear-gradient(rgb(21, 83, 141), rgb(16, 67, 114));" data-x="-143.45526123046875" data-y="-366.00140380859375">
+                        }</style><div class="pedal draggable" id="pedal" style="">
     <div id="resize"></div>
 
 
 
     <div class="container" id="txtcontainer">
-      
+      <img id="background-image" src="./img/background/2.jpg">
 
       <h4></h4>
       <p class="pedalLabel" id="test"></p>
@@ -306,8 +327,8 @@
         <figcaption>tototo</figcaption>
     </figure> -->
     <!-- <div class="text-block" id="froala-editor"></div> -->
-  <div class="knob" id="Depth"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.01" value="1" style="height: 50px;" id="/phaserx2/Depth"></webaudio-knob><div style="text-align:center">Depth</div></div><div class="knob" id="Feedback_Gain"><webaudio-knob src="./img/knobs/SimpleFlat3.png" height="50" width="50" sprites="100" min="0" max="1" step="0.01" value="0" style="height: 50px;" id="/phaserx2/Feedback_Gain"></webaudio-knob><div style="text-align:center">Feedback_Gain</div></div><div class="knob" id="MaxNotch1Freq"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="20" max="10000" step="1" value="800" style="height: 50px;" id="/phaserx2/MaxNotch1Freq"></webaudio-knob><div style="text-align:center">MaxNotch1Freq</div></div><div class="knob" id="MinNotch1Freq"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="20" max="5000" step="1" value="100" style="height: 50px;" id="/phaserx2/MinNotch1Freq"></webaudio-knob><div style="text-align:center">MinNotch1Freq</div></div><div class="knob " id="Notch_Width"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="10" max="5000" step="1" value="1000" style="height: 50px;" id="/phaserx2/Notch_Width"></webaudio-knob><div style="text-align:center">Notch_Width</div></div><div class="knob " id="NotchFreq"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="1.1" max="4" step="0.01" value="1.5" style="height: 50px;" id="/phaserx2/NotchFreq"></webaudio-knob><div style="text-align:center">NotchFreq</div></div><div class="knob " id="Speed"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0.001" max="20" step="0.01" value="0.5" style="height: 50px;" id="/phaserx2/Speed"></webaudio-knob><div style="text-align:center">Speed</div></div><div class="knob " id="level"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="-60" max="10" step="0.1" value="0" style="height: 50px;" id="/phaserx2/level"></webaudio-knob><div style="text-align:center">level</div></div><div class="switch " id="VibratoMode"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" style="height: 50px;" id="/phaserx2/VibratoMode"></webaudio-switch><div>VibratoMode</div></div><div class="switch " id="bypass"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" style="height: 50px;" id="/phaserx2/bypass"></webaudio-switch><div>bypass</div></div><div class="switch " id="invert"><webaudio-switch src="./img/switches/Jambalaya.png" height="50" width="80" style="height: 50px;" id="/phaserx2/invert"></webaudio-switch><div>invert</div></div></div></template><script>
-        let phaserx2Temp = document.currentScript.ownerDocument.querySelector('template');
+  <div class="knob" id="Depth"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.01" midilearn="true" value="1" style="height: 50px;" id="/phaserx2/Depth"></webaudio-knob><div style="text-align:center">Depth</div></div><div class="knob" id="Feedback_Gain"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.01" midilearn="true" value="0" style="height: 50px;" id="/phaserx2/Feedback_Gain"></webaudio-knob><div style="text-align:center">Feedback_Gain</div></div><div class="knob" id="MaxNotch1Freq"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="20" max="10000" step="1" midilearn="true" value="800" style="height: 50px;" id="/phaserx2/MaxNotch1Freq"></webaudio-knob><div style="text-align:center">MaxNotch1Freq</div></div><div class="knob" id="MinNotch1Freq"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="20" max="5000" step="1" midilearn="true" value="100" style="height: 50px;" id="/phaserx2/MinNotch1Freq"></webaudio-knob><div style="text-align:center">MinNotch1Freq</div></div><div class="knob" id="Notch_Width"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="10" max="5000" step="1" midilearn="true" value="1000" style="height: 50px;" id="/phaserx2/Notch_Width"></webaudio-knob><div style="text-align:center">Notch_Width</div></div><div class="knob" id="NotchFreq"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="1.1" max="4" step="0.01" midilearn="true" value="1.5" style="height: 50px;" id="/phaserx2/NotchFreq"></webaudio-knob><div style="text-align:center">NotchFreq</div></div><div class="knob" id="Speed"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0.001" max="20" step="0.01" midilearn="true" value="0.5" style="height: 50px;" id="/phaserx2/Speed"></webaudio-knob><div style="text-align:center">Speed</div></div><div class="knob" id="level"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="-60" max="10" step="0.1" midilearn="true" value="0" style="height: 50px;" id="/phaserx2/level"></webaudio-knob><div style="text-align:center">level</div></div><div class="switch" id="VibratoMode"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" midilearn="true" style="height: 50px;" id="/phaserx2/VibratoMode"></webaudio-switch><div>VibratoMode</div></div><div class="switch" id="bypass"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" midilearn="true" style="height: 50px;" id="/phaserx2/bypass"></webaudio-switch><div>bypass</div></div><div class="switch" id="invert"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" midilearn="true" style="height: 50px;" id="/phaserx2/invert"></webaudio-switch><div>invert</div></div><div class="label pedalLabelName" id="label_145">phaserx2</div></div></template><script>
+        let phaserx2Temp = document.currentScript.ownerDocument.querySelector('#phaserx2');
         class phaserx2Gui extends HTMLElement {
     
         
@@ -362,6 +383,17 @@
                     //console.log("After fix : wc src as " + e.getAttribute("src"));
                 }
             });
+
+            let imgs = this._root.querySelectorAll("img");
+            imgs.forEach(e => {
+              let currentImagePath = e.getAttribute("src");
+              if (currentImagePath !== undefined) {
+                  console.log("Got img src as " + e.getAttribute("src"));
+                  let imagePath = e.getAttribute("src");
+                  e.setAttribute("src", this.basePath + "/" + imagePath);
+                  console.log("After fix : img src as " + e.getAttribute("src"));
+              }
+          });
             
             }
         
@@ -380,7 +412,7 @@
                
             console.log("Custom element attributes changed.");
             this.state = JSON.parse(this.getAttribute('state'));
-            let tmp = "/undefined/bypass";
+            let tmp = "/phaserx2/bypass";
             if (this.state[tmp] == 1) {
             this._root.querySelector("#switch1").value = 0;
             this.isOn = false;
@@ -406,7 +438,7 @@
                 },
                 dataHeight: {
                 type: Number,
-                value: 890
+                value: 950
                 }
           };
           return this.boundingRect;
@@ -423,7 +455,7 @@
                
             // Sets the background image and style.
             var background = this._root.querySelector('img');
-            background.src = this._plug.URL + '/assets/undefined';
+            background.src = this._plug.URL + '/assets/2.jpg';
             background.style = 'border-radius : 10px;'
             this._root.querySelectorAll(".knob").forEach((knob) => {
 				knob.querySelector("webaudio-knob").setAttribute('src', this._plug.URL + '/assets/MiniMoog_Main.png');

@@ -1,0 +1,428 @@
+
+    <link href='https://fonts.googleapis.com/css?family=Montez|Lobster|Roboto|Lexend+Zetta|Josefin+Sans|Shadows+Into+Light|Pacifico|Amatic+SC:700|Orbitron:400,900|Rokkitt|Righteous|Dancing+Script:700|Bangers|Chewy|Sigmar+One|Architects+Daughter|Abril+Fatface|Covered+By+Your+Grace|Kaushan+Script|Gloria+Hallelujah|Satisfy|Lobster+Two:700|Comfortaa:700|Cinzel|Courgette' rel='stylesheet' type='text/css'>
+            <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webcomponents-lite.js"></script>
+            <script>
+            </script>
+            <script>
+            WebAudioControlsOptions = {
+                useMidi: 1,
+            };
+            </script>
+            <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webaudio-controls.js"></script>
+            <template id="ts9wac2019"><style>	
+                        .pedal{
+                            display: block;
+                            background:linear-gradient(rgba(43, 197, 0, 1), rgba(186, 212, 100, 1));
+                            background-color: #7caeff;
+                            width: 228.24609375px;
+                            height: 291.4375px;
+                            border-radius: 10px;
+                            position: relative;
+                            box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
+                            /* bring your own prefixes */
+                            /* transform: translate(-50%, -50%); */
+                        }
+            
+                        
+                        #background-image {
+                            //border: solid 2px black;
+                            width: 228.24609375px;
+                            height: 291.4375px;
+                            opacity: 0.5;
+                            border-radius: 10px;
+                            /* display: none; */
+                            //visibility: hidden;
+                        }
+
+                        /* .img-bck img[src=""] {
+                            display: none;
+                        } */
+
+                        /* #resize {
+                            position: absolute;
+                            cursor: nwse-resize;
+                            width: 10px;
+                            height: 10px;
+                            left: 220.24609375px;
+                            top: 283.4375px;
+                            border: 1px solid black;
+                        } */
+
+                        .knob, .switch, .icon, .label, .slider {
+                            position: absolute;
+                            cursor: pointer;
+                            text-align: center;
+                        }
+
+                        .container {
+                            position: relative;
+                            width: 228.24609375px;
+                            height: 291.4375px;
+                            /* font-family: Arial; */
+                          }
+                          
+                        .text-block {
+                            position: absolute;
+                            bottom: 20px;
+                            right: 20px;
+                            background-color: #7caeff;
+                            color: white;
+                            padding-left: 20px;
+                            padding-right: 20px;
+                        }
+
+                        /* .text-block :not(.tititi) {
+                            opacity : 0;
+                        } */
+
+                        .draggable {
+                            touch-action: none;
+                            user-select: none;
+                        }
+
+                          #canvas {
+                            width:100px;
+                            height:300px;
+                            border: 10px solid;
+                        }
+                        .rectangle {
+                            border: 1px solid #FF0000;
+                            position: absolute;
+                        }
+
+                        .selected {
+                            border: 1px dashed black;
+                            cursor: move;
+                        }
+
+                        .selected:hover {
+                            border: 1px dashed black;
+                            cursor: move;
+                        }
+
+                        .selected  webaudio-knob{
+                            cursor: move;
+                        }
+
+                        .selected  webaudio-switch{
+                            cursor: move;
+                        }
+
+                        .selected  span{
+                            cursor: move;
+                        }
+
+                        .selected:hover  span{
+                            cursor: move;
+                        }
+
+                        .selected  webaudio-slider{
+                            cursor: move;
+                        }
+
+                        .selected:hover webaudio-knob{
+                            cursor: move;
+                        }
+
+                        .selected:hover webaudio-switch{
+                            cursor: move;
+                        }
+                        
+                        .selected:hover webaudio-slider{
+                            cursor: move;
+                        }
+
+
+                        #switch1 {
+                            bottom: 10px;
+                            right: 0px;
+                        }
+                        
+                    #drive {
+                        left: 26px;
+                        top: 15px;
+                    }
+
+                    #drive div {
+                        color: #000000;
+                        font-family: "Verdana";
+                        font-size: 14px;
+                        
+                    }
+                
+                    #level {
+                        left: 76px;
+                        top: 75px;
+                    }
+
+                    #level div {
+                        color: #000000;
+                        font-family: "Verdana";
+                        font-size: 14px;
+                        
+                    }
+                
+                    #tone {
+                        left: 126px;
+                        top: 11px;
+                    }
+
+                    #tone div {
+                        color: #000000;
+                        font-family: "Verdana";
+                        font-size: 14px;
+                        
+                    }
+                
+                    #bypass {
+                        left: 79px;
+                        top: 168px;
+                    }
+
+                    #bypass div {
+                        color: #000000;
+                        font-family: "Verdana";
+                        font-size: 14px;
+                        
+                    }
+                
+                #label_530 {
+                            left: 25px;
+                            top: 228px;
+                            color: #000000;
+                            font-family: "Verdana";
+                            font-size: 28px;
+                        }
+
+                
+                        
+                        .pedalLabelName {
+                          color: #FFFFFF;
+                          background: transparent;
+                          text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5;                        }                        
+
+                        .pedalLabel{
+                            position: absolute;
+                            /* top: 225px; */
+                            font-size: 16pxpx;
+                            font-family: -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";/*Sansita;*//*{font}*/
+                            text-align: center;
+                            line-height: 30px;/*{pedalfontsize}*/
+                            width: 150px;
+                            color: #6B0000;/*{fontcolor}*/
+                        }
+                        .knob-label{
+                            position: absolute;
+                            font-size: 12px;/*{knobfontsize}*/
+                            line-height: 12px;
+                            width:64px;
+                            max-width:64px;
+                            overflow: hidden;
+                            text-align: center;
+                            font-family: Sansita;/*{font}*/
+                            color: #6B0000;/*{fontcolor}*/
+                        }
+                        #knob1-label{
+                            top: 84px;
+                            left: 43px;
+                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-342.41px, -187.262px);" data-x="-342.41015625" data-y="-187.26171875">
+    <div id="resize"></div>
+
+
+
+    <div class="container" id="txtcontainer">
+      <img id="background-image" src="./img/background/image2.png">
+
+      <h4></h4>
+      <p class="pedalLabel" id="test"></p>
+
+    </div>
+    <!-- <p id="labeldiv" style="border-style: dashed; top: 68px;">tototo</p> -->
+    <!-- <figure>
+        <img id="background-image" alt="tototo">
+        <figcaption>tototo</figcaption>
+    </figure> -->
+    <!-- <div class="text-block" id="froala-editor"></div> -->
+  <div class="knob   " id="drive"><webaudio-knob src="./img/knobs/Prophetic_0-10_black_large_80x80.png" height="73.04126625211983" width="73.04126625211983" sprites="100" min="0" max="1" step="0.01" midilearn="true" value="0.5" style="height: 73.0413px;" id="/ts9Wac2019/TubeScreamer/drive"></webaudio-knob><div style="text-align:center">drive</div></div><div class="knob     " id="level"><webaudio-knob src="./img/knobs/Prophetic_0-10_black_large_80x80.png" height="69.03900508762011" width="69.03900508762011" sprites="100" min="-20" max="4" step="0.1" midilearn="true" value="-16" style="height: 69.039px;" id="/ts9Wac2019/TubeScreamer/level"></webaudio-knob><div style="text-align:center">level</div></div><div class="knob      " id="tone"><webaudio-knob src="./img/knobs/Prophetic_0-10_black_large_80x80.png" height="74.00000000000003" width="74.00000000000003" sprites="100" min="100" max="1000" step="1.03" midilearn="true" value="400" style="height: 74px;" id="/ts9Wac2019/TubeScreamer/tone"></webaudio-knob><div style="text-align:center">tone</div></div><div class="switch" id="bypass"><webaudio-switch src="./img/switches/switch_1.png" height="36" width="60.479999999999976" midilearn="true" style="height: 36px;" id="/ts9Wac2019/bypass"></webaudio-switch><div></div></div><div class="label pedalLabelName " id="label_530">ts9Wac2019</div></div></template><script>
+        let ts9Wac2019Temp = document.currentScript.ownerDocument.querySelector('#ts9wac2019');
+        class ts9Wac2019Gui extends HTMLElement {
+    
+        
+            constructor(plug) {
+               
+                super();
+                this._plug = plug;
+                this._plug.gui = this;
+                console.log(this._plug);
+                this._root = this.attachShadow({ mode: 'open' });
+                this._root.appendChild(ts9Wac2019Temp.content.cloneNode(true));
+                this.isOn;
+                this.state = new Object();
+                this.setKnobs();
+                this.setSliders();
+                this.setSwitches();
+                //this.setSwitchListener();
+                this.setInactive();
+                this._root.querySelector("#pedal").style.transform = 'none';
+                //this._root.querySelector("#test").style.fontFamily = window.getComputedStyle(this._root.querySelector("#test")).getPropertyValue('font-family');
+
+                // Compute base URI of this main.html file. This is needed in order
+                // to fix all relative paths in CSS, as they are relative to
+                // the main document, not the plugin's main.html
+
+                //console.log("maindoc URI = " + ts9Wac2019Temp.baseURI);
+                let posOfLastSlash = ts9Wac2019Temp.baseURI.lastIndexOf("/");
+                //console.log("Base URI = " + ts9Wac2019Temp.baseURI.substring(0, posOfLastSlash))
+                this.basePath = ts9Wac2019Temp.baseURI.substring(0, posOfLastSlash);
+                //console.log("basePath = " + this.basePath)
+                //console.log("baseURI = " + this.baseURI)
+
+                // Fix relative path in WebAudio Controls elements
+                this.fixRelativeImagePathsInCSS();
+
+                // optionnal : set image background using a relative URI (relative
+                // to this main.html file)
+                //this.setImageBackground("/img/BigMuffBackground.png");
+        
+            }
+        
+            fixRelativeImagePathsInCSS(imageRelativeURI) {
+               
+        // change webaudiocontrols relative paths for spritesheets to absolute
+            let webaudioControls = this._root.querySelectorAll("webaudio-knob, webaudio-slider, webaudio-switch");
+            webaudioControls.forEach(e => {
+                let currentImagePath = e.getAttribute("src");
+                if (currentImagePath !== undefined) {
+                    //console.log("Got wc src as " + e.getAttribute("src"));
+                    let imagePath = e.getAttribute("src");
+                    e.setAttribute("src", this.basePath + "/" + imagePath);
+                    //console.log("After fix : wc src as " + e.getAttribute("src"));
+                }
+            });
+            
+            }
+        
+            setImageBackground() {
+               
+           // check if the shadowroot host has a background image
+            let mainDiv = this._root.querySelector("#main");
+            mainDiv.style.backgroundImage = "url(" + this.basePath + "/" + imageRelativeURI + ")";
+
+            //console.log("background =" + mainDiv.style.backgroundImage);
+            //this._root.style.backgroundImage = "toto.png";
+    
+            }
+        
+            attributeChangedCallback() {
+               
+            console.log("Custom element attributes changed.");
+            this.state = JSON.parse(this.getAttribute('state'));
+            let tmp = "/ts9Wac2019/bypass";
+            if (this.state[tmp] == 1) {
+            this._root.querySelector("#switch1").value = 0;
+            this.isOn = false;
+            } else if (this.state[tmp] == 0) {
+            this._root.querySelector("#switch1").value = 1;
+            this.isOn = true;
+            }
+            this.knobs = this._root.querySelectorAll(".knob");
+            console.log(this.state);
+            for (var i = 0; i < this.knobs.length; i++) {
+                    this.knobs[i].setValue(this.state[this.knobs[i].id],false);
+            console.log(this.knobs[i].value);
+            }
+        
+            }
+        
+            get properties() {
+               
+            this.boundingRect = {
+                dataWidth: {
+                type: Number,
+                value: 228.24609375
+                },
+                dataHeight: {
+                type: Number,
+                value: 291.4375
+                }
+          };
+          return this.boundingRect;
+        
+            }
+        
+            static get observedAttributes() {
+               
+                return ['state'];
+        
+            }
+        
+            setResources() {
+               
+            // Sets the background image and style.
+            var background = this._root.querySelector('img');
+            background.src = this._plug.URL + '/assets/image2.png';
+            background.style = 'border-radius : 10px;'
+            this._root.querySelectorAll(".knob").forEach((knob) => {
+				knob.querySelector("webaudio-knob").setAttribute('src', this._plug.URL + '/assets/MiniMoog_Main.png');
+            });
+            
+            this._root.querySelectorAll(".switch").forEach((s) => {
+				s.querySelector("webaudio-switch").setAttribute('src', this._plug.URL + '/assets/switch_1.png');
+            });
+            
+            
+        
+            }
+        
+            setKnobs() {
+               this._root.getElementById("/ts9Wac2019/TubeScreamer/drive").addEventListener("input", (e) =>this._plug.setParam("/ts9Wac2019/TubeScreamer/drive", e.target.value));
+this._root.getElementById("/ts9Wac2019/TubeScreamer/level").addEventListener("input", (e) =>this._plug.setParam("/ts9Wac2019/TubeScreamer/level", e.target.value));
+this._root.getElementById("/ts9Wac2019/TubeScreamer/tone").addEventListener("input", (e) =>this._plug.setParam("/ts9Wac2019/TubeScreamer/tone", e.target.value));
+
+            }
+        
+            setSwitchListener() {
+               
+            console.log("setswitch");
+            if(this._root.querySelector("#switch1")) {
+                this._root.querySelector("#switch1").addEventListener('change', (e) => {
+                    if (this.isOn) this.bypass()
+                    else this.reactivate();
+                    this.isOn = !this.isOn;
+                });
+            }
+        
+            }
+        
+            setSliders() {
+               
+            }
+        
+            setSwitches() {
+               this._root.getElementById("/ts9Wac2019/bypass").addEventListener("change", (e) =>this._plug.setParam("/ts9Wac2019/bypass", 1-e.target.value));
+
+            }
+        
+            setInactive() {
+               
+        let switches = this._root.querySelectorAll(".switch webaudio-switch");
+        switches.forEach(s => {
+          console.log("### SWITCH ID = " + s.id);
+          this._plug.setParam(s.id, 1);
+        });
+       
+            }
+        }
+                try {
+                    customElements.define('wap-ts9wac2019', ts9Wac2019Gui);
+                    console.log("Element defined");
+                } catch(error){
+                    console.log(error);
+                    console.log("Element already defined");      
+                }
+                
+                createts9Wac2019GUI = (plug) => {
+                    let elem = new ts9Wac2019Gui(plug);
+                    return elem; 
+                }
+        </script>
