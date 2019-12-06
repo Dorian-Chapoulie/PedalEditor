@@ -88,6 +88,20 @@ app.get("/previews/icons", function(req, res) {
   });
 });
 
+app.get("/previews/backgrounds", function(req, res) {
+  fs.readdir("../Back-End/img/background", (err, files) => {
+    let filesUrl = "http://localhost:3000/img/background/";
+
+    response = {
+      filesUrl,
+      files
+    };
+
+    res.json(response);
+  });
+});
+
+
 app.get("/previews/switches", function(req, res) {
   fs.readdir("../Back-End/img/switches", (err, files) => {
     let filesUrl = "http://localhost:3000/img/switches/";

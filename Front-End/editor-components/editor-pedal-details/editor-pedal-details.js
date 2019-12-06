@@ -78,7 +78,13 @@
 
             pedalElemPreviews.forEach(elm => {
                 elm.addEventListener('preview-selected', e => {
-                    this.editablePedal.addElement(e.detail.type, e.detail.fileName)
+                    switch(e.detail.type) {
+                        case "backgroundImages" :
+                                console.log("Background image selected type = " + e.detail.type + " file : " + e.detail.fileName)
+                                this.setBackgroundImage(e.detail.fileName);
+                            break;
+                    }
+                    //this.editablePedal.addElement(e.detail.type, e.detail.fileName)
                 });
             });
         }
