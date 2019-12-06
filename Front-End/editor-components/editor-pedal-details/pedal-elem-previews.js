@@ -44,6 +44,8 @@
         }
 
         setUpPreviews() {
+            let container = this.root.querySelector("#scrollableContent");
+
             for(let previewFile of this.previews.files) {
                 if (previewFile !== ".DS_Store") {
                     let previewElem = document.createElement('img');
@@ -62,7 +64,8 @@
                         this.dispatchEvent(event);
                     }
 
-                    this.root.appendChild(previewElem);
+                    container.appendChild(previewElem);
+                    //this.root.appendChild(previewElem);
                 }
             }
         }
