@@ -1,7 +1,10 @@
 (function (window, document, undefined) {
 
-    const doc = (document._currentScript || document.currentScript).ownerDocument;
-    const template = doc.querySelector('template');
+
+    // Current document needs to be defined to get DOM access to imported HTML
+    const doc = document.currentScript.ownerDocument;
+
+    const template = doc.querySelector('#template-previews');
     
     const PREVIEW_SELECTED_EVENT = "previewSelected";
     

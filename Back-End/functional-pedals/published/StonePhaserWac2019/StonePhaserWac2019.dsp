@@ -13,17 +13,16 @@ import("stdfaust.lib");
 /////////////
 // Control //
 /////////////
+
 bypass = checkbox("[0] Bypass [symbol:bypass]");
-color = checkbox("[1] Color [symbol:color]");
+color = checkbox("[1] Color [symbol:color] [boolean] [style:knob]");
 lf = hslider("[2] LFO  [symbol:lfo_frequency] [unit:Hz] [scale:log] [style:knob]", 0.2, 0.01, 5., 0.01) : tsmooth;
 fb = hslider("[3] Feedback  [symbol:feedback_depth] [unit:%] [integer] [style:knob]", 75, 0, 99, 1) : *(0.01) : tsmooth;
-fbHf = hslider("[4] Lo-cut [abbrev:Fb bass cut] [symbol:feedback_hpf_cutoff] [unit:Hz] [scale:log] [style:knob]", 500., 10., 5000., 1.) : tsmooth;
-dw = hslider("[5] Mix [symbol:mix] [unit:%] [integer] [style:knob]", 50, 0, 100, 1) : *(0.01);
-ph = hslider("[6] Stereo phase [symbol:stereo_phase] [unit:deg] [integer] [style:knob]", 0., -180., +180., 1.) : /(360.) : +(1.) : tsmooth;
-
-
+fbHf = hslider("[4] lo cut [abbrev:Fb bass cut] [symbol:feedback_hpf_cutoff] [unit:Hz] [scale:log] [style:knob]", 500., 10., 5000., 1.) : tsmooth;
+dw = hslider("[5] mix [symbol:mix] [unit:%] [integer] [style:knob]", 50, 0, 100, 1) : *(0.01);
 w = sin(dw*(ma.PI/2)) : tsmooth;
 d = cos(dw*(ma.PI/2)) : tsmooth;
+ph = hslider("[6] Stereo  [symbol:stereo_phase] [unit:deg] [integer] [style:knob]", 0., -180., +180., 1.) : /(360.) : +(1.) : tsmooth;
 
 //////////////////////////
 // All-pass filter unit //
@@ -170,4 +169,4 @@ expTri(roundness, slopeUp, slopeDown, pos) = lerp(tab, pos, ts) with {
 
 process_mono(x) = mono_phaser(x, os.lf_sawpos(lf));
 process_stereo(x1, x2) = stereo_phaser(x1, x2, os.lf_sawpos(lf));
-process = process_stereo;
+process = process_mono;

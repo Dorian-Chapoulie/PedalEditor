@@ -258,7 +258,7 @@
                             border-radius: ${this.getAttribute("radius")}px;
                             position: fixed;
                             top: 50%;
-                            left: 50%;
+                            left: 20%;
                             box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
                             /* bring your own prefixes */
                             /* transform: translate(-50%, -50%); */
@@ -710,11 +710,11 @@
           slider.step = element.step ? element.step : 1;
           slider.value = element.value;
           slider.address = element.address;
-          /*
+          
           console.log(
             "loadConfig SLIDER " + slider.label + " STEP = " + element.step
           );
-          */
+          
         }
       }
 

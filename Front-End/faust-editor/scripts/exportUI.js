@@ -81,7 +81,7 @@ function tooglePlayEdit(sha, div) {
 
 	} else {
 		document.querySelector('#edit-zone').style.display = 'none';
-		document.querySelector('#play-zone').innerHTML = '<object type="text/html" data="http://localhost:3000/functional-pedals/current/testuntitled.html" width="800px" height="600px"></object>'
+		document.querySelector('#play-zone').innerHTML = '<object type="text/html" data="https://mainline.i3s.unice.fr/Back-End/functional-pedals/current/testuntitled.html" width="800px" height="600px"></object>'
 	}
 
 	

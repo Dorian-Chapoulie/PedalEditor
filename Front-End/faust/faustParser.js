@@ -1,4 +1,3 @@
-
 /**
  * This utility will parse Faust code then extract relevant information on
  * the pedal elements necessary to run that Faust code.
@@ -106,7 +105,7 @@ class FaustParser {
             type = 'slider';
             width = 150;
             height = 40;
-        } else if(elem.type == 'checkbox') {
+        } else if((elem.type == 'checkbox') ||  (elem.type == 'button')){
             type = 'switch';
             width = 80;
             height = 50;
@@ -117,8 +116,13 @@ class FaustParser {
             fontSize = 28;
         }
 
+        let newLabel = elem.label.replace(/[.+*#_/,() ]+/g, '-');
+        if(newLabel.endsWith("-")) newLabel = newLabel.substring(0, newLabel.length - 1);
+        console.log("elem.label = " + elem.label + " newLabel = " + newLabel);
+
         let ret = {
-            id: elem.label.replace(/\s+/g, '_'),
+            //id: elem.label.replace(/\s+/g, '_'),
+            id:newLabel,
             x: 10,
             y: 10,
             width: width,

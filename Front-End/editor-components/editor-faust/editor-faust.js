@@ -1,6 +1,6 @@
 (function(window, document, undefined) {
   const doc = (document._currentScript || document.currentScript).ownerDocument;
-  const template = doc.querySelector("template");
+  const template = doc.querySelector("#template-editor-faust");
 
   class EditorFaust extends HTMLElement {
     static get observedAttributes() {
@@ -64,7 +64,7 @@
       let height = 10;
 
       elements.forEach(elem => {
-        // MICHEL BUFFA DIRTY FIX: as labels may contain
+// MICHEL BUFFA DIRTY FIX: as labels may contain
         // spaces and / and are used as HTML ids, let's filter
         // these chars ansd replace them by underscores...
         elem.label = elem.label.replace(/ /g, "_");

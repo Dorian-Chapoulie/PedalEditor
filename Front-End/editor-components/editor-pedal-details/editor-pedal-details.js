@@ -1,7 +1,7 @@
 (function (window, document, undefined) {
 
     const doc = (document._currentScript || document.currentScript).ownerDocument;
-    const template = doc.querySelector('template');
+    const template = doc.querySelector('#template-details');
 
     class EditorPedalDetails extends HTMLElement {
 

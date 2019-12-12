@@ -1,4 +1,4 @@
-<template>
+<template id="template-details">
 
     <style>
         @import "css/StyleSheet.css";
@@ -26,11 +26,12 @@
             <summary style="color: white;" > Pedal configuration </summary>
 ""
             <div class="editor-collapsible-content" style="background-color: #333;">
-                <label style="direction: ltr; color: white;">Name: </label>
-                <input id="pedal-name" name="name" class="maininput" style="direction: ltr;" disabled>
+                <div style="display:none">
+                    <label style="direction: ltr; color: white;">Name: </label>
+                    <input id="pedal-name" name="name" class="maininput" style="direction: ltr;" disabled>
 
-                <br>
-
+                    <br>
+                </div>
                 <label style="direction: ltr; color: white;">Background color: #</label>
                 <input type="color" name="color" class="maininput" style="direction: ltr;" disabled>
 
@@ -61,7 +62,7 @@
                     <img class="menu-img background-image" src="./img/background/1.png" alt="1.png" />
                     <img class="menu-img background-image" src="./img/background/2.jpg" alt="2.jpg" />
                     -->
-                    <pedal-elem-previews url="http://localhost:3000/previews/backgrounds" pedal-element-type="backgroundImages" id="preview-switches" >
+                    <pedal-elem-previews url="https://mainline.i3s.unice.fr/previews/backgrounds" pedal-element-type="backgroundImages" id="preview-switches" >
                     </pedal-elem-previews>
                    
                 </div>
@@ -86,7 +87,7 @@
                 <details id="add-knob" class="sub-editor-collapsible">
                     <summary style="color: whitesmoke;"> Knob </summary>
                     <div class="editor-collapsible-content">
-                        <pedal-elem-previews url="http://localhost:3000/previews/knobs" pedal-element-type="knob">
+                        <pedal-elem-previews url="https://mainline.i3s.unice.fr/previews/knobs" pedal-element-type="knob">
                         </pedal-elem-previews>
                         
                     </div>
@@ -95,7 +96,7 @@
                 <details id="add-icon" class="sub-editor-collapsible">
                     <summary style="color: whitesmoke;"> Icons </summary>
                     <div class="editor-collapsible-content">
-                        <pedal-elem-previews url="http://localhost:3000/previews/icons" pedal-element-type="icon">
+                        <pedal-elem-previews url="https://mainline.i3s.unice.fr/previews/icons" pedal-element-type="icon">
                         </pedal-elem-previews>
                     </div>
                 </details>
@@ -103,7 +104,7 @@
                 <details id="ad-slider" class="sub-editor-collapsible" pedal-element-type="slider">
                     <summary style="color: whitesmoke;">Sliders</summary>
                     <div class="editor-collapsible-contnet">
-                        <pedal-elem-previews url="http://localhost:3000/previews/sliders" pedal-element-type="slider">
+                        <pedal-elem-previews url="https://mainline.i3s.unice.fr/previews/sliders" pedal-element-type="slider">
                         </pedal-elem-previews>
                     </div>
                 </details>
@@ -111,7 +112,7 @@
                 <details id="ad-switch" class="sub-editor-collapsible" pedal-element-type="slider">
                     <summary style="color: whitesmoke;">Switches</summary>
                     <div class="editor-collapsible-contnet">
-                        <pedal-elem-previews url="http://localhost:3000/previews/switches" pedal-element-type="switch">
+                        <pedal-elem-previews url="https://mainline.i3s.unice.fr/previews/switches" pedal-element-type="switch">
                         </pedal-elem-previews>
                     </div>
                 </details>

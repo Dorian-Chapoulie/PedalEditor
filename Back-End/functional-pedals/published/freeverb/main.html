@@ -12,10 +12,10 @@
             <template id="freeverb"><style>	
                         .pedal{
                             display: block;
-                            background:null;
-                            background-color: #6cfc9c;
-                            width: 266.75px;
-                            height: 307.99609375px;
+                            background:linear-gradient(rgba(254, 255, 0, 0.5), rgba(255, 0, 242, 0.5));
+                            background-color: #d0fa9f;
+                            width: 324.56640625px;
+                            height: 570px;
                             border-radius: 10px;
                             position: relative;
                             box-shadow: 4px 5px 6px rgba(0, 0, 0, 0.7), inset -2px -2px 5px 0px rgba(0, 0, 0, 0.2), inset 3px 1px 1px 4px rgba(255, 255, 255, 0.2), 1px 0px 1px 0px rgba(0, 0, 0, 0.9), 0 2px 1px 0 rgba(0, 0, 0, 0.9), 1px 1px 1px 0px rgba(0, 0, 0, 0.9);
@@ -26,9 +26,9 @@
                         
                         #background-image {
                             //border: solid 2px black;
-                            width: 266.75px;
-                            height: 307.99609375px;
-                            opacity: 1;
+                            width: 324.56640625px;
+                            height: 570px;
+                            opacity: 0.7;
                             border-radius: 10px;
                             /* display: none; */
                             //visibility: hidden;
@@ -43,8 +43,8 @@
                             cursor: nwse-resize;
                             width: 10px;
                             height: 10px;
-                            left: 258.75px;
-                            top: 299.99609375px;
+                            left: 316.56640625px;
+                            top: 562px;
                             border: 1px solid black;
                         } */
 
@@ -56,8 +56,8 @@
 
                         .container {
                             position: relative;
-                            width: 266.75px;
-                            height: 307.99609375px;
+                            width: 324.56640625px;
+                            height: 570px;
                             /* font-family: Arial; */
                           }
                           
@@ -65,7 +65,7 @@
                             position: absolute;
                             bottom: 20px;
                             right: 20px;
-                            background-color: #6cfc9c;
+                            background-color: #d0fa9f;
                             color: white;
                             padding-left: 20px;
                             padding-right: 20px;
@@ -139,8 +139,8 @@
                         }
                         
                     #Damp {
-                        left: 40px;
-                        top: 10px;
+                        left: 42px;
+                        top: 16px;
                     }
 
                     #Damp div {
@@ -163,8 +163,8 @@
                     }
                 
                     #Stereo_Spread {
-                        left: 109px;
-                        top: 40px;
+                        left: 23px;
+                        top: 171px;
                     }
 
                     #Stereo_Spread div {
@@ -175,8 +175,8 @@
                     }
                 
                     #bypass {
-                        left: 101px;
-                        top: 176px;
+                        left: 25px;
+                        top: 430px;
                     }
 
                     #bypass div {
@@ -187,8 +187,8 @@
                     }
                 
                     #Wet {
-                        left: 187px;
-                        top: 21px;
+                        left: 125px;
+                        top: 29px;
                     }
 
                     #Wet div {
@@ -198,9 +198,9 @@
                         
                     }
                 
-                #label_252 {
-                            left: 86px;
-                            top: 239px;
+                #label_584 {
+                            left: 25px;
+                            top: 510px;
                             color: #000000;
                             font-family: "Verdana";
                             font-size: 28px;
@@ -237,13 +237,13 @@
                         #knob1-label{
                             top: 84px;
                             left: 43px;
-                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-332.879px, -286.883px);" data-x="-332.87890625" data-y="-286.8828125">
+                        }</style><div class="pedal draggable" id="pedal" style="transform: translate(-238.008px, -186.742px); box-shadow: none;" data-x="-238.0078125" data-y="-186.7421875">
     <div id="resize"></div>
 
 
 
     <div class="container" id="txtcontainer">
-      
+      <img id="background-image" src="./img/background/psyche11.jpg">
 
       <h4></h4>
       <p class="pedalLabel" id="test"></p>
@@ -255,7 +255,7 @@
         <figcaption>tototo</figcaption>
     </figure> -->
     <!-- <div class="text-block" id="froala-editor"></div> -->
-  <div class="knob" id="Damp"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.025" midilearn="true" value="0.5" style="height: 50px;" id="/freeverb/Freeverb/0x00/Damp"></webaudio-knob><div style="text-align:center">Damp</div></div><div class="knob" id="RoomSize"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.025" midilearn="true" value="0.5" style="height: 50px;" id="/freeverb/Freeverb/0x00/RoomSize"></webaudio-knob><div style="text-align:center">RoomSize</div></div><div class="knob   " id="Stereo_Spread"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.01" midilearn="true" value="0.5" style="height: 50px;" id="/freeverb/Freeverb/0x00/Stereo_Spread"></webaudio-knob><div style="text-align:center">Stereo</div></div><div class="switch   " id="bypass"><webaudio-switch src="./img/switches/switch_1.png" height="35" width="65.80000000000001" midilearn="true" style="height: 35px;" id="/freeverb/bypass"></webaudio-switch><div>bypass</div></div><div class="slider " id="Wet"><webaudio-slider value="0.3333" height="150" width="40" max="1" min="0" step="0.025" midilearn="true" src="./img/sliders/slider1.png" knobsrc="./img/sliders/sliderKnob.png" style="height: 150px;" id="/freeverb/Freeverb/Wet"></webaudio-slider><div>Wet</div></div><div class="label pedalLabelName" id="label_252">freeverb</div></div></template><script>
+  <div class="knob " id="Damp"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.025" midilearn="true" value="0.5" style="height: 50px;" id="/freeverb/Freeverb/0x00/Damp"></webaudio-knob><div style="text-align:center">Damp</div></div><div class="knob " id="RoomSize"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.025" midilearn="true" value="0.5" style="height: 50px;" id="/freeverb/Freeverb/0x00/RoomSize"></webaudio-knob><div style="text-align:center">RoomSize</div></div><div class="knob " id="Stereo_Spread"><webaudio-knob src="./img/knobs/knob2.png" height="50" width="50" sprites="100" min="0" max="1" step="0.01" midilearn="true" value="0.5" style="height: 50px;" id="/freeverb/Freeverb/0x00/Stereo_Spread"></webaudio-knob><div style="text-align:center">Stereo_Spread</div></div><div class="switch" id="bypass"><webaudio-switch src="./img/switches/switch_2.png" height="50" width="80" midilearn="true" style="height: 50px;" id="/freeverb/bypass"></webaudio-switch><div>bypass</div></div><div class="slider" id="Wet"><webaudio-slider value="0.3333" height="150" width="40" max="1" min="0" step="0.025" midilearn="true" src="./img/sliders/sliderKnob.png" knobsrc="./img/sliders/sliderKnob.png" style="height: 150px;" id="/freeverb/Freeverb/Wet"></webaudio-slider><div>Wet</div></div><div class="label pedalLabelName" id="label_584">freeverb</div></div></template><script>
         let freeverbTemp = document.currentScript.ownerDocument.querySelector('#freeverb');
         class freeverbGui extends HTMLElement {
     
@@ -301,7 +301,7 @@
             fixRelativeImagePathsInCSS(imageRelativeURI) {
                
         // change webaudiocontrols relative paths for spritesheets to absolute
-            let webaudioControls = this._root.querySelectorAll("webaudio-knob, webaudio-slider, webaudio-switch");
+            let webaudioControls = this._root.querySelectorAll("webaudio-knob, webaudio-slider, webaudio-switch, img");
             webaudioControls.forEach(e => {
                 let currentImagePath = e.getAttribute("src");
                 if (currentImagePath !== undefined) {
@@ -311,6 +311,17 @@
                     //console.log("After fix : wc src as " + e.getAttribute("src"));
                 }
             });
+
+            let sliders = this._root.querySelectorAll("webaudio-slider");
+            sliders.forEach(e => {
+              let currentImagePath = e.getAttribute("knobsrc");
+              if (currentImagePath !== undefined) {
+                  console.log("Got img src as " + e.getAttribute("src"));
+                  let imagePath = e.getAttribute("knobsrc");
+                  e.setAttribute("knobsrc", this.basePath + "/" + imagePath);
+                  console.log("After fix : slider knobsrc as " + e.getAttribute("knobsrc"));
+              }
+          });
             
             }
         
@@ -351,11 +362,11 @@
             this.boundingRect = {
                 dataWidth: {
                 type: Number,
-                value: 266.75
+                value: 324.56640625
                 },
                 dataHeight: {
                 type: Number,
-                value: 307.99609375
+                value: 570
                 }
           };
           return this.boundingRect;
@@ -372,7 +383,7 @@
                
             // Sets the background image and style.
             var background = this._root.querySelector('img');
-            background.src = this._plug.URL + '/assets/undefined';
+            background.src = this._plug.URL + '/assets/psyche11.jpg';
             background.style = 'border-radius : 10px;'
             this._root.querySelectorAll(".knob").forEach((knob) => {
 				knob.querySelector("webaudio-knob").setAttribute('src', this._plug.URL + '/assets/MiniMoog_Main.png');
