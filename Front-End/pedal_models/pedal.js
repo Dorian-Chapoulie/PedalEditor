@@ -120,6 +120,14 @@
         let backgroundImageElem = this.shadowRoot.querySelector(
           "#background-image"
         );
+        if(!backgroundImageElem) {
+          // let's add it
+          console.log("No background image, adding one!");
+          let imageBackground = document.createElement("img");
+          imageBackground.id = "background-image";
+          this.shadowRoot.querySelector("#container").append(imageBackground);
+        }
+
         backgroundImageElem.setAttribute(
           "src",
           ASSETS_PATH + "/background/" + imageName
@@ -805,7 +813,10 @@
      * Gets the html content of the function pedal.
      */
     getHtml() {
-      let html = this.shadowRoot.childNodes[7].cloneNode(true);
+      // MICHEL BUFFA : faire un query Selector pour choper le div de la pédale !!!
+      let pedalDiv = this.shadowRoot.querySelector("#pedal");
+
+      let html = pedalDiv.cloneNode(true);
 
       for (let elem of html.querySelectorAll("webaudio-knob")) {
         elem.innerHTML = "";

@@ -465,14 +465,17 @@ class FunctionalPedalGenerator {
   }
   
   setWebAudioControlsIds() {
-    for (let knob of this.editablePedal.shadowRoot.childNodes[7].querySelectorAll(
+    // Michel Buffa, faire un queryselector pour choper le div de la pédale, pas avec un index en dur !!!
+    let pedalDiv = this.editablePedal.shadowRoot.querySelector("#pedal");
+
+    for (let knob of pedalDiv.querySelectorAll(
       ".knob"
     )) {
       let id = knob.getAttribute("id");
       let waControlId = this.editablePedal.getElementById(id).address;
       knob.childNodes[0].setAttribute("id", waControlId);
     }
-    for (let slider of this.editablePedal.shadowRoot.childNodes[7].querySelectorAll(
+    for (let slider of pedalDiv.querySelectorAll(
       ".slider"
     )) {
       let id = slider.getAttribute("id");
@@ -481,14 +484,14 @@ class FunctionalPedalGenerator {
     }
 
     /*
-    let waControl = this.editablePedal.shadowRoot.childNodes[3].querySelector(
+    let waControl = pedalDiv.querySelector(
       ".switch"
     );
     if (waControl) waControl.childNodes[0].setAttribute("id", "switch1");
     else console.log("functionalPedalGenerator waControl = null");
     */
 
-    for (let sw of this.editablePedal.shadowRoot.childNodes[7].querySelectorAll(
+    for (let sw of pedalDiv.querySelectorAll(
       ".switch"
     )) {
       let id = sw.getAttribute("id");

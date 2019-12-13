@@ -116,7 +116,7 @@ class FaustParser {
             fontSize = 28;
         }
 
-        let newLabel = elem.label.replace(/[.+*#_/,() ]+/g, '-');
+        let newLabel = elem.label.replace(/[&!%$`<>=:?@.+*#_/,;() ]+/g, '-');
         if(newLabel.endsWith("-")) newLabel = newLabel.substring(0, newLabel.length - 1);
         console.log("elem.label = " + elem.label + " newLabel = " + newLabel);
 
