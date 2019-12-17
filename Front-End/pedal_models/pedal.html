@@ -3,7 +3,7 @@
   <style> 
   </style>
 
-  <div class="pedal draggable" id="pedal">
+  <div class="pedal draggable" style="box-sizing: border-box" id="pedal">
     <div id="resize"></div>
     <div class="container" id="txtcontainer">
       <img id="background-image">
@@ -31,12 +31,12 @@
   // target elements with the "draggable" class
   interact('.draggable')
     .draggable({
-      ignoreFrom: 'webaudio-knob, webaudio-switch, webaudio-slider, div.label',
+      ignoreFrom: 'webaudio-knob, webaudio-switch, webaudio-slider, .label',
       onmove: window.dragMoveListener,
     })
     .resizable({
       // resize from all edges and corners
-      ignoreFrom: 'webaudio-knob, webaudio-switch, webaudio-slider',
+      ignoreFrom: 'webaudio-knob, webaudio-switch, webaudio-slider, .label',
       edges: {
         left: true,
         right: true,
@@ -58,6 +58,7 @@
       inertia: true
     })
     .on('resizemove', function (event) {
+      //console.log("onresizeMove  de pedal.html")
       var target = event.target
       var x = (parseFloat(target.getAttribute('data-x')) || 0)
       var y = (parseFloat(target.getAttribute('data-y')) || 0)
@@ -89,8 +90,11 @@
 
     })
 
+    
   function dragMoveListener(event) {
-    console.log("drag move listener pedal.js");
+    //console.log("dragMoveListener de pedal.html")
+
+    event.stopPropagation();
     var target = event.target
     // keep the dragged position in the data-x/data-y attributes
     var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
@@ -105,4 +109,5 @@
     target.setAttribute('data-x', x)
     target.setAttribute('data-y', y)
   }
+  
 </script>

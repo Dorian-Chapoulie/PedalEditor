@@ -36,7 +36,7 @@
                 inputElem.value = value;
             }
 
-            console.log("elem font = " + elem.label_fontfamily)
+            //console.log("elem font = " + elem.label_fontfamily)
 
             // show current font in menu
             let menuFonts = this.root.querySelector('#inspector-label-font-family');

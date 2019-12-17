@@ -5,7 +5,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="Cache-Control" content="no-store" />
 
-    <script src="lib//webcomponents-lite.js"></script>
+    <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webcomponents-lite.js"></script>
+
+    
+    <script src="faust/faustUIParser.js"></script>
+    
+    
+    <link rel="import" href="pedal_models/pedal.html">
+    
+    <link rel="import" href="editor-components/editor-pedal-details/editor-pedal-details.html">
+    <link rel="import" href="editor-components/editor-pedal-details/pedal-elem-previews.html">
+    <link rel="import" href="editor-components/editor-element-list.html">
+    <link rel="import" href="editor-components/editor-inspector.html">
+    <link rel="import" href="editor-components/editor-faust/editor-faust.html">
+    <link rel="import" href="editor-components/editor-pedal-new/editor-pedal-new-1.html">
+
     <script src="./bower_components/webaudio-controls/webaudio-controls.js"></script>
     <script src="lib/webaudio-controls.js"></script>
     <script src="lib/WebAudioSDK.js"></script>
@@ -21,20 +35,12 @@
     <link rel="Stylesheet" href="css/SideBar.css">
     <link rel="Stylesheet" href="css/police_select.css">
 
-    <link rel="import" href="pedal_models/pedal.html">
-    <link rel="import" href="editor-components/editor-pedal-details/editor-pedal-details.html">
-    <link rel="import" href="editor-components/editor-pedal-details/pedal-elem-previews.html">
-    <link rel="import" href="editor-components/editor-element-list.html">
-    <link rel="import" href="editor-components/editor-inspector.html">
-    <link rel="import" href="editor-components/editor-faust/editor-faust.html">
-    <link rel="import" href="editor-components/editor-pedal-new/editor-pedal-new-1.html">
-
+  
 
     <script src="pedal_models/functionalPedalGenerator.js"></script>
     <script src="lib/interact.min.js"></script>
     <script src="lib/TweenMax.min.js"></script>
     <script src="lib/TextPlugin.min.js"></script>
-    <script src="lib/dom2image.min.js"></script>
     <!--
     <script src='https://kit.fontawesome.com/a076d05399.js'></script>
     -->
@@ -1570,6 +1576,8 @@
             inertia: true
         })
         .on('resizemove', function (event) {
+            event.stopPropagation();
+            
             var target = event.target
             var x = (parseFloat(target.getAttribute('data-x')) || 0)
             var y = (parseFloat(target.getAttribute('data-y')) || 0)
@@ -1592,7 +1600,11 @@
             //target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
         })
 
+        
     function dragMoveListener(event) {
+        //console.log("dragMoveListener de index.html")
+        event.stopPropagation();
+
         var target = event.target
         // keep the dragged position in the data-x/data-y attributes
         var x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx
@@ -2422,7 +2434,7 @@
     let currentWapName, currentWapCode;
 
 
-    window.onload = initialize;
+    //window.onload = initialize;
     //Mettre en commentaire la fonction ci-dessous avant d'utiliser faust, bug à régler
     /* function init(){
         var pp = document.querySelector('my-pedal');
@@ -2983,6 +2995,8 @@
 
     }
 
+    //window.onload = initializeFromMessagePostedByFaustIDE;
+
     // TRES IMPORTANT !!!!
     function initializeFromMessagePostedByFaustIDE(data) {
         console.log("initializeFromMessagePostedByFaustIDE")
@@ -2998,7 +3012,7 @@
 
         currentWapName = faustUI.WapName;
         console.log("initializeFromMessagePostedByFaustIDE: currentWapName = " + currentWapName)
-        console.log("code = " + data.code);
+        //console.log("code = " + data.code);
         //Mettre en commentaire init() quand on utilise faust editor, bug à régler
         //init();
         faustUI = data.ui;
@@ -3015,11 +3029,15 @@
         checkMetadata(document.querySelector("#urlPlugin").value);
         }); */
 
+        /* MICHEL BUFFA
         let faust = document.querySelector('#editor-faust'),
             faustClone = faust.cloneNode(true);
         faust.parentNode.replaceChild(faustClone, faust);
 
         faust = document.querySelector('#editor-faust');
+        */
+
+
         /*faust.addEventListener('create-pedal', (e) => {
         newPedal();
         let pedalConfig = {
@@ -3038,8 +3056,11 @@
             console.log("### faustUI present ! ####")
             console.log(window.faustUI);
 
-            let detail = faust.pedalConfigFromUI(window.faustUI, currentWapName);
 
+            //let detail = faust.pedalConfigFromUI(window.faustUI, currentWapName);
+            faust = new FaustUIParser();
+
+            let detail = faust.pedalConfigFromUI(window.faustUI, currentWapName);
             let pedalConfig = {
                 name: currentWapName,
                 color: "#7caeff",

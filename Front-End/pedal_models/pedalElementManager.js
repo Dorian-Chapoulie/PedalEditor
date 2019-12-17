@@ -251,14 +251,14 @@ class PedalElementManager {
     var switchContainer = this.doc.createElement("div");
     switchContainer.setAttribute("class", "switch");
     switchContainer.setAttribute("id", id ? id : switchConfig.id);
-    var swithcElem = this.doc.createElement("webaudio-switch");
+    var switchElem = this.doc.createElement("webaudio-switch");
 
-    swithcElem.setAttribute(
+    switchElem.setAttribute(
       "src",
       this.pedal.ASSETS_PATH + "/switches/" + switchConfig.model
     );
 
-    switchContainer.appendChild(swithcElem);
+    switchContainer.appendChild(switchElem);
 
     var label = this.doc.createElement("div");
 
@@ -323,6 +323,7 @@ class PedalElementManager {
 
   /* Listener for draging and droping the pedal element with the mouse. */
   dragAndDropElementListener(e, elem, that) {
+    e.stopPropagation();
     let initialX = e.pageX;
     let initialY = e.pageY;
 
@@ -330,6 +331,7 @@ class PedalElementManager {
     let posY = elem.y;
 
     function move(x, y) {
+      //console.log("move de pedalElementManager.js")
       let cursorOffsetX = x - initialX;
       let cursorOffsetY = y - initialY;
 
@@ -340,6 +342,7 @@ class PedalElementManager {
     }
 
     function onMouseMove(e) {
+      e.stopPropagation();
       if (that.selectedElement === elem) {
         move(e.pageX, e.pageY);
         that.dispatchEvent(that.configChangedEvent);
@@ -347,6 +350,7 @@ class PedalElementManager {
     }
 
     function onMouseUp(e) {
+      e.stopPropagation();
       document.removeEventListener("mousemove", onMouseMove);
       document.onmouseup = null;
     }
