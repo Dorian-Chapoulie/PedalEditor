@@ -34,6 +34,7 @@
     }
 
     constructor(wi) {
+      console.log("pedal.js constructor");
       super();
       this.knobs = [];
       this.icons = [];

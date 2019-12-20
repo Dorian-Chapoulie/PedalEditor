@@ -1201,7 +1201,7 @@
         })
         .then(data => {
             document.querySelector("#knobmenuid > pedal-elem-previews").previews = data;
-            document.querySelector("#knobmenuid > pedal-elem-previews").setUpPreviews();
+            //document.querySelector("#knobmenuid > pedal-elem-previews").setUpPreviews();
         })
         .catch(err => {
             console.error('Error fetching preview image names: ' + err);
@@ -2519,7 +2519,7 @@
             name: document.getElementById('name').value
         };
 
-
+/*
         let modifiedPedalConfig = {
             color: RGBAToHexA(r, g, b, a),
             width: window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('width')
@@ -2534,7 +2534,7 @@
             elements: [],
             name: document.getElementById('name').value
         }
-
+*/
         if (args) {
             defaultPedalConfig.name = args.name;
             defaultPedalConfig.height = args.height;
