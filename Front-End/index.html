@@ -5,14 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="Cache-Control" content="no-store" />
 
-    <script src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webcomponents-lite.js"></script>
+    <script
+        src="https://mainline.i3s.unice.fr/WebAudioPluginBank/bower_components/webaudio-controls2/webcomponents-lite.js">
+    </script>
 
-    
+
     <script src="faust/faustUIParser.js"></script>
-    
-    
-    <link rel="import" href="pedal_models/pedal.html">
-    
+    <script>
+        let importsLoaded = false;
+
+        function handleLoad(e) {
+            console.log("file imported : " + e.target.href);
+            importsLoaded = true;
+        }
+    </script>
+
+    <link rel="import" href="pedal_models/pedal.html" onload="handleLoad(event)">
+
     <link rel="import" href="editor-components/editor-pedal-details/editor-pedal-details.html">
     <link rel="import" href="editor-components/editor-pedal-details/pedal-elem-previews.html">
     <link rel="import" href="editor-components/editor-element-list.html">
@@ -35,7 +44,7 @@
     <link rel="Stylesheet" href="css/SideBar.css">
     <link rel="Stylesheet" href="css/police_select.css">
 
-  
+
 
     <script src="pedal_models/functionalPedalGenerator.js"></script>
     <script src="lib/interact.min.js"></script>
@@ -69,7 +78,8 @@
         }
 
         .boxshadow {
-            border-radius: 8px border: 1px solid #fff;
+            border-radius: 8px;
+            border: 1px solid #fff;
             background: #ddd;
         }
 
@@ -172,45 +182,43 @@
             position: fixed;
             display: none;
             transition: 0.2s display ease-in;
-
-            .menu-options {
-                list-style: none;
-                padding: 10px 0;
-                z-index: 1;
-
-                .menu-option {
-                    font-weight: 500;
-                    z-index: 1;
-                    font-size: 14px;
-                    padding: 10px 40px 10px 20px;
-                    border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
-                    cursor: pointer;
-
-                    &:hover {
-                        background: rgba(0, 0, 0, 0.2);
-                    }
-                }
-            }
         }
+
+        .menu-options {
+            list-style: none;
+            padding: 10px 0;
+            z-index: 1;
+        }
+
+        .menu-option {
+            font-weight: 500;
+            z-index: 1;
+            font-size: 14px;
+            padding: 10px 40px 10px 20px;
+            border-bottom: 1.5px solid rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
 
 
 
         button {
             background: grey;
             border: none;
-
-            .next {
-                color: green;
-            }
-
-            &[disabled="false"]:hover {
-                .next {
-                    color: red;
-                    animation: move 0.5s;
-                    animation-iteration-count: 2;
-                }
-            }
         }
+
+        .next {
+            color: green;
+        }
+
+
+        .next {
+            color: red;
+            animation: move 0.5s;
+            animation-iteration-count: 2;
+        }
+
+
 
         @keyframes move {
             from {
@@ -1577,7 +1585,7 @@
         })
         .on('resizemove', function (event) {
             event.stopPropagation();
-            
+
             var target = event.target
             var x = (parseFloat(target.getAttribute('data-x')) || 0)
             var y = (parseFloat(target.getAttribute('data-y')) || 0)
@@ -1600,7 +1608,7 @@
             //target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
         })
 
-        
+
     function dragMoveListener(event) {
         //console.log("dragMoveListener de index.html")
         event.stopPropagation();
@@ -2483,101 +2491,104 @@
     }
 
     function newPedal(args, withoutInit) {
+        buildPedal();
+
+        function buildPedal() {
+            console.log("Building pedal...")
+
+            section.innerHTML = '';
+            pedal = null;
+            let pedalElem = document.createElement('my-pedal');
+            pedalElem.id = "my-pedal";
+            //pedalElem.className = "draggable";
+            section.appendChild(pedalElem);
+            pedal = pedalElem;
 
 
+            pedal.addEventListener('select-knob', function (e) {
+                selectKnob(e.detail);
+                updateInspector();
+            });
 
-        section.innerHTML = '';
-        pedal = null;
-        let pedalElem = document.createElement('my-pedal');
-        pedalElem.id = "my-pedal";
-        //pedalElem.className = "draggable";
-        section.appendChild(pedalElem);
-        pedal = pedalElem;
+            if (!withoutInit) {
+                defaultPedalConfig.name = currentWapName;
+            }
 
+            var r = Number(document.getElementById("color").value.slice(5, 8));
+            var g = Number(document.getElementById("color").value.slice(9, 12));
+            var b = Number(document.getElementById("color").value.slice(13, 16));
+            var a = Number(document.getElementById("color").value.slice(17, 20));
+            //RGBAToHexA(r,g,b,a)
 
-        pedal.addEventListener('select-knob', function (e) {
-            selectKnob(e.detail);
-            updateInspector();
-        });
+            let defaultPedalConfig = {
+                color: document.getElementById('color').value,
+                width: Number(document.getElementById('width').value),
+                height: Number(document.getElementById('height').value),
+                radius: Number(document.getElementById('radius').value),
+                elements: [],
+                name: document.getElementById('name').value
+            };
 
-        if (!withoutInit) {
-            defaultPedalConfig.name = currentWapName;
-        }
+            /*
+                    let modifiedPedalConfig = {
+                        color: RGBAToHexA(r, g, b, a),
+                        width: window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('width')
+                            .slice(0, window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue(
+                                'width').lastIndexOf("p")),
+                        height: window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('height')
+                            .slice(0, window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue(
+                                'width').lastIndexOf("p")),
+                        radius: window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('radius')
+                            .slice(0, window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue(
+                                'width').lastIndexOf("p")),
+                        elements: [],
+                        name: document.getElementById('name').value
+                    }
+            */
+            if (args) {
+                defaultPedalConfig.name = args.name;
+                defaultPedalConfig.height = args.height;
+                defaultPedalConfig.width = args.width;
+                defaultPedalConfig.name = args.name;
+                defaultPedalConfig.elements = args.elements;
+            }
 
-        var r = Number(document.getElementById("color").value.slice(5, 8));
-        var g = Number(document.getElementById("color").value.slice(9, 12));
-        var b = Number(document.getElementById("color").value.slice(13, 16));
-        var a = Number(document.getElementById("color").value.slice(17, 20));
-        //RGBAToHexA(r,g,b,a)
-
-        let defaultPedalConfig = {
-            color: document.getElementById('color').value,
-            width: Number(document.getElementById('width').value),
-            height: Number(document.getElementById('height').value),
-            radius: Number(document.getElementById('radius').value),
-            elements: [],
-            name: document.getElementById('name').value
-        };
-
-/*
-        let modifiedPedalConfig = {
-            color: RGBAToHexA(r, g, b, a),
-            width: window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('width')
-                .slice(0, window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue(
-                    'width').lastIndexOf("p")),
-            height: window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('height')
-                .slice(0, window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue(
-                    'width').lastIndexOf("p")),
-            radius: window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('radius')
-                .slice(0, window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue(
-                    'width').lastIndexOf("p")),
-            elements: [],
-            name: document.getElementById('name').value
-        }
-*/
-        if (args) {
-            defaultPedalConfig.name = args.name;
-            defaultPedalConfig.height = args.height;
-            defaultPedalConfig.width = args.width;
-            defaultPedalConfig.name = args.name;
-            defaultPedalConfig.elements = args.elements;
-        }
-
-        pedal.loadConfig(defaultPedalConfig);
-        //pedal.loadConfig(modifiedPedalConfig);
-        /* if(Number(defaultPedalConfig.width) < Number(window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('width').slice(0,1))  || Number(defaultPedalConfig.width) > Number(window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('width').slice(0,1))) {
-            
-            pedal.loadConfig(modifiedPedalConfig);
-        }
-        else{
             pedal.loadConfig(defaultPedalConfig);
-        } */
-        plugPedalToEditor();
+            //pedal.loadConfig(modifiedPedalConfig);
+            /* if(Number(defaultPedalConfig.width) < Number(window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('width').slice(0,1))  || Number(defaultPedalConfig.width) > Number(window.getComputedStyle(pedal.shadowRoot.getElementById('pedal')).getPropertyValue('width').slice(0,1))) {
+                
+                pedal.loadConfig(modifiedPedalConfig);
+            }
+            else{
+                pedal.loadConfig(defaultPedalConfig);
+            } */
+            plugPedalToEditor();
 
 
 
-        functionalPedalGenerator = new FunctionalPedalGenerator(pedal);;
+            functionalPedalGenerator = new FunctionalPedalGenerator(pedal);;
 
-        document.getElementById('h3').innerHTML = document.getElementById('label').value;
-        var ped = document.querySelector('my-pedal');
+            document.getElementById('h3').innerHTML = document.getElementById('label').value;
+            var ped = document.querySelector('my-pedal');
 
-        if (ped.shadowRoot) {
-            pedal.shadowRoot.getElementById('test').innerHTML = document.getElementById('label').value;
-            /* window.addEventListener("click", e => {
-                const flyoutElement = document.getElementById("closeLink");
-                let targetElement = e.target;
-                if (targetElement === flyoutElement) toggleMenu("hide");
-            }); */
+            if (ped.shadowRoot) {
+                pedal.shadowRoot.getElementById('test').innerHTML = document.getElementById('label').value;
+                /* window.addEventListener("click", e => {
+                    const flyoutElement = document.getElementById("closeLink");
+                    let targetElement = e.target;
+                    if (targetElement === flyoutElement) toggleMenu("hide");
+                }); */
 
-            /* window.addEventListener("contextmenu", e => {
-                e.preventDefault();
-                const origin = {
-                    left: e.pageX,
-                    top: e.pageY
-                };
-                setPosition(origin);
-                return false;
-            }); */
+                /* window.addEventListener("contextmenu", e => {
+                    e.preventDefault();
+                    const origin = {
+                        left: e.pageX,
+                        top: e.pageY
+                    };
+                    setPosition(origin);
+                    return false;
+                }); */
+            }
         }
     }
 
@@ -2997,91 +3008,117 @@
 
     //window.onload = initializeFromMessagePostedByFaustIDE;
 
+    function waitUntilHtmlImportsLoaded(interval, callback) {
+        const getPromiseInstance = () => new Promise((resolve, reject) => {
+            console.log("Checking if files have been imported...");
+            if (importsLoaded)
+                resolve("imports loaded");
+        });
+
+        let id = setInterval(() => {
+            getPromiseInstance().then((result) => {
+                console.log(result);
+                clearInterval(id);
+                // continue...
+                callback(result);
+            })
+        }, interval);
+    }
+
+
+
     // TRES IMPORTANT !!!!
     function initializeFromMessagePostedByFaustIDE(data) {
-        console.log("initializeFromMessagePostedByFaustIDE")
+        waitUntilHtmlImportsLoaded(1000, () => {
+            console.log("Ok, all fils imported, let's go on...")
+            continueInitializations();
+        });
 
-        let name = data.name;
-        console.log("initializeFromMessagePostedByFaustIDE: name = " + name)
-        currentWapCode = data.code;
+        function continueInitializations() {
+            console.log("initializeFromMessagePostedByFaustIDE")
 
-        /* ####### Commenter la ligne de faustUI.WapName ci-dessous quand on n'utilise pas faust editor ########
-         */
-        faustUI.WapName = name.substr(0, name.lastIndexOf("."));
-        console.log("initializeFromMessagePostedByFaustIDE: faustUI.WapName = " + faustUI.WapName)
+            let name = data.name;
+            console.log("initializeFromMessagePostedByFaustIDE: name = " + name)
+            currentWapCode = data.code;
 
-        currentWapName = faustUI.WapName;
-        console.log("initializeFromMessagePostedByFaustIDE: currentWapName = " + currentWapName)
-        //console.log("code = " + data.code);
-        //Mettre en commentaire init() quand on utilise faust editor, bug à régler
-        //init();
-        faustUI = data.ui;
-        console.log("FaustUI = " + JSON.stringify(data.ui))
-        //console.log("faustUI = ", faustUI)
-        //setFaustUIFromUrl();
-        //console.log("faustUi après setFaustUIFromUrl= ", faustUI)
+            /* ####### Commenter la ligne de faustUI.WapName ci-dessous quand on n'utilise pas faust editor ########
+             */
+            faustUI.WapName = name.substr(0, name.lastIndexOf("."));
+            console.log("initializeFromMessagePostedByFaustIDE: faustUI.WapName = " + faustUI.WapName)
 
-
-        //displaySavedPedalsIds();
-
-        /* bt_buildIt.addEventListener('click', () => {
-
-        checkMetadata(document.querySelector("#urlPlugin").value);
-        }); */
-
-        /* MICHEL BUFFA
-        let faust = document.querySelector('#editor-faust'),
-            faustClone = faust.cloneNode(true);
-        faust.parentNode.replaceChild(faustClone, faust);
-
-        faust = document.querySelector('#editor-faust');
-        */
+            currentWapName = faustUI.WapName;
+            console.log("initializeFromMessagePostedByFaustIDE: currentWapName = " + currentWapName)
+            //console.log("code = " + data.code);
+            //Mettre en commentaire init() quand on utilise faust editor, bug à régler
+            //init();
+            faustUI = data.ui;
+            console.log("FaustUI = " + JSON.stringify(data.ui))
+            //console.log("faustUI = ", faustUI)
+            //setFaustUIFromUrl();
+            //console.log("faustUi après setFaustUIFromUrl= ", faustUI)
 
 
-        /*faust.addEventListener('create-pedal', (e) => {
-        newPedal();
-        let pedalConfig = {
-        name: "First",
-        color: "#7caeff",
-        width: e.detail.width,
-        height: e.detail.height,
-        radius: "10",
-        opacity: "1",
-        elements: e.detail.elements
-        };
-        //console.log(e.detail);
-        pedal.loadConfig(pedalConfig);
-        });*/
-        if (window.faustUI) {
-            console.log("### faustUI present ! ####")
-            console.log(window.faustUI);
+            //displaySavedPedalsIds();
+
+            /* bt_buildIt.addEventListener('click', () => {
+
+            checkMetadata(document.querySelector("#urlPlugin").value);
+            }); */
+
+            /* MICHEL BUFFA
+            let faust = document.querySelector('#editor-faust'),
+                faustClone = faust.cloneNode(true);
+            faust.parentNode.replaceChild(faustClone, faust);
+
+            faust = document.querySelector('#editor-faust');
+            */
 
 
-            //let detail = faust.pedalConfigFromUI(window.faustUI, currentWapName);
-            faust = new FaustUIParser();
-
-            let detail = faust.pedalConfigFromUI(window.faustUI, currentWapName);
+            /*faust.addEventListener('create-pedal', (e) => {
+            newPedal();
             let pedalConfig = {
-                name: currentWapName,
-                color: "#7caeff",
-                width: detail.width,
-                height: detail.height,
-                radius: "10",
-                opacity: "1",
-                elements: detail.elements
+            name: "First",
+            color: "#7caeff",
+            width: e.detail.width,
+            height: e.detail.height,
+            radius: "10",
+            opacity: "1",
+            elements: e.detail.elements
             };
-            console.log(detail);
-            console.log("PEDALCONFIG = ", pedalConfig);
-
-            newPedal(null, true);
-
-            //currentWapName = pedalConfig.name;
+            //console.log(e.detail);
             pedal.loadConfig(pedalConfig);
+            });*/
+            if (window.faustUI) {
+                console.log("### faustUI present ! ####")
+                console.log(window.faustUI);
+
+
+                //let detail = faust.pedalConfigFromUI(window.faustUI, currentWapName);
+                faust = new FaustUIParser();
+
+                let detail = faust.pedalConfigFromUI(window.faustUI, currentWapName);
+                let pedalConfig = {
+                    name: currentWapName,
+                    color: "#7caeff",
+                    width: detail.width,
+                    height: detail.height,
+                    radius: "10",
+                    opacity: "1",
+                    elements: detail.elements
+                };
+                console.log(detail);
+                console.log("PEDALCONFIG = ", pedalConfig);
+
+                newPedal(null, true);
+
+                //currentWapName = pedalConfig.name;
+                pedal.loadConfig(pedalConfig);
 
 
 
 
 
+            }
         }
     }
     // 2 - SENT BY FAUST IDE WHEN THE BINARY.ZIP FILE IS READY TO BE SENT TO BACK-END WAP SERVER
